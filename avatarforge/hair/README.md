@@ -1,35 +1,37 @@
-# Avatar Forge Hair Texture Lab v11
+# Avatar Forge Hair Research
 
-A source-controlled hair generation/editor prototype for the real Avatar Forge model.
+This branch is the source authority for the Avatar Forge hair experiments.
 
-## Current architecture
+## Current causal architecture
 
-`real AvatarHead scalp -> canonical roots -> style guides -> continuous strand texture -> lock/follower reconstruction -> dynamics -> render`
+The texture of a fiber must emerge from its microscopic/material state. The current direction is:
 
-Texture and hairstyle are separate. The familiar 1A–4C labels are editor anchors in one continuous texture space, not biological categories. One rooted topology can interpolate between anchors.
+`cross-section + cortex differential strain/orientation + hydration + heterogeneity`
+`-> intrinsic rest strain field kappa1(s), kappa2(s), tau(s)`
+`-> Cosserat-style natural fiber integration`
+`-> mechanics/contact/gravity/product interactions`
+`-> observed strand/lock/groom appearance`
 
-## Generate
+`avatarforge_hair/micro_fiber.py` implements the first version of that bridge. It does **not** accept curl radius, cycle count, or a kink target. Those are outcomes to measure from the resulting centerline.
 
-```bash
-python -m tools.generate_texture_lab out/me.glb out/me.hair-v11.medium.glb --strands 600 --length medium
-python -m tools.generate_texture_lab out/me.glb out/me.hair-v11.short.glb --strands 600 --length short
-```
+The familiar 1A-4C vocabulary may remain as an editor/readout convention, but it must not be the geometry generator. A label can select or summarize a region of microscopic state space; it does not prescribe the final curve.
 
-The interactive topology is intentionally guide-density. Dense follower reconstruction is a render concern and should not multiply every morph target.
+## Important invalidation
 
-## Viewer
+The earlier v11 `generate_texture_lab.py` morph-target path directly prescribed fields such as coil radius, cycles per 10 cm, and kink. That was useful for testing topology/runtime plumbing but is **not an acceptable causal hair model** and must not be treated as the production texture generator.
 
-```bash
-python -m tools.studio
-```
+Likewise, the first 1A-4C atlas is invalid visual evidence. Its high-curvature states mixed numerical undersampling with prescribed geometry.
 
-Hair controls include:
+## What remains reusable
 
-- 1A through 4C texture anchors;
-- continuous interpolation between anchors;
-- water/rain, conditioner, gel, and oil response controls;
-- original cards / generated strands comparison;
-- secondary lock dynamics and gust stress test.
+- real `AvatarHead` scalp sampling and stable roots;
+- hairstyle guide / scalp-flow work;
+- guide-to-dense reconstruction architecture;
+- collision and secondary-dynamics infrastructure;
+- product/environment state plumbing;
+- standalone Babylon viewer and tests.
+
+These layers should consume micro-derived intrinsic fiber state rather than manufacture texture themselves.
 
 ## Tests
 
@@ -38,4 +40,6 @@ python -m unittest discover -s tests -p 'test_*.py'
 node --test tests/*.test.js
 ```
 
-See `SOURCE-PROVENANCE.md` before treating an older generated asset as source authority.
+`tests/test_micro_fiber.py` verifies that geometry changes when microscopic differential strain/orientation changes, and that water first changes the microstate before the natural shape is recomputed.
+
+See `SOURCE-PROVENANCE.md` for pre-repository lineage.
