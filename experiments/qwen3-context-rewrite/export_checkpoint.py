@@ -18,8 +18,8 @@ snapshot_download(
 )
 manifest={"model":"Qwen/Qwen3-0.6B","chunk_size":CHUNK_SIZE,"files":[],"parts":[]}
 number=0
-for item in sorted(MODEL_DIR.rglob("*")):
- if not item.is_file():continue
+for item in sorted(MODEL_DIR.rglob("*"), key=lambda p:(not p.name.endswith(".safetensors"),str(p))):
+ if not item.is_file() or ".cache" in item.relative_to(MODEL_DIR).parts:continue
  relative=item.relative_to(MODEL_DIR).as_posix()
  sha=hashlib.sha256()
  pieces=[]
