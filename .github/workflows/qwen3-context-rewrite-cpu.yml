@@ -1,0 +1,46 @@
+name: Qwen3 CPU Context Rewrite Experiment
+on:
+  push:
+    branches:
+      - research/qwen3-context-rewrite-cpu-20261113
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install PyTorch CPU and Transformers
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+          python -m pip install 'transformers>=4.51,<5' accelerate safetensors huggingface_hub
+      - name: Verify arithmetic checker
+        run: python experiments/qwen3-context-rewrite/probe.py --self-test
+      - name: Run pretrained Qwen3-0.6B on CPU
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u experiments/qwen3-context-rewrite/probe.py \
+            --model Qwen/Qwen3-0.6B \
+            --examples 2 \
+            --steps 2 \
+            --memory-tokens 64 \
+            --max-new-tokens 96 \
+            --output qwen3_results.json
+      - name: Upload full model traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-results
+          path: qwen3_results.json
+          if-no-files-found: warn
