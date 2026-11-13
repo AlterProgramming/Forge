@@ -1,0 +1,39 @@
+name: Fetch official bAbI QA2 10k benchmark
+on:
+  push:
+    branches:
+      - research/qwen3-streaming-memory-babi-20261113
+    paths:
+      - .github/workflows/fetch-babi-qa2-10k.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download and extract official en-10k QA2
+        run: |
+          python - <<'PY'
+          import urllib.request,tarfile,io,pathlib
+          url='https://s3.amazonaws.com/text-datasets/babi_tasks_1-20_v1-2.tar.gz'
+          raw=urllib.request.urlopen(url,timeout=60).read()
+          tf=tarfile.open(fileobj=io.BytesIO(raw),mode='r:gz')
+          p=pathlib.Path('data');p.mkdir(exist_ok=True)
+          for k in ('train','test'):
+              suff=f'en-10k/qa2_two-supporting-facts_{k}.txt'
+              ent=next(m for m in tf.getmembers() if m.name.endswith(suff))
+              b=tf.extractfile(ent).read()
+              (p/f'qa2_10k_{k}.txt').write_bytes(b)
+              print(k,len(b))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: babi-qa2-10k
+          path: data/*.txt
+          retention-days: 2
