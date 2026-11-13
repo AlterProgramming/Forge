@@ -125,3 +125,35 @@ jobs:
           if-no-files-found: ignore
           compression-level: 0
           retention-days: 1
+      - name: Upload shard 012
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-weight-shard-012
+          path: transfer/shards/part-012
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+      - name: Upload shard 013
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-weight-shard-013
+          path: transfer/shards/part-013
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+      - name: Upload shard 014
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-weight-shard-014
+          path: transfer/shards/part-014
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
+      - name: Upload shard 015
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-weight-shard-015
+          path: transfer/shards/part-015
+          if-no-files-found: ignore
+          compression-level: 0
+          retention-days: 1
