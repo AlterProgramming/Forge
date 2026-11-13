@@ -1,0 +1,54 @@
+name: Fetch official bAbI QA2 benchmark files
+on:
+  push:
+    branches:
+      - research/qwen3-streaming-memory-babi-20261113
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch original bAbI task 2 data
+        run: |
+          python - <<'PY'
+          import io, tarfile, urllib.request, pathlib
+          urls=[
+           'https://s3.amazonaws.com/text-datasets/babi_tasks_1-20_v1-2.tar.gz',
+           'https://www.thespermwhale.com/jaseweston/babi/tasks_1-20_v1-2.tar.gz',
+           'https://raw.githubusercontent.com/raviraju/NLP_QA_Project/master/tasks_1-20_v1-2/en/qa2_two-supporting-facts_train.txt',
+          ]
+          out=pathlib.Path('babi');out.mkdir(exist_ok=True)
+          for url in urls:
+           try:
+            raw=urllib.request.urlopen(url,timeout=50).read()
+            if url.endswith('.tar.gz'):
+             with tarfile.open(fileobj=io.BytesIO(raw),mode='r:gz') as tf:
+              for tag in ['train','test']:
+               ending=f'en/qa2_two-supporting-facts_{tag}.txt'
+               path=next((m for m in tf.getmembers() if m.name.endswith(ending)),None)
+               if path is None:raise FileNotFoundError(ending)
+               data=tf.extractfile(path).read()
+               (out/f'qa2_{tag}.txt').write_bytes(data)
+            else:
+             (out/'qa2_train.txt').write_bytes(raw)
+             raise RuntimeError('Only train found, try another source')
+            print('Fetched QA2 train and test from',url)
+            break
+           except Exception as e:
+            print('Source failed',url,repr(e))
+          assert (out/'qa2_train.txt').exists() and (out/'qa2_test.txt').exists(),'no complete benchmark'
+          for p in out.iterdir():
+           print(p,p.stat().st_size)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: babi-qa2-official
+          path: babi/*.txt
+          retention-days: 2
