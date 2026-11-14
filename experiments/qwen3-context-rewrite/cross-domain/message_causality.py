@@ -26,6 +26,13 @@ ARMS = ("none", "one", "four", "eight", "full", "shuffled")
 SYSTEM_SENDER = ("Give exactly ONE useful intermediate calculation, constraint "
                  "or relationship for solving the problem. Do not give the final "
                  "answer. Do not add analysis or explanations. Keep it short.")
+DERIVED_SENDER = (
+    "Compute exactly ONE genuinely NEW intermediate consequence from the question. "
+    "It must be obtained by combining at least two facts or quantities, rather "
+    "than copying a phrase already present. Give the result as the shortest "
+    "possible equation or factual relation. Never give the final answer. "
+    "If no consequence can be justified, output UNKNOWN. No explanations."
+)
 SYSTEM_RECEIVER = "Solve the question. Check whether a supplied intermediate claim is relevant and correct."
 
 def public_tasks(family, n, seed):
@@ -103,7 +110,7 @@ def decode_answer(family, raw, task):
 
 def rollup(rows, family):
     sums={}
-    for arm in ARMS:
+    for arm in rows[0]["receiver"]:
         rs=[x["receiver"][arm] for x in rows]
         sgen=sum(x["sender"]["generated_tokens"] for x in rows)
         sin=sum(x["sender"]["input_tokens"] for x in rows)
@@ -144,12 +151,17 @@ def main():
     ap.add_argument("--receiver-tokens",type=int,default=112)
     ap.add_argument("--output",default="message_causality.json")
     ap.add_argument("--self-test",action="store_true")
+    ap.add_argument("--sender-protocol",choices=["original","derived"],default="original")
+    ap.add_argument("--arms",default=",".join(ARMS),help="comma-separated message arms")
     args=ap.parse_args()
     if args.self_test:
         self_test()
         return
     if args.n < 2:
         ap.error("n >= 2 required for shuffled-message negative control")
+    active_arms=tuple(a.strip() for a in args.arms.split(",") if a.strip())
+    if not active_arms or len(active_arms)!=len(set(active_arms)) or any(a not in ARMS for a in active_arms):
+        ap.error("arms must be a nonempty comma-separated selection from the known conditions")
     import torch
     from transformers import AutoTokenizer,AutoModelForCausalLM
     torch.set_num_threads(2)
@@ -159,7 +171,8 @@ def main():
                                                low_cpu_mem_usage=True).eval()
     device=next(model.parameters()).device
     def invoke(role,text,max_new_tokens):
-        msgs=[{"role":"system","content":SYSTEM_SENDER if role=="sender" else SYSTEM_RECEIVER},
+        sender_instruction=DERIVED_SENDER if args.sender_protocol=="derived" else SYSTEM_SENDER
+        msgs=[{"role":"system","content":sender_instruction if role=="sender" else SYSTEM_RECEIVER},
               {"role":"user","content":text}]
         ids=tok.apply_chat_template(msgs,tokenize=True,add_generation_prompt=True,
                  enable_thinking=False,return_tensors="pt").to(device)
@@ -184,7 +197,7 @@ def main():
                  gold_eval_only=task["gold"],sender=messages[i],
                  signal=signals[i],signal_tokens=len(tok.encode(signals[i],add_special_tokens=False)),
                  receiver={})
-        for arm in ARMS:
+        for arm in active_arms:
             msg=variants[i][arm]
             ret=invoke("receiver",receiver_user(task["question"],msg,args.family),
                        args.receiver_tokens)
