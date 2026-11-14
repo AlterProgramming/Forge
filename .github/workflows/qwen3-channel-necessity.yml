@@ -1,0 +1,42 @@
+name: Qwen3 Necessary One-Value Communication
+on:
+  push:
+    branches: [research/qwen3-minimal-channel-necessity-20261114]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  minimum-channel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen Qwen CPU and official GSM8K
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch>=2.4,<3'
+          python -m pip install 'transformers>=4.51,<5' accelerate safetensors 'datasets>=3,<5'
+      - name: Check minimal channel masking and numeric encoding
+        run: |
+          python experiments/qwen3-context-rewrite/cross-domain/channel_necessity.py --self-test
+      - name: Sender emits missing information; receiver uses it in two tasks
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u experiments/qwen3-context-rewrite/cross-domain/channel_necessity.py \
+             --model Qwen/Qwen3-0.6B --n 5 --seed 20261117 \
+             --output channel_necessity_results.json
+      - name: Upload complete sender and receiver traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-channel-necessity
+          path: channel_necessity_results.json
+          if-no-files-found: warn
