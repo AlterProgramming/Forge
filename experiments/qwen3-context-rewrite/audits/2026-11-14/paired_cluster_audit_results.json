@@ -1,0 +1,179 @@
+{
+  "experiment": "story-cluster paired bootstrap and within-story sign permutation",
+  "bootstrap_replicates": 1000,
+  "seed": 20261114,
+  "source_files": [
+    "paired_test_predictions_eval_seed61425.json",
+    "paired_test_predictions_eval_seed61426.json"
+  ],
+  "results": {
+    "61425/test/curriculum_seed61425_vs_no_curriculum_seed61425": {
+      "n_questions": 3000,
+      "n_stories": 1000,
+      "a_correct": 2444,
+      "b_correct": 1039,
+      "delta_accuracy": 0.468333,
+      "cluster_bootstrap_95ci": [
+        0.447333,
+        0.488667
+      ],
+      "story_signflip_two_sided_p": 0.000999,
+      "discordant_a_only": 1509,
+      "discordant_b_only": 104
+    },
+    "61425/test/curriculum_seed61425_vs_permuted_features_seed61425": {
+      "n_questions": 3000,
+      "n_stories": 1000,
+      "a_correct": 2444,
+      "b_correct": 799,
+      "delta_accuracy": 0.548333,
+      "cluster_bootstrap_95ci": [
+        0.529,
+        0.567
+      ],
+      "story_signflip_two_sided_p": 0.000999,
+      "discordant_a_only": 1686,
+      "discordant_b_only": 41
+    },
+    "61425/test/curriculum_seed61426_vs_permuted_features_seed61425": {
+      "n_questions": 3000,
+      "n_stories": 1000,
+      "a_correct": 2955,
+      "b_correct": 799,
+      "delta_accuracy": 0.718667,
+      "cluster_bootstrap_95ci": [
+        0.706333,
+        0.731
+      ],
+      "story_signflip_two_sided_p": 0.000999,
+      "discordant_a_only": 2174,
+      "discordant_b_only": 18
+    },
+    "61425/ood/curriculum_seed61425_vs_no_curriculum_seed61425": {
+      "n_questions": 628,
+      "n_stories": 628,
+      "a_correct": 325,
+      "b_correct": 1,
+      "delta_accuracy": 0.515924,
+      "cluster_bootstrap_95ci": [
+        0.479299,
+        0.555732
+      ],
+      "story_signflip_two_sided_p": 0.000999,
+      "discordant_a_only": 325,
+      "discordant_b_only": 1
+    },
+    "61425/ood/curriculum_seed61425_vs_permuted_features_seed61425": {
+      "n_questions": 628,
+      "n_stories": 628,
+      "a_correct": 325,
+      "b_correct": 0,
+      "delta_accuracy": 0.517516,
+      "cluster_bootstrap_95ci": [
+        0.479299,
+        0.555732
+      ],
+      "story_signflip_two_sided_p": 0.000999,
+      "discordant_a_only": 325,
+      "discordant_b_only": 0
+    },
+    "61425/ood/curriculum_seed61426_vs_permuted_features_seed61425": {
+      "n_questions": 628,
+      "n_stories": 628,
+      "a_correct": 618,
+      "b_correct": 0,
+      "delta_accuracy": 0.984076,
+      "cluster_bootstrap_95ci": [
+        0.97293,
+        0.993631
+      ],
+      "story_signflip_two_sided_p": 0.000999,
+      "discordant_a_only": 618,
+      "discordant_b_only": 0
+    },
+    "61426/test/curriculum_seed61425_vs_no_curriculum_seed61425": {
+      "n_questions": 3000,
+      "n_stories": 1000,
+      "a_correct": 2472,
+      "b_correct": 1017,
+      "delta_accuracy": 0.485,
+      "cluster_bootstrap_95ci": [
+        0.463333,
+        0.505667
+      ],
+      "story_signflip_two_sided_p": 0.000999,
+      "discordant_a_only": 1549,
+      "discordant_b_only": 94
+    },
+    "61426/test/curriculum_seed61425_vs_permuted_features_seed61425": {
+      "n_questions": 3000,
+      "n_stories": 1000,
+      "a_correct": 2472,
+      "b_correct": 806,
+      "delta_accuracy": 0.555333,
+      "cluster_bootstrap_95ci": [
+        0.536333,
+        0.574333
+      ],
+      "story_signflip_two_sided_p": 0.000999,
+      "discordant_a_only": 1706,
+      "discordant_b_only": 40
+    },
+    "61426/test/curriculum_seed61426_vs_permuted_features_seed61425": {
+      "n_questions": 3000,
+      "n_stories": 1000,
+      "a_correct": 2958,
+      "b_correct": 806,
+      "delta_accuracy": 0.717333,
+      "cluster_bootstrap_95ci": [
+        0.704,
+        0.730667
+      ],
+      "story_signflip_two_sided_p": 0.000999,
+      "discordant_a_only": 2166,
+      "discordant_b_only": 14
+    },
+    "61426/ood/curriculum_seed61425_vs_no_curriculum_seed61425": {
+      "n_questions": 628,
+      "n_stories": 628,
+      "a_correct": 326,
+      "b_correct": 0,
+      "delta_accuracy": 0.519108,
+      "cluster_bootstrap_95ci": [
+        0.482484,
+        0.562102
+      ],
+      "story_signflip_two_sided_p": 0.000999,
+      "discordant_a_only": 326,
+      "discordant_b_only": 0
+    },
+    "61426/ood/curriculum_seed61425_vs_permuted_features_seed61425": {
+      "n_questions": 628,
+      "n_stories": 628,
+      "a_correct": 326,
+      "b_correct": 0,
+      "delta_accuracy": 0.519108,
+      "cluster_bootstrap_95ci": [
+        0.477707,
+        0.557325
+      ],
+      "story_signflip_two_sided_p": 0.000999,
+      "discordant_a_only": 326,
+      "discordant_b_only": 0
+    },
+    "61426/ood/curriculum_seed61426_vs_permuted_features_seed61425": {
+      "n_questions": 628,
+      "n_stories": 628,
+      "a_correct": 616,
+      "b_correct": 0,
+      "delta_accuracy": 0.980892,
+      "cluster_bootstrap_95ci": [
+        0.969745,
+        0.990446
+      ],
+      "story_signflip_two_sided_p": 0.000999,
+      "discordant_a_only": 616,
+      "discordant_b_only": 0
+    }
+  }
+}
