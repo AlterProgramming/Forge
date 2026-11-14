@@ -25,6 +25,15 @@ import time
 from pathlib import Path
 from boost import load_tasks, number
 
+def numerically_equal(value, expected):
+    """Treat Decimal scientific notation as numerically equal, not string-unequal."""
+    if value is None:
+        return False
+    try:
+        return Decimal(value) == Decimal(expected)
+    except Exception:
+        return False
+
 # Entries were hand-diagnosed on PREVIOUSLY inspected failures. Numerical facts
 # are independently checkable consequences of each word problem; the final
 # answer is deliberately absent from the intervention prompts.
@@ -143,6 +152,8 @@ def make_prompts(problem, case):
     }
 
 def self_test():
+    assert numerically_equal("1.2E+3","1200")
+    assert numerically_equal("5E+1","50")
     assert len(CASES)==4
     for key,c in CASES.items():
         assert c["gold"] == c["micro"][-1][1],key
@@ -191,14 +202,14 @@ def run():
                  arms={},micro=[])
         for arm,prompt in make_prompts(item["prompt"],case).items():
             observed=query(prompt,args.max_tokens)
-            observed["correct"]=observed["parsed"]==item["gold"]
+            observed["correct"]=numerically_equal(observed["parsed"],item["gold"])
             observed["prompt"]=prompt
             row["arms"][arm]=observed
             print(f'{case_id} {arm}: {observed["parsed"]} correct={observed["correct"]}',flush=True)
         for text,gold in case["micro"]:
             observed=query(text+"\n"+FORMAT,args.micro_tokens)
             observed["expected"]=gold
-            observed["correct"]=observed["parsed"]==gold
+            observed["correct"]=numerically_equal(observed["parsed"],gold)
             observed["prompt"]=text
             row["micro"].append(observed)
             print(f'  micro expected={gold} got={observed["parsed"]} correct={observed["correct"]}',flush=True)
