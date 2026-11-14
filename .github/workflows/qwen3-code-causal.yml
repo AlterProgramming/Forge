@@ -1,0 +1,40 @@
+name: Qwen3 Code Causal Feedback
+on:
+  push:
+    branches: [research/qwen3-code-feedback-20261114]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Qwen on CPU and public MBPP dataset
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch>=2.4,<3'
+          python -m pip install 'transformers>=4.51,<5' accelerate safetensors 'datasets>=3,<5'
+      - name: Verify annotations
+        run: python experiments/qwen3-context-rewrite/cross-domain/code_trace_probe.py --self-test
+      - name: Compare base, semantic invariant, and executable test feedback
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u experiments/qwen3-context-rewrite/cross-domain/code_trace_probe.py \
+            --model Qwen/Qwen3-0.6B --output code_causal_results.json
+      - name: Preserve programs, public development test, and independent test outcomes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-code-causal-results
+          path: code_causal_results.json
+          if-no-files-found: warn
