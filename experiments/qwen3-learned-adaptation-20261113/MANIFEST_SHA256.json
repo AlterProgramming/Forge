@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "model": "Qwen/Qwen3-0.6B",
+  "kind": "frozen-feature-graph-and-halt-learned-checkpoints",
+  "checksums": {
+    "checkpoints/joint_graph_halt_curriculum_seed61426.pt": "7f693c3d9d9a8406b5fcf19ef623b263bcccb1a03998b080f5365a8e33ca7d32",
+    "checkpoints/joint_graph_halt_curriculum_seed61425.pt": "4f31de79178a185e233c16c459c480d7b7e07fc416f5ae9f408af77a5bd4028b",
+    "checkpoints/joint_graph_halt_curriculum_seed61427.pt": "d799543f7b1645738843c808572eefc6ccc8360a7d72c75a7d7dcbe65d708e7e",
+    "checkpoints/joint_graph_halt_permuted_seed61425.pt": "ca0b546cc50853255445f90780d645c2d3cc3ce65f12ab5b0ebe248aaada505b",
+    "checkpoints/joint_graph_halt_permuted_seed61426.pt": "74ca95c0bd6a21ed77acd7c9ff9822162c3a855e68e4ccb934659d5bd64cec13",
+    "checkpoints/joint_graph_halt_seed61425.pt": "08204124d11c4e0cfc996096220a03cec5d760aff0fea589257aef6f1e897222",
+    "checkpoints/lora_qwen_stop.pt": "63b5181bb997a8254f599ba399fe9a7fc3bd7ce41f7f3aa91f96276065737e62",
+    "checkpoints/frozen_qwen_stop.pt": "408d1533f2e6121e2414e9606659edbe1133929f95d8dc5eabd23f439e656dcb",
+    "checkpoints/router.pt": "55e295ce37aa1943c6e1df7d3cf6180011d1ff5986413b01d4eb730c2c5d7f74",
+    "checkpoints/blind_router.pt": "c57b4da9a037c90919edf44431b8dd00f812e9436a0adf2047127c2e857608fb"
+  }
+}
