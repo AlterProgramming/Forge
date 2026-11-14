@@ -1,0 +1,35 @@
+name: Export Qwen3 CPU runtime Python wheels
+on:
+  push:
+    branches:
+      - research/qwen3-context-rewrite-cpu-20261113
+    paths:
+      - .github/workflows/qwen3-runtime-wheels.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Download matching CPU inference libraries
+        run: |
+          python -m pip download --no-deps --dest wheelhouse \
+            'transformers==4.57.6' \
+            'tokenizers==0.22.2' \
+            'huggingface_hub==0.36.2' \
+            'accelerate==1.15.0'
+          ls -lh wheelhouse
+      - name: Upload wheels
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-python-wheels
+          path: wheelhouse/*.whl
+          retention-days: 1
