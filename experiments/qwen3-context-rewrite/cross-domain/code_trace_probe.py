@@ -55,11 +55,11 @@ def main():
         if key not in CASES:
             continue
         tests=list(ex["test_list"])
-        match=re.search(r"\\bassert\\s+([a-zA-Z_]\\w*)\\s*\\(",tests[0])
-        suffix=f"\\nUse the function name {match.group(1)}." if match else ""
+        match=re.search(r"\bassert\s+([a-zA-Z_]\w*)\s*\(",tests[0])
+        suffix=f"\nUse the function name {match.group(1)}." if match else ""
         selected[key]=dict(
             family="mbpp",id=key,
-            prompt=ex["text"]+suffix+"\\nReturn only runnable Python code, no explanation.",
+            prompt=ex["text"]+suffix+"\nReturn only runnable Python code, no explanation.",
             dev_tests=tests[:1],eval_tests=tests[1:],
             setup=ex.get("test_setup_code") or "")
     if set(selected)!=set(CASES):
