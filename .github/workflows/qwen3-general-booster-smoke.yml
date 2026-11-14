@@ -1,0 +1,22 @@
+name: Qwen3 General Booster CLI Smoke Test
+on:
+  push:
+    branches:
+      - research/qwen3-general-booster-20261114
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint-and-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify reusable CLI without downloading model weights
+        run: |
+          python -m py_compile experiments/qwen3-context-rewrite/cross-domain/qwen_boost_cli.py
+          python experiments/qwen3-context-rewrite/cross-domain/qwen_boost_cli.py --self-test
