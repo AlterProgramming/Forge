@@ -1,0 +1,40 @@
+name: Qwen3 Exact Answer Format Intervention
+on:
+  push:
+    branches: [research/qwen3-answer-format-causality-20261114]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install same frozen Qwen CPU runtime
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch>=2.4,<3'
+          python -m pip install 'transformers>=4.51,<5' accelerate safetensors
+      - name: Verify fixed-question numeric scorer
+        run: python experiments/qwen3-context-rewrite/cross-domain/format_causal_probe.py --self-test
+      - name: Re-execute same arithmetic operations changing only answer syntax
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u experiments/qwen3-context-rewrite/cross-domain/format_causal_probe.py \
+            --model Qwen/Qwen3-0.6B --output format_causal_results.json
+      - name: Save all matched prompts, completions and costs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-format-causal-results
+          path: format_causal_results.json
+          if-no-files-found: warn
