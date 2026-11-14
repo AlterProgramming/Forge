@@ -1,0 +1,158 @@
+{
+  "with_lora": {
+    "trainable_params": 96385,
+    "best_epoch": 2,
+    "validation_best": 785,
+    "test_1to3": {
+      "correct_depth": 2934,
+      "n": 3000,
+      "depth_accuracy": 0.978
+    },
+    "test_unseen_4": {
+      "correct_depth": 610,
+      "n": 628,
+      "depth_accuracy": 0.9713
+    },
+    "curve": [
+      {
+        "epoch": 1,
+        "valid800": 781,
+        "loss": 0.1594,
+        "seconds": 7.3
+      },
+      {
+        "epoch": 2,
+        "valid800": 785,
+        "loss": 0.0618,
+        "seconds": 12.4
+      },
+      {
+        "epoch": 4,
+        "valid800": 784,
+        "loss": 0.0625,
+        "seconds": 22.5
+      },
+      {
+        "epoch": 6,
+        "valid800": 785,
+        "loss": 0.047,
+        "seconds": 33.1
+      },
+      {
+        "epoch": 8,
+        "valid800": 785,
+        "loss": 0.0498,
+        "seconds": 43.6
+      },
+      {
+        "epoch": 10,
+        "valid800": 785,
+        "loss": 0.0414,
+        "seconds": 54.4
+      },
+      {
+        "epoch": 12,
+        "valid800": 784,
+        "loss": 0.0422,
+        "seconds": 64.1
+      },
+      {
+        "epoch": 14,
+        "valid800": 776,
+        "loss": 0.0438,
+        "seconds": 74.5
+      },
+      {
+        "epoch": 16,
+        "valid800": 784,
+        "loss": 0.0467,
+        "seconds": 84.8
+      },
+      {
+        "epoch": 18,
+        "valid800": 785,
+        "loss": 0.0415,
+        "seconds": 94.1
+      }
+    ]
+  },
+  "no_lora": {
+    "trainable_params": 67713,
+    "best_epoch": 18,
+    "validation_best": 785,
+    "test_1to3": {
+      "correct_depth": 2928,
+      "n": 3000,
+      "depth_accuracy": 0.976
+    },
+    "test_unseen_4": {
+      "correct_depth": 611,
+      "n": 628,
+      "depth_accuracy": 0.9729
+    },
+    "curve": [
+      {
+        "epoch": 1,
+        "valid800": 777,
+        "loss": 0.1517,
+        "seconds": 99.6
+      },
+      {
+        "epoch": 2,
+        "valid800": 777,
+        "loss": 0.0835,
+        "seconds": 102.6
+      },
+      {
+        "epoch": 4,
+        "valid800": 781,
+        "loss": 0.0753,
+        "seconds": 107.9
+      },
+      {
+        "epoch": 6,
+        "valid800": 779,
+        "loss": 0.0875,
+        "seconds": 113.2
+      },
+      {
+        "epoch": 8,
+        "valid800": 784,
+        "loss": 0.0732,
+        "seconds": 118.5
+      },
+      {
+        "epoch": 10,
+        "valid800": 774,
+        "loss": 0.0664,
+        "seconds": 123.8
+      },
+      {
+        "epoch": 12,
+        "valid800": 776,
+        "loss": 0.063,
+        "seconds": 129.1
+      },
+      {
+        "epoch": 14,
+        "valid800": 778,
+        "loss": 0.0727,
+        "seconds": 134.4
+      },
+      {
+        "epoch": 16,
+        "valid800": 777,
+        "loss": 0.0596,
+        "seconds": 140.0
+      },
+      {
+        "epoch": 18,
+        "valid800": 785,
+        "loss": 0.0615,
+        "seconds": 145.1
+      }
+    ]
+  },
+  "description": "Qwen3 last pretrained transformer decoder layer with rank-4 LoRA on attention output and MLP output weights, trainable readout. Earlier 27 layers fixed and not run; input is pretrained Qwen sentence final hidden vectors and fixed-projected latent graph state. This trains genuine Qwen3 decoder weight deltas but is not end-to-end model fine-tuning. Supervision comes from final path labels, which encode path length. Loss trains STOP length choice, not specific path quality. Holdout depth4 was never supervised.",
+  "time_seconds": 147.4
+}

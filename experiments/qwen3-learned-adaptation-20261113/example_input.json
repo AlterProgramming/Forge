@@ -1,0 +1,10 @@
+{
+  "events": [
+    "The garden is west of the bathroom.",
+    "The bedroom is north of the hallway.",
+    "The office is south of the hallway.",
+    "The bathroom is north of the bedroom.",
+    "The kitchen is east of the bedroom."
+  ],
+  "question": "How do you go from the bathroom to the hallway?"
+}

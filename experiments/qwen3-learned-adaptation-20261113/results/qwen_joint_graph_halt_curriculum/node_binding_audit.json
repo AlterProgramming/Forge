@@ -1,0 +1,233 @@
+{
+  "qwen_seed61425": {
+    "room_to_anonymous_node": {
+      "bathroom": 7,
+      "bedroom": 6,
+      "garden": 4,
+      "hallway": 2,
+      "kitchen": 0,
+      "office": 1
+    },
+    "mean_assigned_room_node_probability": 0.4747,
+    "mean_room_argmax_mass": 0.4748,
+    "event_endpoints_correct": 111,
+    "event_endpoints_total": 240,
+    "room_node_distributions": {
+      "bathroom": [
+        0.05,
+        0.125,
+        0.075,
+        0.0,
+        0.128,
+        0.0,
+        0.1,
+        0.522
+      ],
+      "bedroom": [
+        0.1,
+        0.1,
+        0.1,
+        0.016,
+        0.051,
+        0.0,
+        0.459,
+        0.174
+      ],
+      "garden": [
+        0.09,
+        0.086,
+        0.125,
+        0.025,
+        0.267,
+        0.039,
+        0.1,
+        0.268
+      ],
+      "hallway": [
+        0.053,
+        0.1,
+        0.547,
+        0.0,
+        0.125,
+        0.0,
+        0.1,
+        0.075
+      ],
+      "kitchen": [
+        0.591,
+        0.1,
+        0.049,
+        0.0,
+        0.039,
+        0.018,
+        0.1,
+        0.103
+      ],
+      "office": [
+        0.1,
+        0.461,
+        0.1,
+        0.0,
+        0.059,
+        0.014,
+        0.1,
+        0.166
+      ]
+    },
+    "notes": "posthoc Hungarian alignment to room labels only for measurement; no room-to-node labels used in training."
+  },
+  "qwen_seed61426": {
+    "room_to_anonymous_node": {
+      "bathroom": 5,
+      "bedroom": 2,
+      "garden": 7,
+      "hallway": 1,
+      "kitchen": 3,
+      "office": 4
+    },
+    "mean_assigned_room_node_probability": 0.5167,
+    "mean_room_argmax_mass": 0.5167,
+    "event_endpoints_correct": 124,
+    "event_endpoints_total": 240,
+    "room_node_distributions": {
+      "bathroom": [
+        0.0,
+        0.125,
+        0.1,
+        0.1,
+        0.075,
+        0.525,
+        0.0,
+        0.075
+      ],
+      "bedroom": [
+        0.0,
+        0.075,
+        0.625,
+        0.1,
+        0.05,
+        0.1,
+        0.0,
+        0.05
+      ],
+      "garden": [
+        0.0,
+        0.15,
+        0.05,
+        0.1,
+        0.125,
+        0.075,
+        0.0,
+        0.5
+      ],
+      "hallway": [
+        0.0,
+        0.45,
+        0.075,
+        0.1,
+        0.1,
+        0.125,
+        0.0,
+        0.15
+      ],
+      "kitchen": [
+        0.0,
+        0.1,
+        0.1,
+        0.475,
+        0.125,
+        0.1,
+        0.0,
+        0.1
+      ],
+      "office": [
+        0.0,
+        0.1,
+        0.05,
+        0.125,
+        0.525,
+        0.075,
+        0.0,
+        0.125
+      ]
+    },
+    "notes": "posthoc Hungarian alignment to room labels only for measurement; no room-to-node labels used in training."
+  },
+  "permuted_seed61425": {
+    "room_to_anonymous_node": {
+      "bathroom": 6,
+      "bedroom": 0,
+      "garden": 4,
+      "hallway": 5,
+      "kitchen": 1,
+      "office": 3
+    },
+    "mean_assigned_room_node_probability": 0.3371,
+    "mean_room_argmax_mass": 0.7323,
+    "event_endpoints_correct": 81,
+    "event_endpoints_total": 240,
+    "room_node_distributions": {
+      "bathroom": [
+        0.019,
+        0.018,
+        0.0,
+        0.05,
+        0.35,
+        0.0,
+        0.563,
+        0.0
+      ],
+      "bedroom": [
+        0.019,
+        0.0,
+        0.0,
+        0.05,
+        0.85,
+        0.0,
+        0.081,
+        0.0
+      ],
+      "garden": [
+        0.0,
+        0.0,
+        0.0,
+        0.1,
+        0.85,
+        0.0,
+        0.05,
+        0.0
+      ],
+      "hallway": [
+        0.0,
+        0.0,
+        0.0,
+        0.082,
+        0.8,
+        0.018,
+        0.1,
+        0.0
+      ],
+      "kitchen": [
+        0.0,
+        0.017,
+        0.0,
+        0.125,
+        0.775,
+        0.0,
+        0.083,
+        0.0
+      ],
+      "office": [
+        0.0,
+        0.0,
+        0.0,
+        0.555,
+        0.375,
+        0.02,
+        0.05,
+        0.0
+      ]
+    },
+    "notes": "posthoc Hungarian alignment to room labels only for measurement; no room-to-node labels used in training."
+  }
+}

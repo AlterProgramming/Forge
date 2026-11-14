@@ -1,0 +1,167 @@
+{
+  "seed": 61426,
+  "best_epoch": 70,
+  "validation_correct": 2655,
+  "test_train_horizons": [
+    2657,
+    {
+      "1": [
+        927,
+        1000
+      ],
+      "2": [
+        856,
+        1000
+      ],
+      "3": [
+        874,
+        1000
+      ]
+    }
+  ],
+  "test_unseen_horizon_4": [
+    476,
+    {
+      "4": [
+        476,
+        628
+      ]
+    }
+  ],
+  "train_examples": 27000,
+  "validation_examples": 3000,
+  "test_examples": 3000,
+  "test_4_examples": 628,
+  "history": [
+    {
+      "epoch": 1,
+      "val_correct": 328,
+      "trainloss": 52.406
+    },
+    {
+      "epoch": 5,
+      "val_correct": 835,
+      "trainloss": 9.497
+    },
+    {
+      "epoch": 10,
+      "val_correct": 838,
+      "trainloss": 9.355
+    },
+    {
+      "epoch": 15,
+      "val_correct": 848,
+      "trainloss": 9.392
+    },
+    {
+      "epoch": 20,
+      "val_correct": 848,
+      "trainloss": 9.385
+    },
+    {
+      "epoch": 25,
+      "val_correct": 955,
+      "trainloss": 115.241
+    },
+    {
+      "epoch": 30,
+      "val_correct": 995,
+      "trainloss": 103.701
+    },
+    {
+      "epoch": 35,
+      "val_correct": 1000,
+      "trainloss": 101.494
+    },
+    {
+      "epoch": 40,
+      "val_correct": 1043,
+      "trainloss": 89.343
+    },
+    {
+      "epoch": 45,
+      "val_correct": 1074,
+      "trainloss": 87.173
+    },
+    {
+      "epoch": 50,
+      "val_correct": 1321,
+      "trainloss": 188.082
+    },
+    {
+      "epoch": 55,
+      "val_correct": 2152,
+      "trainloss": 63.462
+    },
+    {
+      "epoch": 60,
+      "val_correct": 2612,
+      "trainloss": 18.026
+    },
+    {
+      "epoch": 65,
+      "val_correct": 2620,
+      "trainloss": 15.933
+    },
+    {
+      "epoch": 70,
+      "val_correct": 2655,
+      "trainloss": 13.939
+    },
+    {
+      "epoch": 75,
+      "val_correct": 2655,
+      "trainloss": 13.33
+    },
+    {
+      "epoch": 80,
+      "val_correct": 2655,
+      "trainloss": 13.99
+    },
+    {
+      "epoch": 85,
+      "val_correct": 2655,
+      "trainloss": 12.687
+    },
+    {
+      "epoch": 90,
+      "val_correct": 2655,
+      "trainloss": 13.023
+    },
+    {
+      "epoch": 95,
+      "val_correct": 2655,
+      "trainloss": 12.538
+    },
+    {
+      "epoch": 100,
+      "val_correct": 2655,
+      "trainloss": 12.885
+    },
+    {
+      "epoch": 105,
+      "val_correct": 2655,
+      "trainloss": 12.457
+    },
+    {
+      "epoch": 110,
+      "val_correct": 2655,
+      "trainloss": 12.091
+    },
+    {
+      "epoch": 115,
+      "val_correct": 2655,
+      "trainloss": 12.913
+    }
+  ],
+  "trainable_params": 301551,
+  "pretrained_qwen_weights_updated": false,
+  "feature_ablation": "Frozen Qwen3 sentence vectors randomly permuted across all 150 sentence/question types (same permutation for train/test) to preserve geometry but destroy their semantic associations",
+  "curriculum_stages": {
+    "1hop": 20,
+    "1to2hop": 28,
+    "1to3hop": 67
+  },
+  "description": "end-to-end training of continuous anonymous graph construction + shared STOP gate on final answers of length 1..3; all extra graph operations architectural; Qwen features fixed; OOD is length4 path generated from official held-out stories; all direction tokens are outputs; no intermediate labels",
+  "seconds": 171.78
+}
