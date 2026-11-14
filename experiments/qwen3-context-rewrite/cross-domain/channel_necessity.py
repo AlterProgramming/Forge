@@ -90,7 +90,7 @@ def main():
         sender["correct"]=numeric_equal(sender["parsed"],hidden)
         sender["prompt"]=prompt
         senders.append(sender)
-        signals.append(sender["parsed"])
+        signals.append(format(Decimal(sender["parsed"]), "f") if sender["parsed"] is not None else None)
     started=time.monotonic()
     rows=[]
     for i,(task,(incomplete,hidden)) in enumerate(zip(tasks,masked)):
