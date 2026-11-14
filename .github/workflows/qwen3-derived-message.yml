@@ -1,0 +1,48 @@
+name: Qwen3 Derived Message Primitive
+on:
+  push:
+    branches: [research/qwen3-derived-message-20261114]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        family: [gsm8k, arc]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install unchanged Qwen3 and independent public test sets
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch>=2.4,<3'
+          python -m pip install 'transformers>=4.51,<5' accelerate safetensors 'datasets>=3,<5'
+      - name: Verify message transport self-tests
+        run: python experiments/qwen3-context-rewrite/cross-domain/message_causality.py --self-test
+      - name: Generate derived signal versus no and shuffled message
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u experiments/qwen3-context-rewrite/cross-domain/message_causality.py \
+            --family ${{ matrix.family }} --n 6 --seed 20261118 \
+            --sender-protocol derived --arms none,full,shuffled \
+            --model Qwen/Qwen3-0.6B \
+            --sender-tokens 40 --receiver-tokens 112 \
+            --output derived_${{ matrix.family }}.json
+      - name: Archive all sender output and counterfactual receiver responses
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-derived-${{ matrix.family }}
+          path: derived_${{ matrix.family }}.json
+          if-no-files-found: warn
