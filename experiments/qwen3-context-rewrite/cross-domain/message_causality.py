@@ -105,8 +105,8 @@ def rollup(rows, family):
     sums={}
     for arm in ARMS:
         rs=[x["receiver"][arm] for x in rows]
-        sgen=sum(x["generated_tokens"] for x in rows)
-        sin=sum(x["input_tokens"] for x in rows)
+        sgen=sum(x["sender"]["generated_tokens"] for x in rows)
+        sin=sum(x["sender"]["input_tokens"] for x in rows)
         sums[arm]=dict(n=len(rs),correct=sum(int(x["correct"]) for x in rs),
                         answer_changes_from_none=sum(int(x["answer"]!=r["receiver"]["none"]["answer"])
                                                      for x,r in zip(rs,rows)),
