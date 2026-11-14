@@ -1,4 +1,4 @@
-name: Qwen3 Cross-Domain Improvement Trial
+name: Qwen3 Cross-Domain Thinking Trial
 on:
   push:
     branches:
@@ -33,12 +33,12 @@ jobs:
         run: |
           python -u experiments/qwen3-context-rewrite/cross-domain/boost.py \
             --model Qwen/Qwen3-0.6B \
-            --n 4 --k 3 --seed 20261114 --max-tokens 160 \
-            --output cross_domain_results.json
+            --n 4 --k 1 --seed 20261114 --max-tokens 512 --thinking \
+            --output thinking_results.json
       - name: Upload all generations, decisions, and measurements
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: qwen3-cross-domain-trial
-          path: cross_domain_results.json
+          name: qwen3-cross-domain-thinking
+          path: thinking_results.json
           if-no-files-found: warn
