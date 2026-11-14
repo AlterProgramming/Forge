@@ -90,8 +90,14 @@ def main():
             response=ask(question)
             response["expected"]=case["micro"][i][1]
             response["correct"]=equal(response["parsed"],response["expected"])
+            # IMPORTANT: numeric parser returns scientific notation after
+            # Decimal.normalize (e.g. 30 -> '3E+1'). Preserve numerical
+            # meaning and use plain decimal notation at state boundaries.
+            parsed=response["parsed"]
+            passed_to_next=format(Decimal(parsed),"f") if parsed is not None else None
+            response["passed_to_next"]=passed_to_next
             trace.append(response)
-            own.append(response["parsed"])
+            own.append(passed_to_next)
             print(f'{k} step {i+1}: want={response["expected"]} produced={response["parsed"]} correct={response["correct"]}',flush=True)
         row=dict(case=k,name=case["name"],gold=case["gold"],
                  direct=direct,direct_correct=equal(direct["parsed"],case["gold"]),
