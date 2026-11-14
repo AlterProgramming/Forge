@@ -1,0 +1,54 @@
+name: Qwen3 Forced Completion Trial
+on:
+  push:
+    branches:
+      - research/qwen3-forced-completion-20261114
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download the exact completed reasoning traces from earlier trial
+        uses: actions/download-artifact@v4
+        with:
+          run-id: 43627284466
+          name: qwen3-cross-domain-thinking
+          path: thought_traces
+          github-token: ${{ github.token }}
+      - name: Install Qwen3 on CPU
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch>=2.4,<3'
+          python -m pip install 'transformers>=4.51,<5' accelerate safetensors 'datasets>=3,<5'
+      - name: Verify continuation invariants
+        run: |
+          test -s thought_traces/thinking_results.json
+          python experiments/qwen3-context-rewrite/cross-domain/force_complete.py --self-test
+          python experiments/qwen3-context-rewrite/cross-domain/boost.py --self-test
+      - name: Finish unfinished thinking without updating pretrained weights
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u experiments/qwen3-context-rewrite/cross-domain/force_complete.py \
+            --input thought_traces/thinking_results.json \
+            --model Qwen/Qwen3-0.6B \
+            --max-tokens 192 --output forced_completion_results.json
+      - name: Publish all outcomes and generation records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-forced-completion
+          path: forced_completion_results.json
+          if-no-files-found: warn
