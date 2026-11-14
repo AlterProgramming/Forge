@@ -47,10 +47,23 @@ def main():
     import torch
     from transformers import AutoModelForCausalLM,AutoTokenizer
     torch.set_num_threads(2)
-    all_tasks=load_tasks(6,20261115)
-    selected={t["id"]:t for t in all_tasks if t["family"]=="mbpp" and t["id"] in CASES}
+    from datasets import load_dataset
+    import re
+    selected={}
+    for ex in load_dataset("google-research-datasets/mbpp","full",split="test"):
+        key=str(ex["task_id"])
+        if key not in CASES:
+            continue
+        tests=list(ex["test_list"])
+        match=re.search(r"\\bassert\\s+([a-zA-Z_]\\w*)\\s*\\(",tests[0])
+        suffix=f"\\nUse the function name {match.group(1)}." if match else ""
+        selected[key]=dict(
+            family="mbpp",id=key,
+            prompt=ex["text"]+suffix+"\\nReturn only runnable Python code, no explanation.",
+            dev_tests=tests[:1],eval_tests=tests[1:],
+            setup=ex.get("test_setup_code") or "")
     if set(selected)!=set(CASES):
-        raise ValueError(f"Dataset task mismatch: {set(selected)}")
+        raise ValueError(f"Missing fixed MBPP task IDs: {set(CASES)-set(selected)}")
     tok=AutoTokenizer.from_pretrained(args.model)
     model=AutoModelForCausalLM.from_pretrained(args.model,dtype=torch.float32,
                                               low_cpu_mem_usage=True).eval()
