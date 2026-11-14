@@ -50,7 +50,7 @@ def finish_prompt(task, scratchpad):
 
 def self_test():
     math = {"family":"gsm8k"}
-    code = {"family":"mbpp"}
+    code = {"family":"mbpp","prompt":"Write a Python function f(x)"}
     assert has_final(math,"FINAL ANSWER: 7")
     assert not has_final(math,"<think>unfinished 7")
     assert extract(math,"FINAL ANSWER: 7") == "7"
