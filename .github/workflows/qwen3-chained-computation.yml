@@ -1,0 +1,40 @@
+name: Qwen3 Chained Computation Causal Test
+on:
+  push:
+    branches: [research/qwen3-chained-computation-20261114]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen Qwen3 CPU and public GSM8K dataset
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch>=2.4,<3'
+          python -m pip install 'transformers>=4.51,<5' accelerate safetensors 'datasets>=3,<5'
+      - name: Validate arithmetic and dependency plan
+        run: python experiments/qwen3-context-rewrite/cross-domain/chained_computation.py --self-test
+      - name: Run dynamic intermediate-to-intermediate dependency chain
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u experiments/qwen3-context-rewrite/cross-domain/chained_computation.py \
+            --model Qwen/Qwen3-0.6B --output chained_computation_results.json
+      - name: Archive complete Qwen outputs, state handoffs, and baseline
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-chained-computation
+          path: chained_computation_results.json
+          if-no-files-found: warn
