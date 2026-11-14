@@ -108,6 +108,8 @@ def main():
                 # No second Qwen call is needed to decide where the value goes:
                 # the position is already known in the receiver's state.
                 patched=incomplete.replace("[MISSING]",msg)
+                if label == "direct_source":
+                    assert patched == task["question"], "lossless source-substitution invariant failed"
                 echo_prompt=("RECEIVED_VALUE="+msg+"\n"
                              "Read only RECEIVED_VALUE. Copy its exact numeric value. "
                              "Output the number only, no calculation.")
@@ -135,7 +137,7 @@ def main():
                value_recovered=sum(int(r["conditions"][label]["copy"]["correct"]) for r in rows),
                word_problem_solved=sum(int(r["conditions"][label]["solve"]["correct"]) for r in rows),
                output_tokens=sum(r["conditions"][label][k]["generated_tokens"] for r in rows for k in ("copy","solve"))
-                             + (sum(r["sender"]["generated_tokens"] for r in rows) if label=="own" else 0))
+                             + (sum(r["sender"]["generated_tokens"] for r in rows) if label in ("own","direct_sender") else 0))
         Path(args.output).write_text(json.dumps(dict(model=args.model,
                protocol="sender has missing input; no oracle corrections; same receiver prompt except signal",
                config=vars(args),rows=rows,summary=summary,
