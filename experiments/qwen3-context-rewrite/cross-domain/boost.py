@@ -190,6 +190,7 @@ def main():
     p.add_argument("--max-tokens", type=int, default=160)
     p.add_argument("--output", default="cross_domain_results.json")
     p.add_argument("--self-test", action="store_true")
+    p.add_argument("--thinking", action="store_true", help="Use official Qwen3 reasoning mode")
     args = p.parse_args()
     if args.self_test:
         self_test()
@@ -217,15 +218,19 @@ def main():
             messages = [{"role": "system", "content": SYSTEM},
                         {"role": "user", "content": task["prompt"]}]
             inputs = tokenizer.apply_chat_template(messages, tokenize=True,
-                      add_generation_prompt=True, enable_thinking=False,
+                      add_generation_prompt=True, enable_thinking=args.thinking,
                       return_tensors="pt").to(device)
             with torch.inference_mode():
-                output = model.generate(inputs, do_sample=True, temperature=0.7,
-                                        top_p=0.8, top_k=20,
+                output = model.generate(inputs, attention_mask=torch.ones_like(inputs),
+                                        do_sample=True, temperature=0.6 if args.thinking else 0.7,
+                                        top_p=0.95 if args.thinking else 0.8, top_k=20,
                                         max_new_tokens=args.max_tokens,
                                         pad_token_id=tokenizer.eos_token_id)
-            responses.append(tokenizer.decode(output[0, inputs.shape[1]:],
-                                              skip_special_tokens=True))
+            raw = tokenizer.decode(output[0, inputs.shape[1]:], skip_special_tokens=False)
+            if args.thinking and "</think>" in raw:
+                raw = raw.split("</think>", 1)[-1]
+            raw = raw.replace("<|im_end|>", "").strip()
+            responses.append(raw)
             input_tokens += int(inputs.shape[1])
             generated_tokens += int(output.shape[1] - inputs.shape[1])
         parsed, chosen, index = decide(task, responses)
