@@ -96,20 +96,33 @@ def main():
     for i,(task,(incomplete,hidden)) in enumerate(zip(tasks,masked)):
         conditions={"absent":"(none)",
                     "own":signals[i] or "(unavailable)",
-                    "shuffled":signals[(i+1)%len(signals)] or "(unavailable)"}
+                    "shuffled":signals[(i+1)%len(signals)] or "(unavailable)",
+                    "direct_sender":signals[i] or "(unavailable)",
+                    "direct_source":hidden}
         row=dict(id=task["id"],question_full_eval_only=task["question"],
                  question_masked=incomplete,hidden_eval_only=hidden,
                  gold_eval_only=task["gold"],sender=senders[i],conditions={})
         for label,msg in conditions.items():
-            prefix=("PROBLEM WITH ONE VALUE MISSING:\n"+incomplete+
-                    "\n\nMESSAGE FROM ANOTHER COMPUTATION:\n"+msg+
-                    "\n\n")
-            copy=ask(prefix+"What exact number belongs in [MISSING]? "
-                    "Reply with one numerical value.",48)
-            solve=ask(prefix+"Solve the problem by using the message only if it "
-                     "supplies a legitimate missing value. "
-                     "Output only FINAL ANSWER: followed by the numerical answer.",112)
+            if label in ("direct_sender","direct_source"):
+                # The communication primitive is just a lossless state write.
+                # No second Qwen call is needed to decide where the value goes:
+                # the position is already known in the receiver's state.
+                patched=incomplete.replace("[MISSING]",msg)
+                echo_prompt=("RECEIVED_VALUE="+msg+"\n"
+                             "Read only RECEIVED_VALUE. Copy its exact numeric value. "
+                             "Output the number only, no calculation.")
+                copy=ask(echo_prompt,16)
+                solve=ask(patched+"\nGive FINAL ANSWER: followed by the numerical answer.",112)
+            else:
+                prefix=("PROBLEM WITH ONE VALUE MISSING:\n"+incomplete+
+                        "\n\nMESSAGE FROM ANOTHER COMPUTATION:\n"+msg+"\n\n")
+                copy=ask(prefix+"What exact number belongs in [MISSING]? "
+                         "Reply with one numerical value.",48)
+                solve=ask(prefix+"Solve the problem by using the message only if it "
+                         "supplies a legitimate missing value. "
+                         "Output only FINAL ANSWER: followed by the numerical answer.",112)
             copy["correct"]=numeric_equal(copy["parsed"],hidden)
+            copy["message_exact"]=numeric_equal(msg,hidden)
             solve["correct"]=numeric_equal(solve["parsed"],task["gold"])
             row["conditions"][label]=dict(message=msg,copy=copy,solve=solve)
             print(f'{i+1}/{len(tasks)} {label} sender_correct={row["sender"]["correct"]} '
@@ -118,7 +131,7 @@ def main():
         summary={}
         for label in conditions:
             summary[label]=dict(n=len(rows),
-               transmitted_correct=sum(int(r["sender"]["correct"]) for r in rows) if label=="own" else None,
+               transmitted_correct=sum(int(r["sender"]["correct"]) for r in rows) if label in ("own","direct_sender") else None,
                value_recovered=sum(int(r["conditions"][label]["copy"]["correct"]) for r in rows),
                word_problem_solved=sum(int(r["conditions"][label]["solve"]["correct"]) for r in rows),
                output_tokens=sum(r["conditions"][label][k]["generated_tokens"] for r in rows for k in ("copy","solve"))
