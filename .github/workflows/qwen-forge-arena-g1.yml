@@ -1,0 +1,44 @@
+name: Forge Arena G1 - real Qwen task decision
+on:
+  push:
+    branches: [execution/qwen-real-inference-20261115]
+    paths:
+      - .github/workflows/qwen-forge-arena-g1.yml
+      - scripts/forge_arena_qwen_gate.py
+      - deliveries/forge-arena/source/**
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qwen-task-communication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: G1 source provenance and saved real LoRA checkpoint
+        run: |
+          mkdir -p checkpoint-receipts
+          python3 scripts/forge_arena_qwen_gate.py --self-test
+      - name: Install official Qwen inference stack
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch>=2.4,<3'
+          python -m pip install 'transformers>=4.51,<5' 'peft>=0.13,<1' accelerate safetensors
+      - name: G1 run model against actual game request, route through learned sender and receiver
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python3 -u scripts/forge_arena_qwen_gate.py \
+            --cc-gate-sha 4ddc070548f762e4f035f8b4b487ad001729b58fbf7f60b5d3e3fdc8362372fa \
+            --out checkpoint-receipts/forge-arena-qwen-g1.json
+      - name: Save G1 received action and actual model traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: forge-arena-qwen-g1-receipt
+          path: checkpoint-receipts/
+          if-no-files-found: warn
