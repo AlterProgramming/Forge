@@ -1,0 +1,69 @@
+name: Archive verified Qwen LoRA weights durably
+on:
+  push:
+    branches: [fix/qwen-durable-checkpoint-20261114]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  archive-exact-weights:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download actual previously trained PEFT weights
+        uses: actions/download-artifact@v4
+        with:
+          name: qwen3-0_6b-continued-protocol-lora
+          repository: AlterProgramming/Forge
+          run-id: 43657885404
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: /tmp/qwen_adapter
+      - name: Verify checkpoint bytes and publish immutable manifest
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, pathlib, shutil
+          root=pathlib.Path('/tmp/qwen_adapter')
+          target=pathlib.Path('models/qwen3-0.6b-communication-lora-v2')
+          target.mkdir(parents=True,exist_ok=True)
+          required={
+            'adapter/adapter_model.safetensors': '4ea165d25f8e4e11f8a306ddee3d27558043051699e969cd13ad251db6e8143f',
+            'adapter/adapter_config.json': '60636fd64b93d6c2931cb60f1cda341e0b2570201acb64a080171239851cf53e',
+            'results.json': '19a42e2b6b0c3832c70f14b01b70d317360155986921ae87607bbed50b790b9a',
+          }
+          for src,expected in required.items():
+              data=(root/src).read_bytes()
+              actual=hashlib.sha256(data).hexdigest()
+              assert actual==expected,(src,actual,expected)
+              shutil.copyfile(root/src,target/pathlib.Path(src).name)
+              print('VERIFIED',src,len(data),actual,flush=True)
+          result=json.loads((target/'results.json').read_text())
+          assert result['status']=='completed'
+          assert result['final']['heldout']['scores']['SEND']['correct']==15
+          assert result['final']['heldout']['scores']['RECEIVE']['correct']==16
+          assert result['final']['heldout']['scores']['CALC']['correct']==0
+          manifest={
+            'kind':'forge.qwen-trained-adapter',
+            'base_model':'Qwen/Qwen3-0.6B',
+            'loader':'peft.PeftModel.from_pretrained',
+            'training_run_id':43657885404,
+            'original_artifact_id':14140515504,
+            'source_branch':'research/qwen3-protocol-continuation-20261114',
+            'sha256_by_path':{src.split('/')[-1]:digest for src,digest in required.items()},
+            'complete_heldout_16':{'joint_send':15,'decode':16,'direct_trained_calc':0},
+            'limitations':'Researcher-defined protocol; not learned autonomous communication; fresh transfer remains unverified.',
+          }
+          (target/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+          PY
+      - name: Commit trained safetensors and checksum manifest to durable Git history
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add models/qwen3-0.6b-communication-lora-v2/
+          if git diff --cached --quiet; then echo 'Already archived'; exit 0; fi
+          git commit -m "Preserve actual trained Qwen communication LoRA safetensors for future sessions"
+          git push origin HEAD:${{ github.ref_name }}
