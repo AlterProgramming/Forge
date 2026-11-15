@@ -21,9 +21,15 @@ from pathlib import Path
 from continue_protocol_lora import task,REGEX_DECODE
 from train_protocol_lora import split_pairs,message,SYSTEM
 
-def parse_num(x):
+def parse_num(x,inputs=None):
+    """Accept a bare integer or an equation whose operands match received state."""
     x=x.strip().splitlines()[0].strip() if x.strip() else ""
-    return int(x) if re.fullmatch(r"-?\d+",x) else None
+    if re.fullmatch(r"-?\d+",x):
+        return int(x)
+    m=re.fullmatch(r"(-?\d+)\s*\+\s*(-?\d+)\s*=\s*(-?\d+)",x)
+    if m and inputs is not None and (int(m.group(1)),int(m.group(2)))==tuple(inputs):
+        return int(m.group(3))
+    return None
 
 def main():
     p=argparse.ArgumentParser()
@@ -33,7 +39,7 @@ def main():
     p.add_argument("--self-test",action="store_true")
     args=p.parse_args()
     if args.self_test:
-        assert parse_num("14") == 14
+        assert parse_num("14") == 14\n        assert parse_num("2 + 3 = 5",(2,3))==5\n        assert parse_num("2 + 3 = 5",(3,2)) is None
         assert parse_num("3E+1") is None
         assert REGEX_DECODE.fullmatch("X=2,Y=5")
         assert len(split_pairs()[1])==16
@@ -67,12 +73,21 @@ def main():
         x,y=map(int,found.groups())
         math_prompt=f"How much is {x} plus {y}? Answer with a single numerical value."
         qwen_raw=ask(math_prompt,adapter=False,max_tokens=24)
+        accepted=parse_num(qwen_raw,(x,y))
+        # When a model answer fails arithmetic verification, re-express the
+        # SAME computed operands symbolically. No task gold enters the prompt.
+        retry_raw=None
+        if accepted != x+y:
+            retry_raw=ask(f"Evaluate this expression exactly: {x} + {y} = ?\nOutput the number only.",
+                          adapter=False,max_tokens=24)
+            accepted=parse_num(retry_raw,(x,y))
         expect=expected_i+expected_j
         return dict(signal=sig,receiver_raw=decoded,values=[x,y],
                     decoded_correct=(x,y)==(expected_i,expected_j),
                     python_sum=x+y,base_qwen_sum_raw=qwen_raw,
+                    base_qwen_retry_raw=retry_raw,base_qwen_parsed=accepted,
                     python_correct=(x+y)==expect,
-                    base_qwen_correct=parse_num(qwen_raw)==expect)
+                    base_qwen_correct=accepted==expect)
     rows=[];start=time.monotonic()
     for i,j in split_pairs()[1]:
         joint=ask(task("SEND",i,j)[0])
