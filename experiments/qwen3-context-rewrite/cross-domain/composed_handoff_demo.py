@@ -39,7 +39,9 @@ def main():
     p.add_argument("--self-test",action="store_true")
     args=p.parse_args()
     if args.self_test:
-        assert parse_num("14") == 14\n        assert parse_num("2 + 3 = 5",(2,3))==5\n        assert parse_num("2 + 3 = 5",(3,2)) is None
+        assert parse_num("14") == 14
+        assert parse_num("2 + 3 = 5",(2,3))==5
+        assert parse_num("2 + 3 = 5",(3,2)) is None
         assert parse_num("3E+1") is None
         assert REGEX_DECODE.fullmatch("X=2,Y=5")
         assert len(split_pairs()[1])==16
