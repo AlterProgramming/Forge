@@ -1,0 +1,25 @@
+name: Causal latent rewrite diagnostic (CPU)
+on:
+  push:
+    branches:
+      - research/qwen3-state-rewrite-causal-diagnostic-20261115
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  causal-rewrite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install --index-url https://download.pytorch.org/whl/cpu torch
+      - run: python experiments/qwen3-context-rewrite/state_rewrite_causal_diagnostic.py --steps 500 --seeds 3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: causal-rewrite-raw-results
+          path: results.json
+          if-no-files-found: warn
