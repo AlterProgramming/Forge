@@ -42,6 +42,7 @@ def game_source() -> bytes:
 def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--self-test", action="store_true")
+    p.add_argument("--goal", default="Improve the recovered Ancient Greece vehicle-combat game for a real player")
     p.add_argument("--cc-gate-sha", default="")
     p.add_argument("--out", default="forge-arena-qwen-g1.json")
     args = p.parse_args()
@@ -64,6 +65,7 @@ def main() -> None:
     model = PeftModel.from_pretrained(base, str(ADAPTER), is_trainable=False).eval()
 
     context = (
+        "Current user objective: " + args.goal + "\n"
         "You are the action router for a real deliverable, not a benchmark. "
         "The user provided an image of a mobile cartoon vehicle-combat upgrade game: "
         "Ancient Greece chapter, small three-slot blue truck, weapon store, coins, gems, "
@@ -117,7 +119,7 @@ def main() -> None:
         "adapter": str(ADAPTER.relative_to(ROOT)),
         "adapter_sha256": checkpoint,
         "game_source_sha256": source_sha,
-        "actual_user_goal": "Improve and deliver the provided Ancient Greece truck combat game through existing BrightEngine system",
+        "actual_user_goal": args.goal,
         "options": list(CHOICES),
         "decision": {"method":"base Qwen next-token restricted logprob choice; adapter disabled for selection",
                      "scores":scores, "selected_before_handoff":choice},
