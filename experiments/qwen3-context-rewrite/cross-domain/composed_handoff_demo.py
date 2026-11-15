@@ -19,7 +19,7 @@ import re
 import time
 from pathlib import Path
 from continue_protocol_lora import task,REGEX_DECODE
-from train_protocol_lora import split_pairs,message
+from train_protocol_lora import split_pairs,message,SYSTEM
 
 def parse_num(x):
     x=x.strip().splitlines()[0].strip() if x.strip() else ""
@@ -48,7 +48,7 @@ def main():
     net=PeftModel.from_pretrained(base,args.adapter,is_trainable=False).eval()
     def ask(prompt,adapter=True,max_tokens=32):
         ins=tok.apply_chat_template([
-             {"role":"system","content":"Return the exact value requested; no explanation."},
+             {"role":"system","content":SYSTEM},
              {"role":"user","content":prompt}],
              tokenize=True,add_generation_prompt=True,enable_thinking=False,return_tensors="pt")
         context=(__import__('contextlib').nullcontext() if adapter else net.disable_adapter())
