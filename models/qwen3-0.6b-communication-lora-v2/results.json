@@ -1,0 +1,1881 @@
+{
+  "protocol": "continued Qwen3-0.6B trained PEFT adapter; balanced primitive/composition multitask",
+  "config": {
+    "model": "Qwen/Qwen3-0.6B",
+    "initial_adapter": "previous/adapter",
+    "out": "qwen_protocol_continued",
+    "steps": 900,
+    "eval_every": 300,
+    "lr": 0.00045,
+    "max_seconds": 3200,
+    "seed": 20261114,
+    "self_test": false
+  },
+  "source_adapter_sha256": "02ec6abefbd0e27fba69e31ea2f6c46b537fc3f9ac96f46f14974db76eeb2b15",
+  "train_pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      4,
+      1
+    ],
+    [
+      4,
+      2
+    ],
+    [
+      4,
+      3
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      2
+    ],
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      5
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      7,
+      3
+    ],
+    [
+      7,
+      4
+    ],
+    [
+      7,
+      6
+    ],
+    [
+      7,
+      7
+    ]
+  ],
+  "heldout_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      7,
+      1
+    ],
+    [
+      7,
+      5
+    ]
+  ],
+  "trainable_parameters": 393216,
+  "checkpoints": [
+    {
+      "step": 0,
+      "train": {
+        "SEND": {
+          "correct": 0,
+          "total": 12
+        },
+        "RECEIVE": {
+          "correct": 9,
+          "total": 12
+        },
+        "CALC": {
+          "correct": 0,
+          "total": 12
+        }
+      },
+      "test": {
+        "SEND": {
+          "correct": 1,
+          "total": 12
+        },
+        "RECEIVE": {
+          "correct": 6,
+          "total": 12
+        },
+        "CALC": {
+          "correct": 0,
+          "total": 12
+        }
+      },
+      "elapsed_seconds": 65.87
+    },
+    {
+      "step": 300,
+      "train": {
+        "SEND": {
+          "correct": 12,
+          "total": 12
+        },
+        "RECEIVE": {
+          "correct": 12,
+          "total": 12
+        },
+        "CALC": {
+          "correct": 3,
+          "total": 12
+        }
+      },
+      "test": {
+        "SEND": {
+          "correct": 11,
+          "total": 12
+        },
+        "RECEIVE": {
+          "correct": 12,
+          "total": 12
+        },
+        "CALC": {
+          "correct": 0,
+          "total": 12
+        }
+      },
+      "elapsed_seconds": 779.88
+    },
+    {
+      "step": 600,
+      "train": {
+        "SEND": {
+          "correct": 12,
+          "total": 12
+        },
+        "RECEIVE": {
+          "correct": 12,
+          "total": 12
+        },
+        "CALC": {
+          "correct": 7,
+          "total": 12
+        }
+      },
+      "test": {
+        "SEND": {
+          "correct": 11,
+          "total": 12
+        },
+        "RECEIVE": {
+          "correct": 12,
+          "total": 12
+        },
+        "CALC": {
+          "correct": 0,
+          "total": 12
+        }
+      },
+      "elapsed_seconds": 1479.42
+    },
+    {
+      "step": 900,
+      "train": {
+        "SEND": {
+          "correct": 12,
+          "total": 12
+        },
+        "RECEIVE": {
+          "correct": 12,
+          "total": 12
+        },
+        "CALC": {
+          "correct": 10,
+          "total": 12
+        }
+      },
+      "test": {
+        "SEND": {
+          "correct": 11,
+          "total": 12
+        },
+        "RECEIVE": {
+          "correct": 12,
+          "total": 12
+        },
+        "CALC": {
+          "correct": 0,
+          "total": 12
+        }
+      },
+      "elapsed_seconds": 2198.75
+    }
+  ],
+  "losses": [
+    {
+      "step": 1,
+      "loss": 2.18711,
+      "seconds": 68.3
+    },
+    {
+      "step": 40,
+      "loss": 0.67511,
+      "seconds": 151.8
+    },
+    {
+      "step": 80,
+      "loss": 0.31147,
+      "seconds": 238.1
+    },
+    {
+      "step": 120,
+      "loss": 0.13231,
+      "seconds": 325.0
+    },
+    {
+      "step": 160,
+      "loss": 0.15664,
+      "seconds": 415.3
+    },
+    {
+      "step": 200,
+      "loss": 0.16456,
+      "seconds": 502.4
+    },
+    {
+      "step": 240,
+      "loss": 0.26484,
+      "seconds": 588.9
+    },
+    {
+      "step": 280,
+      "loss": 0.11748,
+      "seconds": 675.6
+    },
+    {
+      "step": 320,
+      "loss": 0.1628,
+      "seconds": 823.8
+    },
+    {
+      "step": 360,
+      "loss": 0.0786,
+      "seconds": 911.1
+    },
+    {
+      "step": 400,
+      "loss": 0.17994,
+      "seconds": 997.8
+    },
+    {
+      "step": 440,
+      "loss": 0.0934,
+      "seconds": 1081.9
+    },
+    {
+      "step": 480,
+      "loss": 0.092,
+      "seconds": 1165.2
+    },
+    {
+      "step": 520,
+      "loss": 0.02795,
+      "seconds": 1252.1
+    },
+    {
+      "step": 560,
+      "loss": 0.0095,
+      "seconds": 1337.5
+    },
+    {
+      "step": 600,
+      "loss": 0.04335,
+      "seconds": 1421.7
+    },
+    {
+      "step": 640,
+      "loss": 0.10438,
+      "seconds": 1565.5
+    },
+    {
+      "step": 680,
+      "loss": 0.15709,
+      "seconds": 1651.9
+    },
+    {
+      "step": 720,
+      "loss": 0.00281,
+      "seconds": 1740.4
+    },
+    {
+      "step": 760,
+      "loss": 0.12411,
+      "seconds": 1828.5
+    },
+    {
+      "step": 800,
+      "loss": 0.00517,
+      "seconds": 1915.9
+    },
+    {
+      "step": 840,
+      "loss": 0.08877,
+      "seconds": 2004.8
+    },
+    {
+      "step": 880,
+      "loss": 0.00117,
+      "seconds": 2094.4
+    }
+  ],
+  "status": "completed",
+  "last_step": 900,
+  "weight_update_l2": 7.018896678163009,
+  "final": {
+    "heldout": {
+      "label": "trained_heldout_full",
+      "scores": {
+        "SEND": {
+          "correct": 15,
+          "total": 16
+        },
+        "RECEIVE": {
+          "correct": 16,
+          "total": 16
+        },
+        "CALC": {
+          "correct": 0,
+          "total": 16
+        }
+      },
+      "end_to_end_correct": 0,
+      "traces": [
+        {
+          "i": 0,
+          "j": 0,
+          "SEND": {
+            "expected": "maple|marble",
+            "raw": "maple|marble",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=0,Y=0",
+            "raw": "X=0,Y=0",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "0",
+            "raw": "2",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "maple|marble",
+            "decoded": "X=0,Y=0",
+            "calculated": "2",
+            "correct": false
+          }
+        },
+        {
+          "i": 0,
+          "j": 4,
+          "SEND": {
+            "expected": "maple|spruce",
+            "raw": "maple|spruce",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=0,Y=4",
+            "raw": "X=0,Y=4",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "4",
+            "raw": "5",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "maple|spruce",
+            "decoded": "X=0,Y=4",
+            "calculated": "5",
+            "correct": false
+          }
+        },
+        {
+          "i": 1,
+          "j": 3,
+          "SEND": {
+            "expected": "frost|harbor",
+            "raw": "frost|harbor",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=1,Y=3",
+            "raw": "X=1,Y=3",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "4",
+            "raw": "5",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "frost|harbor",
+            "decoded": "X=1,Y=3",
+            "calculated": "5",
+            "correct": false
+          }
+        },
+        {
+          "i": 1,
+          "j": 7,
+          "SEND": {
+            "expected": "frost|comet",
+            "raw": "frost|1",
+            "correct": false
+          },
+          "RECEIVE": {
+            "expected": "X=1,Y=7",
+            "raw": "X=1,Y=7",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "8",
+            "raw": "9",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "frost|1",
+            "decoded": "fable",
+            "calculated": null,
+            "correct": false
+          }
+        },
+        {
+          "i": 2,
+          "j": 2,
+          "SEND": {
+            "expected": "ocean|fable",
+            "raw": "ocean|fable",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=2,Y=2",
+            "raw": "X=2,Y=2",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "4",
+            "raw": "3",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "ocean|fable",
+            "decoded": "X=2,Y=2",
+            "calculated": "3",
+            "correct": false
+          }
+        },
+        {
+          "i": 2,
+          "j": 6,
+          "SEND": {
+            "expected": "ocean|velvet",
+            "raw": "ocean|velvet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=2,Y=6",
+            "raw": "X=2,Y=6",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "8",
+            "raw": "7",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "ocean|velvet",
+            "decoded": "X=2,Y=6",
+            "calculated": "7",
+            "correct": false
+          }
+        },
+        {
+          "i": 3,
+          "j": 1,
+          "SEND": {
+            "expected": "cinder|orbit",
+            "raw": "cinder|orbit",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=3,Y=1",
+            "raw": "X=3,Y=1",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "4",
+            "raw": "6",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "cinder|orbit",
+            "decoded": "X=3,Y=1",
+            "calculated": "6",
+            "correct": false
+          }
+        },
+        {
+          "i": 3,
+          "j": 5,
+          "SEND": {
+            "expected": "cinder|copper",
+            "raw": "cinder|copper",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=3,Y=5",
+            "raw": "X=3,Y=5",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "8",
+            "raw": "9",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "cinder|copper",
+            "decoded": "X=3,Y=5",
+            "calculated": "9",
+            "correct": false
+          }
+        },
+        {
+          "i": 4,
+          "j": 0,
+          "SEND": {
+            "expected": "violet|marble",
+            "raw": "violet|marble",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=4,Y=0",
+            "raw": "X=4,Y=0",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "4",
+            "raw": "5",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "violet|marble",
+            "decoded": "X=4,Y=0",
+            "calculated": "5",
+            "correct": false
+          }
+        },
+        {
+          "i": 4,
+          "j": 4,
+          "SEND": {
+            "expected": "violet|spruce",
+            "raw": "violet|spruce",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=4,Y=4",
+            "raw": "X=4,Y=4",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "8",
+            "raw": "9",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "violet|spruce",
+            "decoded": "X=4,Y=4",
+            "calculated": "9",
+            "correct": false
+          }
+        },
+        {
+          "i": 5,
+          "j": 3,
+          "SEND": {
+            "expected": "echo|harbor",
+            "raw": "echo|harbor",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=5,Y=3",
+            "raw": "X=5,Y=3",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "8",
+            "raw": "9",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "echo|harbor",
+            "decoded": "X=5,Y=3",
+            "calculated": "9",
+            "correct": false
+          }
+        },
+        {
+          "i": 5,
+          "j": 7,
+          "SEND": {
+            "expected": "echo|comet",
+            "raw": "echo|comet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=5,Y=7",
+            "raw": "X=5,Y=7",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "12",
+            "raw": "14",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "echo|comet",
+            "decoded": "X=5,Y=7",
+            "calculated": "14",
+            "correct": false
+          }
+        },
+        {
+          "i": 6,
+          "j": 2,
+          "SEND": {
+            "expected": "pollen|fable",
+            "raw": "pollen|fable",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=6,Y=2",
+            "raw": "X=6,Y=2",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "8",
+            "raw": "9",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "pollen|fable",
+            "decoded": "X=6,Y=2",
+            "calculated": "9",
+            "correct": false
+          }
+        },
+        {
+          "i": 6,
+          "j": 6,
+          "SEND": {
+            "expected": "pollen|velvet",
+            "raw": "pollen|velvet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=6,Y=6",
+            "raw": "X=6,Y=6",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "12",
+            "raw": "11",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "pollen|velvet",
+            "decoded": "X=6,Y=6",
+            "calculated": "11",
+            "correct": false
+          }
+        },
+        {
+          "i": 7,
+          "j": 1,
+          "SEND": {
+            "expected": "tundra|orbit",
+            "raw": "tundra|orbit",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=7,Y=1",
+            "raw": "X=7,Y=1",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "8",
+            "raw": "9",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "tundra|orbit",
+            "decoded": "X=7,Y=1",
+            "calculated": "9",
+            "correct": false
+          }
+        },
+        {
+          "i": 7,
+          "j": 5,
+          "SEND": {
+            "expected": "tundra|copper",
+            "raw": "tundra|copper",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=7,Y=5",
+            "raw": "X=7,Y=5",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "12",
+            "raw": "11",
+            "correct": false
+          },
+          "end_to_end": {
+            "sent": "tundra|copper",
+            "decoded": "X=7,Y=5",
+            "calculated": "11",
+            "correct": false
+          }
+        }
+      ]
+    },
+    "seen": {
+      "label": "trained_seen_full",
+      "scores": {
+        "SEND": {
+          "correct": 48,
+          "total": 48
+        },
+        "RECEIVE": {
+          "correct": 48,
+          "total": 48
+        },
+        "CALC": {
+          "correct": 40,
+          "total": 48
+        }
+      },
+      "end_to_end_correct": null,
+      "traces": [
+        {
+          "i": 0,
+          "j": 1,
+          "SEND": {
+            "expected": "maple|orbit",
+            "raw": "maple|orbit",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=0,Y=1",
+            "raw": "X=0,Y=1",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "1",
+            "raw": "2",
+            "correct": false
+          }
+        },
+        {
+          "i": 0,
+          "j": 2,
+          "SEND": {
+            "expected": "maple|fable",
+            "raw": "maple|fable",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=0,Y=2",
+            "raw": "X=0,Y=2",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "2",
+            "raw": "2",
+            "correct": true
+          }
+        },
+        {
+          "i": 0,
+          "j": 3,
+          "SEND": {
+            "expected": "maple|harbor",
+            "raw": "maple|harbor",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=0,Y=3",
+            "raw": "X=0,Y=3",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "3",
+            "raw": "3",
+            "correct": true
+          }
+        },
+        {
+          "i": 0,
+          "j": 5,
+          "SEND": {
+            "expected": "maple|copper",
+            "raw": "maple|copper",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=0,Y=5",
+            "raw": "X=0,Y=5",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "5",
+            "raw": "5",
+            "correct": true
+          }
+        },
+        {
+          "i": 0,
+          "j": 6,
+          "SEND": {
+            "expected": "maple|velvet",
+            "raw": "maple|velvet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=0,Y=6",
+            "raw": "X=0,Y=6",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "6",
+            "raw": "6",
+            "correct": true
+          }
+        },
+        {
+          "i": 0,
+          "j": 7,
+          "SEND": {
+            "expected": "maple|comet",
+            "raw": "maple|comet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=0,Y=7",
+            "raw": "X=0,Y=7",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "7",
+            "raw": "7",
+            "correct": true
+          }
+        },
+        {
+          "i": 1,
+          "j": 0,
+          "SEND": {
+            "expected": "frost|marble",
+            "raw": "frost|marble",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=1,Y=0",
+            "raw": "X=1,Y=0",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "1",
+            "raw": "2",
+            "correct": false
+          }
+        },
+        {
+          "i": 1,
+          "j": 1,
+          "SEND": {
+            "expected": "frost|orbit",
+            "raw": "frost|orbit",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=1,Y=1",
+            "raw": "X=1,Y=1",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "2",
+            "raw": "2",
+            "correct": true
+          }
+        },
+        {
+          "i": 1,
+          "j": 2,
+          "SEND": {
+            "expected": "frost|fable",
+            "raw": "frost|fable",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=1,Y=2",
+            "raw": "X=1,Y=2",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "3",
+            "raw": "3",
+            "correct": true
+          }
+        },
+        {
+          "i": 1,
+          "j": 4,
+          "SEND": {
+            "expected": "frost|spruce",
+            "raw": "frost|spruce",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=1,Y=4",
+            "raw": "X=1,Y=4",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "5",
+            "raw": "5",
+            "correct": true
+          }
+        },
+        {
+          "i": 1,
+          "j": 5,
+          "SEND": {
+            "expected": "frost|copper",
+            "raw": "frost|copper",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=1,Y=5",
+            "raw": "X=1,Y=5",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "6",
+            "raw": "6",
+            "correct": true
+          }
+        },
+        {
+          "i": 1,
+          "j": 6,
+          "SEND": {
+            "expected": "frost|velvet",
+            "raw": "frost|velvet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=1,Y=6",
+            "raw": "X=1,Y=6",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "7",
+            "raw": "7",
+            "correct": true
+          }
+        },
+        {
+          "i": 2,
+          "j": 0,
+          "SEND": {
+            "expected": "ocean|marble",
+            "raw": "ocean|marble",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=2,Y=0",
+            "raw": "X=2,Y=0",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "2",
+            "raw": "2",
+            "correct": true
+          }
+        },
+        {
+          "i": 2,
+          "j": 1,
+          "SEND": {
+            "expected": "ocean|orbit",
+            "raw": "ocean|orbit",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=2,Y=1",
+            "raw": "X=2,Y=1",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "3",
+            "raw": "3",
+            "correct": true
+          }
+        },
+        {
+          "i": 2,
+          "j": 3,
+          "SEND": {
+            "expected": "ocean|harbor",
+            "raw": "ocean|harbor",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=2,Y=3",
+            "raw": "X=2,Y=3",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "5",
+            "raw": "5",
+            "correct": true
+          }
+        },
+        {
+          "i": 2,
+          "j": 4,
+          "SEND": {
+            "expected": "ocean|spruce",
+            "raw": "ocean|spruce",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=2,Y=4",
+            "raw": "X=2,Y=4",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "6",
+            "raw": "5",
+            "correct": false
+          }
+        },
+        {
+          "i": 2,
+          "j": 5,
+          "SEND": {
+            "expected": "ocean|copper",
+            "raw": "ocean|copper",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=2,Y=5",
+            "raw": "X=2,Y=5",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "7",
+            "raw": "7",
+            "correct": true
+          }
+        },
+        {
+          "i": 2,
+          "j": 7,
+          "SEND": {
+            "expected": "ocean|comet",
+            "raw": "ocean|comet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=2,Y=7",
+            "raw": "X=2,Y=7",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "9",
+            "raw": "9",
+            "correct": true
+          }
+        },
+        {
+          "i": 3,
+          "j": 0,
+          "SEND": {
+            "expected": "cinder|marble",
+            "raw": "cinder|marble",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=3,Y=0",
+            "raw": "X=3,Y=0",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "3",
+            "raw": "3",
+            "correct": true
+          }
+        },
+        {
+          "i": 3,
+          "j": 2,
+          "SEND": {
+            "expected": "cinder|fable",
+            "raw": "cinder|fable",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=3,Y=2",
+            "raw": "X=3,Y=2",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "5",
+            "raw": "6",
+            "correct": false
+          }
+        },
+        {
+          "i": 3,
+          "j": 3,
+          "SEND": {
+            "expected": "cinder|harbor",
+            "raw": "cinder|harbor",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=3,Y=3",
+            "raw": "X=3,Y=3",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "6",
+            "raw": "6",
+            "correct": true
+          }
+        },
+        {
+          "i": 3,
+          "j": 4,
+          "SEND": {
+            "expected": "cinder|spruce",
+            "raw": "cinder|spruce",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=3,Y=4",
+            "raw": "X=3,Y=4",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "7",
+            "raw": "7",
+            "correct": true
+          }
+        },
+        {
+          "i": 3,
+          "j": 6,
+          "SEND": {
+            "expected": "cinder|velvet",
+            "raw": "cinder|velvet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=3,Y=6",
+            "raw": "X=3,Y=6",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "9",
+            "raw": "9",
+            "correct": true
+          }
+        },
+        {
+          "i": 3,
+          "j": 7,
+          "SEND": {
+            "expected": "cinder|comet",
+            "raw": "cinder|comet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=3,Y=7",
+            "raw": "X=3,Y=7",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "10",
+            "raw": "10",
+            "correct": true
+          }
+        },
+        {
+          "i": 4,
+          "j": 1,
+          "SEND": {
+            "expected": "violet|orbit",
+            "raw": "violet|orbit",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=4,Y=1",
+            "raw": "X=4,Y=1",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "5",
+            "raw": "5",
+            "correct": true
+          }
+        },
+        {
+          "i": 4,
+          "j": 2,
+          "SEND": {
+            "expected": "violet|fable",
+            "raw": "violet|fable",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=4,Y=2",
+            "raw": "X=4,Y=2",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "6",
+            "raw": "5",
+            "correct": false
+          }
+        },
+        {
+          "i": 4,
+          "j": 3,
+          "SEND": {
+            "expected": "violet|harbor",
+            "raw": "violet|harbor",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=4,Y=3",
+            "raw": "X=4,Y=3",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "7",
+            "raw": "6",
+            "correct": false
+          }
+        },
+        {
+          "i": 4,
+          "j": 5,
+          "SEND": {
+            "expected": "violet|copper",
+            "raw": "violet|copper",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=4,Y=5",
+            "raw": "X=4,Y=5",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "9",
+            "raw": "9",
+            "correct": true
+          }
+        },
+        {
+          "i": 4,
+          "j": 6,
+          "SEND": {
+            "expected": "violet|velvet",
+            "raw": "violet|velvet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=4,Y=6",
+            "raw": "X=4,Y=6",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "10",
+            "raw": "11",
+            "correct": false
+          }
+        },
+        {
+          "i": 4,
+          "j": 7,
+          "SEND": {
+            "expected": "violet|comet",
+            "raw": "violet|comet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=4,Y=7",
+            "raw": "X=4,Y=7",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "11",
+            "raw": "11",
+            "correct": true
+          }
+        },
+        {
+          "i": 5,
+          "j": 0,
+          "SEND": {
+            "expected": "echo|marble",
+            "raw": "echo|marble",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=5,Y=0",
+            "raw": "X=5,Y=0",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "5",
+            "raw": "5",
+            "correct": true
+          }
+        },
+        {
+          "i": 5,
+          "j": 1,
+          "SEND": {
+            "expected": "echo|orbit",
+            "raw": "echo|orbit",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=5,Y=1",
+            "raw": "X=5,Y=1",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "6",
+            "raw": "7",
+            "correct": false
+          }
+        },
+        {
+          "i": 5,
+          "j": 2,
+          "SEND": {
+            "expected": "echo|fable",
+            "raw": "echo|fable",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=5,Y=2",
+            "raw": "X=5,Y=2",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "7",
+            "raw": "7",
+            "correct": true
+          }
+        },
+        {
+          "i": 5,
+          "j": 4,
+          "SEND": {
+            "expected": "echo|spruce",
+            "raw": "echo|spruce",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=5,Y=4",
+            "raw": "X=5,Y=4",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "9",
+            "raw": "9",
+            "correct": true
+          }
+        },
+        {
+          "i": 5,
+          "j": 5,
+          "SEND": {
+            "expected": "echo|copper",
+            "raw": "echo|copper",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=5,Y=5",
+            "raw": "X=5,Y=5",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "10",
+            "raw": "10",
+            "correct": true
+          }
+        },
+        {
+          "i": 5,
+          "j": 6,
+          "SEND": {
+            "expected": "echo|velvet",
+            "raw": "echo|velvet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=5,Y=6",
+            "raw": "X=5,Y=6",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "11",
+            "raw": "11",
+            "correct": true
+          }
+        },
+        {
+          "i": 6,
+          "j": 0,
+          "SEND": {
+            "expected": "pollen|marble",
+            "raw": "pollen|marble",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=6,Y=0",
+            "raw": "X=6,Y=0",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "6",
+            "raw": "6",
+            "correct": true
+          }
+        },
+        {
+          "i": 6,
+          "j": 1,
+          "SEND": {
+            "expected": "pollen|orbit",
+            "raw": "pollen|orbit",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=6,Y=1",
+            "raw": "X=6,Y=1",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "7",
+            "raw": "7",
+            "correct": true
+          }
+        },
+        {
+          "i": 6,
+          "j": 3,
+          "SEND": {
+            "expected": "pollen|harbor",
+            "raw": "pollen|harbor",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=6,Y=3",
+            "raw": "X=6,Y=3",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "9",
+            "raw": "9",
+            "correct": true
+          }
+        },
+        {
+          "i": 6,
+          "j": 4,
+          "SEND": {
+            "expected": "pollen|spruce",
+            "raw": "pollen|spruce",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=6,Y=4",
+            "raw": "X=6,Y=4",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "10",
+            "raw": "10",
+            "correct": true
+          }
+        },
+        {
+          "i": 6,
+          "j": 5,
+          "SEND": {
+            "expected": "pollen|copper",
+            "raw": "pollen|copper",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=6,Y=5",
+            "raw": "X=6,Y=5",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "11",
+            "raw": "11",
+            "correct": true
+          }
+        },
+        {
+          "i": 6,
+          "j": 7,
+          "SEND": {
+            "expected": "pollen|comet",
+            "raw": "pollen|comet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=6,Y=7",
+            "raw": "X=6,Y=7",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "13",
+            "raw": "13",
+            "correct": true
+          }
+        },
+        {
+          "i": 7,
+          "j": 0,
+          "SEND": {
+            "expected": "tundra|marble",
+            "raw": "tundra|marble",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=7,Y=0",
+            "raw": "X=7,Y=0",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "7",
+            "raw": "7",
+            "correct": true
+          }
+        },
+        {
+          "i": 7,
+          "j": 2,
+          "SEND": {
+            "expected": "tundra|fable",
+            "raw": "tundra|fable",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=7,Y=2",
+            "raw": "X=7,Y=2",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "9",
+            "raw": "9",
+            "correct": true
+          }
+        },
+        {
+          "i": 7,
+          "j": 3,
+          "SEND": {
+            "expected": "tundra|harbor",
+            "raw": "tundra|harbor",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=7,Y=3",
+            "raw": "X=7,Y=3",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "10",
+            "raw": "10",
+            "correct": true
+          }
+        },
+        {
+          "i": 7,
+          "j": 4,
+          "SEND": {
+            "expected": "tundra|spruce",
+            "raw": "tundra|spruce",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=7,Y=4",
+            "raw": "X=7,Y=4",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "11",
+            "raw": "11",
+            "correct": true
+          }
+        },
+        {
+          "i": 7,
+          "j": 6,
+          "SEND": {
+            "expected": "tundra|velvet",
+            "raw": "tundra|velvet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=7,Y=6",
+            "raw": "X=7,Y=6",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "13",
+            "raw": "13",
+            "correct": true
+          }
+        },
+        {
+          "i": 7,
+          "j": 7,
+          "SEND": {
+            "expected": "tundra|comet",
+            "raw": "tundra|comet",
+            "correct": true
+          },
+          "RECEIVE": {
+            "expected": "X=7,Y=7",
+            "raw": "X=7,Y=7",
+            "correct": true
+          },
+          "CALC": {
+            "expected": "14",
+            "raw": "14",
+            "correct": true
+          }
+        }
+      ]
+    }
+  },
+  "elapsed_seconds": 2377.2
+}
