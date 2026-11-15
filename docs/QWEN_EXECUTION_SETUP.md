@@ -30,14 +30,14 @@ Use **real Qwen3-0.6B pretrained weights and real trained PEFT adapter weights**
 3. **Compose existing primitives:** https://github.com/AlterProgramming/Forge/actions/runs/43661450824 . Artifact **14140690763**, name `qwen3-actual-compositional-handoffs`. Actual Qwen ENC_X + ENC_Y sender and learned RECEIVE: **16/16 correct signals, 16/16 correct decoded values, and 16/16 correct deterministic sums** with no oracle correction. Direct joint SEND: 15/16 correct signals.
 4. **Latest actual Qwen math follow-up:** https://github.com/AlterProgramming/Forge/actions/runs/43661880489 . This revises the original base-Qwen arithmetic receiver prompt to retry with symbolic expression and verify exact equations. On the same 16 already inspected withheld combinations: **atomic sender 16/16 correct signals, 16/16 decoded, 16/16 deterministic sum, 15/16 base Qwen math**; joint sender 15/16 signals and 14/16 base Qwen math. The base Qwen is invoked with the trained LoRA **disabled**. This is posthoc recovery, not a fresh blind sample or model training.
 
-**Artifact retention:** GitHub Actions run artifacts are time-limited (workflow config uses retention-days 90). Keep a copy of the actual `adapter_model.safetensors` before expiration. A link or JSON report alone is **not** the adapter. The source repo does **not** contain the binary model weights.
+**Durable trained adapter now in `main`:** `models/qwen3-0.6b-communication-lora-v2/adapter_model.safetensors` (SHA256 `4ea165d25f8e4e11f8a306ddee3d27558043051699e969cd13ad251db6e8143f`), together with `adapter_config.json`, `results.json` and `manifest.json`. Confirmed from the original Actions artifact in archive run [43668470939](https://github.com/AlterProgramming/Forge/actions/runs/43668470939). The project now preserves the trained LoRA weights in Git rather than relying on expiring Actions artifacts. The official pretrained `Qwen/Qwen3-0.6B` base weights are still obtained from Hugging Face. **The Git checkpoint is the preferred recovery source.**
 
 ## Reproduce / execute
 
 GitHub-hosted:
 
 1. Checkout branch `research/qwen3-protocol-composition-proof-20261115`.
-2. Download artifact `qwen3-0_6b-continued-protocol-lora` from run `43657885404` to folder `previous/`; confirm files `previous/adapter/adapter_config.json` and `previous/adapter/adapter_model.safetensors`.
+2. Load trained LoRA from **Forge `main`** under `models/qwen3-0.6b-communication-lora-v2/`. If working from the research branch, copy that directory into your workspace as `previous/adapter/` (keeping `adapter_config.json` and `adapter_model.safetensors` together). Verify SHA256 against `manifest.json`. The historical Actions artifact `14140515504` is provenance and an optional fallback only while retained.
 3. Install dependencies matching `.github/workflows/qwen3-composed-handoff.yml`.
 4. From repo root run:
 
@@ -56,6 +56,9 @@ python -u experiments/qwen3-context-rewrite/cross-domain/continue_protocol_lora.
   --steps 900 --eval-every 300 --lr 0.00045 --max-seconds 3200 \
   --out qwen_protocol_continued
 ```
+
+
+For cold-start execution with the durable checkpoint on Forge `main`, use the verified recovery smoke workflow (once available) and its matching source `scripts/qwen_recovery_smoke.py`; this path downloads the official base model and loads the repository's learned safetensors, **without requiring an expiring Actions artifact or a warm local cache**.
 
 The `continue_protocol_lora.py` expects *the first* adapter to resume as done in the verified continuation run; feeding the newest adapter produces a NEW follow-up and must be clearly labeled as such.
 
