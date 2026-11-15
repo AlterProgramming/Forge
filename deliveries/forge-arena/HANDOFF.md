@@ -33,3 +33,15 @@
 5. The new Forge G1 workflow supports a per-run *game* objective using `workflow_dispatch.inputs.objective` (once present on default branch), but its supported operation registry remains bounded.
 
 Pull requests: [Command Center #25](https://github.com/AlterProgramming/Agent-Command-Center/pull/25), [Forge #20](https://github.com/AlterProgramming/Forge/pull/20), [Kairos #11](https://github.com/AlterProgramming/Kairos/pull/11). Changes are proposed on review branches, not merged to their default branches.
+
+## Subsequent user rejection — delivery remains incomplete
+
+**November 15, 2026:** The customer reviewed the artifact and explicitly stated that it did not meet the requested game, level of visual quality, or intended agent-system interaction. The G0–G5 receipts remain valid as limited technical evidence, but the product is now **REVISION_REQUESTED / NOT ACCEPTED**, not finished.
+
+Source-versus-result discrepancy: the supplied reference is a colorful portrait-oriented mobile game with prominent illustrated equipment, a character riding a truck, and a large game-first upgrade/battle UI; the delivered screenshot is a dark, text-dominant interface with a small canvas. The recorded Chromium test validated buttons, garage elements, projectiles and pause—not visual fidelity, sustained gameplay, enjoyment, or expected product quality.
+
+**Required continuation:** trace the original customer demand through agent context, re-evaluate visual/gameplay sufficiency, exercise the actual external Command Center->Kairos ccs1 boundary, and obtain trusted customer acceptance. The existing Qwen G1 action chooser selected among four bounded changes; it did not autonomously create the user-requested game.
+
+Active observability implementation and reproducible historical failure audit: https://github.com/AlterProgramming/Agent-Command-Center/pull/23
+
+Do not use the passing technical checkpoints to mark the parent demand accepted or complete.
