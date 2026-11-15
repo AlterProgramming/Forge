@@ -1,0 +1,67 @@
+name: Open-ended Qwen game coding -> Kairos -> Studio -> Browser
+on:
+  push:
+    branches: [execution/qwen-open-ended-game-retry-20261115]
+    paths:
+      - .github/workflows/qwen-open-game-retry.yml
+      - scripts/qwen_open_game_*.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real-agent-cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout original game and pretrained-model recovery
+        uses: actions/checkout@v4
+      - name: Checkout actual Kairos implementation
+        uses: actions/checkout@v4
+        with:
+          repository: AlterProgramming/Kairos
+          ref: execution/qwen-forge-arena-g2-g4-20261115
+          path: kairos_repo
+      - name: Checkout existing Production Studio
+        uses: actions/checkout@v4
+        with:
+          repository: AlterProgramming/Agentic-Production-Studio
+          path: studio_repo
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate experiment harness; preserve unmodified game
+        run: |
+          python -m py_compile scripts/qwen_open_game_agent.py scripts/qwen_open_game_downstream.py scripts/qwen_open_game_browser.py
+          python scripts/qwen_recovery_smoke.py --self-test
+          mkdir -p open-agent-evidence
+          sha256sum deliveries/forge-arena/final/index.html > open-agent-evidence/source-sha256.txt
+      - name: Install real Qwen, actual Kairos tests and Chromium
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch>=2.4,<3'
+          python -m pip install 'transformers>=4.51,<5' 'peft>=0.13,<1' accelerate safetensors pytest playwright
+          python -m playwright install --with-deps chromium
+      - name: G1 Qwen explores source and authors own code using unconstrained read/edit tools
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u scripts/qwen_open_game_agent.py --out-dir open-agent-evidence --turns 7
+      - name: G2/G3 Kairos applies exact Qwen proposal and Production Studio materializes it
+        run: |
+          python -u scripts/qwen_open_game_downstream.py
+      - name: G4 actual mobile browser smoke of model-authored game
+        run: |
+          python -u scripts/qwen_open_game_browser.py
+      - name: Retain all executed gates, failures and proposed source for audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: open-qwen-real-game-code-and-evidence
+          path: |
+            open-agent-evidence/
+            studio_workspace/output/index.html
+          if-no-files-found: warn
