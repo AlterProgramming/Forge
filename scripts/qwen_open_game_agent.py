@@ -22,6 +22,10 @@ REQUIREMENTS=[
     "Preserve prompts, unmodified user goal, actual tool actions, failures and separate gate outcomes."
 ]
 SYSTEM="""You are a coding agent. You can read and edit the existing HTML game.
+The CUSTOMER OBJECTIVE and INSTRUCTIONS are NOT game source and must NEVER be used
+as edit anchors. Only exact strings from index.html can be edited.
+If edit fails because find occurs 0 times, do not repeat the same edit.
+Instead invoke read(query) on an actual source symbol and construct a new code edit.
 Reply with ONE JSON object each turn. Tools:
 {"tool":"read","query":"search term from the source"}
 {"tool":"edit","rationale":"why it matters","edits":[{"find":"exact source text","replace":"new source text YOU wrote"}]}
@@ -99,6 +103,7 @@ def main():
       "\nYou can inspect the rest using read. Produce a meaningful original code improvement."}]
     source=original
     trace=[];patches=[]
+    attempted_edits=set()
     for turn in range(args.turns):
         inputs=tokenizer.apply_chat_template(messages,tokenize=True,
             add_generation_prompt=True,enable_thinking=False,return_tensors="pt")
@@ -116,6 +121,10 @@ def main():
             if action["tool"]=="read":
                 observation=read(source,action.get("query"))
             elif action["tool"]=="edit":
+                proposal_key=sha(json.dumps(action.get("edits"),sort_keys=True,ensure_ascii=False))
+                if proposal_key in attempted_edits:
+                    raise ValueError("REPEATED_IDENTICAL_EDIT: The same proposal already failed or was submitted. Choose a different tool action such as read(query), referencing actual index.html source.")
+                attempted_edits.add(proposal_key)
                 candidate=edit(source,action.get("edits"))
                 patches.append({"turn":turn,"model_written_edit":action,
                     "before_sha256":sha(source),"after_sha256":sha(candidate)})
@@ -128,7 +137,10 @@ def main():
                 if patches:
                     row["tool_result"]=observation
                     break
-        except Exception as exc:observation="TOOL REJECTED: "+str(exc)
+        except Exception as exc:
+            observation="TOOL REJECTED: "+str(exc)
+            if "Find must appear once; actual count 0" in observation:
+                observation += " The requested FIND is absent from index.html. The CUSTOMER OBJECTIVE is a prompt, not source. Use read(query) for a real game function such as begin or pulse before editing."
         row["tool_result"]=observation
         save(out,"model_trace.json",trace)
         print("OPEN_QWEN_TOOL",json.dumps({"turn":turn,"result":observation[:700]}),flush=True)
