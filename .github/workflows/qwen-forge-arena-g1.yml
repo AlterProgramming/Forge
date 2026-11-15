@@ -7,6 +7,12 @@ on:
       - scripts/forge_arena_qwen_gate.py
       - deliveries/forge-arena/source/**
   workflow_dispatch:
+    inputs:
+      objective:
+        description: User objective for the existing Forge Arena game
+        required: true
+        type: string
+        default: Improve accessible mobile play in the Ancient Greece vehicle combat game
 permissions:
   contents: read
 jobs:
@@ -31,8 +37,10 @@ jobs:
           HF_HUB_DISABLE_TELEMETRY: '1'
           OMP_NUM_THREADS: '2'
           MKL_NUM_THREADS: '2'
+          DELIVERY_GOAL: ${{ github.event.inputs.objective || 'Improve accessible mobile play in the Ancient Greece vehicle combat game' }}
         run: |
           python3 -u scripts/forge_arena_qwen_gate.py \
+            --goal "$DELIVERY_GOAL" \
             --cc-gate-sha 4ddc070548f762e4f035f8b4b487ad001729b58fbf7f60b5d3e3fdc8362372fa \
             --out checkpoint-receipts/forge-arena-qwen-g1.json
       - name: Save G1 received action and actual model traces
