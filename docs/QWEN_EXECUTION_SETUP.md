@@ -58,7 +58,7 @@ python -u experiments/qwen3-context-rewrite/cross-domain/continue_protocol_lora.
 ```
 
 
-For cold-start execution with the durable checkpoint on Forge `main`, use the verified recovery smoke workflow (once available) and its matching source `scripts/qwen_recovery_smoke.py`; this path downloads the official base model and loads the repository's learned safetensors, **without requiring an expiring Actions artifact or a warm local cache**.
+**Verified fresh-session inference:** [Qwen durable checkpoint run 43668691232](https://github.com/AlterProgramming/Forge/actions/runs/43668691232) checked out Forge `main`, verified SHA256 of the committed adapter, downloaded official pretrained Qwen3-0.6B, and executed **4/4 uncorrected SEND→RECEIVE handoffs** using the actual Git-hosted LoRA. No old Actions artifact or warmed local model was required. Code: `scripts/qwen_recovery_smoke.py`; workflow: `.github/workflows/qwen-durable-cold-start.yml`. Run `python scripts/qwen_recovery_smoke.py --self-test` followed by `python scripts/qwen_recovery_smoke.py --limit 4` in a compatible environment.
 
 The `continue_protocol_lora.py` expects *the first* adapter to resume as done in the verified continuation run; feeding the newest adapter produces a NEW follow-up and must be clearly labeled as such.
 
