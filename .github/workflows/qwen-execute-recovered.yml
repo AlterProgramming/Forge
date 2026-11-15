@@ -1,0 +1,41 @@
+name: Execute recovered Qwen3-0.6B with durable trained LoRA
+on:
+  push:
+    branches:
+      - execution/qwen-real-inference-20261115
+    paths:
+      - .github/workflows/qwen-execute-recovered.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  real-qwen-inference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify preserved trained weights
+        run: python3 scripts/qwen_recovery_smoke.py --self-test
+      - name: Install actual Qwen CPU inference
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch>=2.4,<3'
+          python -m pip install 'transformers>=4.51,<5' 'peft>=0.13,<1' accelerate safetensors
+      - name: Execute real pretrained Qwen and recovered trained adapter
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u scripts/qwen_recovery_smoke.py --limit 4 --out qwen_execution_20261115.json
+      - name: Preserve execution receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen-execution-20261115
+          path: qwen_execution_20261115.json
+          if-no-files-found: warn
