@@ -13,7 +13,7 @@ python3 "$COMMAND_CENTER_ROOT/scripts/session_bootstrap.py" \
 
 When the Command Center checkout is absent, use the connected GitHub tools to read its `main` branch registries: `memory/registry.json`, `capabilities/registry.json`, and `sessions/registry.json`. Resolve **`capability.qwen-execution-recovery.v1`** and follow the canonical runbook and adapter artifact references in that capability before deciding inference is unavailable. Retain the bootstrap receipt in the handoff.
 
-A missing local model cache is NOT proof that Qwen cannot run: the verified execution path is Forge GitHub Actions. The recorded LoRA `adapter_model.safetensors` comes from Actions run `43657885404` (artifact `14140515504`), and the base model is `Qwen/Qwen3-0.6B`. Verify artifact availability and never confuse this LoRA with unrelated research `.pt` files. Command Center recovery CI: https://github.com/AlterProgramming/Agent-Command-Center/actions/runs/43668126943 .
+A missing local model cache is NOT proof that Qwen cannot run: the verified execution path is Forge GitHub Actions. The **durable learned LoRA** is now committed on Forge `main` at `models/qwen3-0.6b-communication-lora-v2/` (including `adapter_model.safetensors` and `adapter_config.json`, verified SHA256 in `manifest.json`); the original training provenance is Actions run `43657885404` (artifact `14140515504`). The official base model is `Qwen/Qwen3-0.6B`. Verify artifact availability and never confuse this LoRA with unrelated research `.pt` files. Command Center recovery CI: https://github.com/AlterProgramming/Agent-Command-Center/actions/runs/43668126943 .
 
 ## Recover Qwen execution before creating new infrastructure
 
