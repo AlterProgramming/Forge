@@ -43,6 +43,7 @@ def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--self-test", action="store_true")
     p.add_argument("--goal", default="Improve the recovered Ancient Greece vehicle-combat game for a real player")
+    p.add_argument("--intent-context-file", type=Path, help="Exact source-grounded customer instruction envelope for model input")
     p.add_argument("--cc-gate-sha", default="")
     p.add_argument("--out", default="forge-arena-qwen-g1.json")
     args = p.parse_args()
@@ -64,7 +65,18 @@ def main() -> None:
     base = AutoModelForCausalLM.from_pretrained("Qwen/Qwen3-0.6B", dtype=torch.float32, low_cpu_mem_usage=True).eval()
     model = PeftModel.from_pretrained(base, str(ADAPTER), is_trainable=False).eval()
 
+    instruction_payload = None
+    if args.intent_context_file:
+        raw_context = args.intent_context_file.read_bytes()
+        instruction_payload = json.loads(raw_context)
+        if not isinstance(instruction_payload, dict) or not instruction_payload.get("visible_requirements"):
+            raise RuntimeError("Invalid customer intent context envelope")
+        if not isinstance(instruction_payload.get("instruction_ids"), list) or len(instruction_payload["instruction_ids"]) != len(instruction_payload["visible_requirements"]):
+            raise RuntimeError("Customer obligation IDs do not match context envelope")
+    source_instructions = (json.dumps(instruction_payload["visible_requirements"], ensure_ascii=False, sort_keys=True)
+                           if instruction_payload else "")
     context = (
+        "Original customer obligations (do not narrow or discard): " + source_instructions + "\n"
         "Current user objective: " + args.goal + "\n"
         "You are the action router for a real deliverable, not a benchmark. "
         "The user provided an image of a mobile cartoon vehicle-combat upgrade game: "
@@ -76,6 +88,9 @@ def main() -> None:
         + "\n".join(CHOICES)
         + "\nRespond with exactly one digit (0, 1, 2, or 3):"
     )
+    if instruction_payload and any(req.get("intent") not in context or req.get("source_quote") not in context
+                                    for req in instruction_payload["visible_requirements"]):
+        raise RuntimeError("At least one original instruction disappeared from the actual Qwen prompt")
     tokenized = tokenizer.apply_chat_template(
         [{"role":"system","content":"Choose the most useful implementation action. No explanation."},
          {"role":"user","content":context}],
@@ -115,6 +130,9 @@ def main() -> None:
         "gate": "G1-real-Qwen-game-intent-and-communication",
         "status": "PASS" if valid else "FAIL",
         "command_center_g0_receipt_sha256": args.cc_gate_sha,
+        "actual_model_prompt_sha256": digest(context.encode("utf-8")),
+        "input_context_sha256": digest(raw_context) if instruction_payload else None,
+        "input_instruction_ids": instruction_payload["instruction_ids"] if instruction_payload else [],
         "model": "Qwen/Qwen3-0.6B",
         "adapter": str(ADAPTER.relative_to(ROOT)),
         "adapter_sha256": checkpoint,
