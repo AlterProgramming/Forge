@@ -1,0 +1,54 @@
+name: Qwen3 Continued Communication Update
+on:
+  push:
+    branches: [research/qwen3-protocol-continuation-20261114]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  continued-train:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Retrieve actual learned LoRA tensor weights from first model update
+        uses: actions/download-artifact@v4
+        with:
+          name: qwen3-0_6b-trained-communication-lora
+          run-id: 43656857296
+          repository: AlterProgramming/Forge
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: previous
+      - name: Install Qwen3 and PEFT training dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch>=2.4,<3'
+          python -m pip install 'transformers>=4.51,<5' 'peft>=0.13,<1' accelerate safetensors
+      - name: Validate unchanged unseen-composition split
+        run: |
+          python experiments/qwen3-context-rewrite/cross-domain/continue_protocol_lora.py --self-test
+      - name: Resume real model weights with per-step balanced primitive supervision
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+          TOKENIZERS_PARALLELISM: 'false'
+        run: |
+          python -u experiments/qwen3-context-rewrite/cross-domain/continue_protocol_lora.py \
+            --initial-adapter previous/adapter --model Qwen/Qwen3-0.6B \
+            --steps 900 --eval-every 300 --lr 0.00045 --max-seconds 3200 \
+            --out qwen_protocol_continued
+      - name: Preserve updated tensors, source hash, weight delta, unseen handoff traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-0_6b-continued-protocol-lora
+          path: qwen_protocol_continued/
+          retention-days: 90
+          if-no-files-found: warn
