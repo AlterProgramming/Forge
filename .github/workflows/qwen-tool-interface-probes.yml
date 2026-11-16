@@ -5,6 +5,7 @@ on:
     paths:
       - .github/workflows/qwen-tool-interface-probes.yml
       - experiments/qwen-tool-interface/**
+      - deliveries/forge-arena/source/**
   workflow_dispatch:
 permissions:
   contents: read
