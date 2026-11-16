@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 from time import monotonic
 
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=Path(__file__).resolve().parents[2]
 GAME=ROOT/"deliveries/forge-arena/source/index.html"
 OUT=ROOT/"tool-probe-evidence"
 READ_TOOL={
