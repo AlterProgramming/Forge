@@ -1,0 +1,55 @@
+name: Qwen3 0.6B tool-interface controlled probes
+on:
+  push:
+    branches: [research/qwen-tool-interface-probes-20261115]
+    paths:
+      - .github/workflows/qwen-tool-interface-probes.yml
+      - experiments/qwen-tool-interface/**
+      - deliveries/forge-arena/source/**
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tool-shape-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install official Qwen CPU inference stack
+        run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch>=2.4,<3'
+          python -m pip install 'transformers>=4.51,<5' accelerate safetensors
+      - name: Run real base Qwen on actual game read-interface probes
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u experiments/qwen-tool-interface/probe.py --limit 9
+      - name: Follow-up native tool interface across source-window sizes
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u experiments/qwen-tool-interface/probe_window.py
+      - name: Qwen function selection with real source distractors
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u experiments/qwen-tool-interface/probe_distractors.py
+      - name: Always upload raw outputs, source SHA, input, feedback, summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen-interface-placeholder-schema-feedback-evidence
+          path: |
+            tool-probe-evidence/
+            tool-window-evidence/
+            tool-distractor-evidence/
+          if-no-files-found: warn
