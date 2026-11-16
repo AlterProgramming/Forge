@@ -29,10 +29,19 @@ jobs:
           MKL_NUM_THREADS: '2'
         run: |
           python -u experiments/qwen-tool-interface/probe.py --limit 9
+      - name: Follow-up native tool interface across source-window sizes
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u experiments/qwen-tool-interface/probe_window.py
       - name: Always upload raw outputs, source SHA, input, feedback, summary
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: qwen-interface-placeholder-schema-feedback-evidence
-          path: tool-probe-evidence/
+          path: |
+            tool-probe-evidence/
+            tool-window-evidence/
           if-no-files-found: warn
