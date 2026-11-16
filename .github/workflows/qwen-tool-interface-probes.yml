@@ -36,6 +36,13 @@ jobs:
           MKL_NUM_THREADS: '2'
         run: |
           python -u experiments/qwen-tool-interface/probe_window.py
+      - name: Qwen function selection with real source distractors
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u experiments/qwen-tool-interface/probe_distractors.py
       - name: Always upload raw outputs, source SHA, input, feedback, summary
         if: always()
         uses: actions/upload-artifact@v4
@@ -44,4 +51,5 @@ jobs:
           path: |
             tool-probe-evidence/
             tool-window-evidence/
+            tool-distractor-evidence/
           if-no-files-found: warn
