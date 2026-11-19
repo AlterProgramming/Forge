@@ -1,0 +1,32 @@
+name: Qwen latent readback outcome training 2026-11-19
+on:
+  push:
+    branches:
+      - research/qwen3-latent-readback-20261119
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu torch
+          python -m pip install 'transformers>=4.51,<5' accelerate safetensors huggingface_hub
+      - name: Execute outcome-trained frozen Qwen readback experiment
+        env:
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+          HF_HUB_DISABLE_TELEMETRY: '1'
+        run: python -u experiments/qwen3-context-rewrite/qwen_latent_readback_20261119.py --steps 12 --output latent_readback_results.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: latent-readback-20261119
+          path: latent_readback_results.json
+          if-no-files-found: warn
