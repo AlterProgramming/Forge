@@ -1,0 +1,71 @@
+{
+  "config": {
+    "steps": 300,
+    "output": "results.json"
+  },
+  "results": [
+    {
+      "seed": 13,
+      "mode": "rewrite",
+      "parameters": 2292,
+      "L6_none": 0.748047,
+      "L24_none": 0.376953,
+      "L24_shuffle": 0.341797,
+      "L24_zero": 0.289062,
+      "L48_none": 0.302734
+    },
+    {
+      "seed": 13,
+      "mode": "replacement",
+      "parameters": 2292,
+      "L6_none": 0.982422,
+      "L24_none": 0.976562,
+      "L24_shuffle": 0.384766,
+      "L24_zero": 0.341797,
+      "L48_none": 0.974609
+    },
+    {
+      "seed": 29,
+      "mode": "rewrite",
+      "parameters": 2292,
+      "L6_none": 0.669922,
+      "L24_none": 0.353516,
+      "L24_shuffle": 0.376953,
+      "L24_zero": 0.328125,
+      "L48_none": 0.275391
+    },
+    {
+      "seed": 29,
+      "mode": "replacement",
+      "parameters": 2292,
+      "L6_none": 0.853516,
+      "L24_none": 0.830078,
+      "L24_shuffle": 0.365234,
+      "L24_zero": 0.333984,
+      "L48_none": 0.826172
+    },
+    {
+      "seed": 47,
+      "mode": "rewrite",
+      "parameters": 2292,
+      "L6_none": 0.595703,
+      "L24_none": 0.410156,
+      "L24_shuffle": 0.382812,
+      "L24_zero": 0.419922,
+      "L48_none": 0.294922
+    },
+    {
+      "seed": 47,
+      "mode": "replacement",
+      "parameters": 2292,
+      "L6_none": 0.871094,
+      "L24_none": 0.890625,
+      "L24_shuffle": 0.392578,
+      "L24_zero": 0.349609,
+      "L48_none": 0.917969
+    }
+  ],
+  "seconds": 4.723263263702393,
+  "data": "Train 512 sequences length 6 seeds 1013/1029/1047; heldout 512 sequences per length seeds 20006/20024/20048; 3 model seeds; 64 minibatch AdamW lr 0.002",
+  "limitations": "No Qwen loaded; frozen tanh readback proxy; 2292 trainable parameters per model; no measured FLOPs/peak memory; matched update counts but not FLOPs; synthetic keyed operations only; outcome-only labels."
+}
