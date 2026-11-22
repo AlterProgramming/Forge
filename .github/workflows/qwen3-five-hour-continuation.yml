@@ -23,6 +23,10 @@ jobs:
           source=gzip.decompress(base64.b64decode(payload))
           expected='6e326c3506013269ef1365547fa93e10b2cb19cba675aff4e7994cc298b0b659'
           assert hashlib.sha256(source).hexdigest()==expected
+          needle=b'validation_indices=val_ids,test_indices=test_ids,'
+          assert source.count(needle)==1
+          source=source.replace(needle,b'validation_indices=val_ids,')
+          assert hashlib.sha256(source).hexdigest()=='0f8f593bb08f224bb4a587db24724ca892a85d5ce453462a3579e62c365e32e5'
           pathlib.Path('experiments/qwen3-five-hour/train.py').write_bytes(source)
           PYCODE
           python -m py_compile experiments/qwen3-five-hour/train.py
