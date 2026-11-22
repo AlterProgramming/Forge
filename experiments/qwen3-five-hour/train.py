@@ -118,7 +118,7 @@ def main():
     val_ids=indices[:args.val_count]
     train_ids=indices[args.val_count:]
     info['data']=dict(name='openai/gsm8k',config='main',train_count=len(train_ids),
-       validation_indices=val_ids,test_indices=test_ids,
+       validation_indices=val_ids,
        train_question_hash=fingerprint('\n'.join(train_raw[i]['question'] for i in train_ids)),
        validation_question_hash=fingerprint('\n'.join(train_raw[i]['question'] for i in val_ids)))
 
