@@ -1,0 +1,5422 @@
+{
+  "config": {
+    "self_test": false,
+    "out": "qwen_5h_output",
+    "model": "Qwen/Qwen3-0.6B",
+    "train_seconds": 17400,
+    "eval_period": 900,
+    "max_seq": 320,
+    "lr": 8e-05,
+    "seed": 20261122,
+    "val_count": 48,
+    "test_count": 64,
+    "rehearsal_interval": 5
+  },
+  "started_utc": "2026-11-22T23:28:18Z",
+  "source_adapter_sha256": "4ea165d25f8e4e11f8a306ddee3d27558043051699e969cd13ad251db6e8143f",
+  "status": "completed",
+  "training": [
+    {
+      "step": 1,
+      "train_loss": 1.649207592010498,
+      "elapsed_seconds": 54.9
+    },
+    {
+      "step": 25,
+      "train_loss": 3.2066287531051785e-05,
+      "elapsed_seconds": 85.1
+    },
+    {
+      "step": 50,
+      "train_loss": 0.0372658334672451,
+      "elapsed_seconds": 117.5
+    },
+    {
+      "step": 75,
+      "train_loss": 0.0006147345993667841,
+      "elapsed_seconds": 150.5
+    },
+    {
+      "step": 100,
+      "train_loss": 0.0014284121571108699,
+      "elapsed_seconds": 182.9
+    },
+    {
+      "step": 125,
+      "train_loss": 0.028160961344838142,
+      "elapsed_seconds": 214.7
+    },
+    {
+      "step": 150,
+      "train_loss": 0.0004330839146859944,
+      "elapsed_seconds": 247.6
+    },
+    {
+      "step": 175,
+      "train_loss": 0.0002408074651611969,
+      "elapsed_seconds": 279.6
+    },
+    {
+      "step": 200,
+      "train_loss": 0.0002869594027288258,
+      "elapsed_seconds": 310.6
+    },
+    {
+      "step": 225,
+      "train_loss": 0.0006112564005888999,
+      "elapsed_seconds": 341.4
+    },
+    {
+      "step": 250,
+      "train_loss": 0.11007138341665268,
+      "elapsed_seconds": 371.2
+    },
+    {
+      "step": 275,
+      "train_loss": 0.00010505214595468715,
+      "elapsed_seconds": 400.6
+    },
+    {
+      "step": 300,
+      "train_loss": 0.005717877298593521,
+      "elapsed_seconds": 431.3
+    },
+    {
+      "step": 325,
+      "train_loss": 3.494427801342681e-05,
+      "elapsed_seconds": 462.0
+    },
+    {
+      "step": 350,
+      "train_loss": 0.0001601294061401859,
+      "elapsed_seconds": 489.4
+    },
+    {
+      "step": 375,
+      "train_loss": 0.00022645907301921397,
+      "elapsed_seconds": 519.3
+    },
+    {
+      "step": 400,
+      "train_loss": 0.000927983783185482,
+      "elapsed_seconds": 549.7
+    },
+    {
+      "step": 425,
+      "train_loss": 7.485784590244293e-05,
+      "elapsed_seconds": 579.7
+    },
+    {
+      "step": 450,
+      "train_loss": 0.000231865793466568,
+      "elapsed_seconds": 609.8
+    },
+    {
+      "step": 475,
+      "train_loss": 0.2854304015636444,
+      "elapsed_seconds": 641.8
+    },
+    {
+      "step": 500,
+      "train_loss": 0.0009068956132978201,
+      "elapsed_seconds": 673.4
+    },
+    {
+      "step": 525,
+      "train_loss": 0.00012035389227094129,
+      "elapsed_seconds": 703.2
+    },
+    {
+      "step": 550,
+      "train_loss": 0.0002922300773207098,
+      "elapsed_seconds": 735.3
+    },
+    {
+      "step": 575,
+      "train_loss": 0.00024964200565591455,
+      "elapsed_seconds": 764.7
+    },
+    {
+      "step": 600,
+      "train_loss": 0.0011486879084259272,
+      "elapsed_seconds": 796.3
+    },
+    {
+      "step": 625,
+      "train_loss": 0.0001938747736858204,
+      "elapsed_seconds": 828.1
+    },
+    {
+      "step": 650,
+      "train_loss": 0.13833339512348175,
+      "elapsed_seconds": 860.8
+    },
+    {
+      "step": 675,
+      "train_loss": 0.000609815411735326,
+      "elapsed_seconds": 889.6
+    },
+    {
+      "step": 700,
+      "train_loss": 0.000181495095603168,
+      "elapsed_seconds": 921.8
+    },
+    {
+      "step": 725,
+      "train_loss": 0.0003434790123719722,
+      "elapsed_seconds": 952.0
+    },
+    {
+      "step": 750,
+      "train_loss": 0.0017673298716545105,
+      "elapsed_seconds": 1018.4
+    },
+    {
+      "step": 775,
+      "train_loss": 0.0005220103194005787,
+      "elapsed_seconds": 1046.5
+    },
+    {
+      "step": 800,
+      "train_loss": 0.00028174123144708574,
+      "elapsed_seconds": 1075.6
+    },
+    {
+      "step": 825,
+      "train_loss": 0.00010603601549519226,
+      "elapsed_seconds": 1102.3
+    },
+    {
+      "step": 850,
+      "train_loss": 0.00015115302812773734,
+      "elapsed_seconds": 1129.6
+    },
+    {
+      "step": 875,
+      "train_loss": 0.0014390934957191348,
+      "elapsed_seconds": 1160.4
+    },
+    {
+      "step": 900,
+      "train_loss": 0.0013505835086107254,
+      "elapsed_seconds": 1191.7
+    },
+    {
+      "step": 925,
+      "train_loss": 0.007664728444069624,
+      "elapsed_seconds": 1221.5
+    },
+    {
+      "step": 950,
+      "train_loss": 0.00018801281112246215,
+      "elapsed_seconds": 1251.9
+    },
+    {
+      "step": 975,
+      "train_loss": 0.001342317322269082,
+      "elapsed_seconds": 1282.7
+    },
+    {
+      "step": 1000,
+      "train_loss": 2.1319262981414795,
+      "elapsed_seconds": 1310.7
+    },
+    {
+      "step": 1025,
+      "train_loss": 0.2193213701248169,
+      "elapsed_seconds": 1341.7
+    },
+    {
+      "step": 1050,
+      "train_loss": 0.00021216356253717095,
+      "elapsed_seconds": 1370.9
+    },
+    {
+      "step": 1075,
+      "train_loss": 0.0002046551089733839,
+      "elapsed_seconds": 1399.6
+    },
+    {
+      "step": 1100,
+      "train_loss": 0.0005817516357637942,
+      "elapsed_seconds": 1430.7
+    },
+    {
+      "step": 1125,
+      "train_loss": 0.00032746364013291895,
+      "elapsed_seconds": 1459.4
+    },
+    {
+      "step": 1150,
+      "train_loss": 0.00025137283955700696,
+      "elapsed_seconds": 1490.9
+    },
+    {
+      "step": 1175,
+      "train_loss": 0.0007621050463058054,
+      "elapsed_seconds": 1519.1
+    },
+    {
+      "step": 1200,
+      "train_loss": 0.012890754267573357,
+      "elapsed_seconds": 1548.5
+    },
+    {
+      "step": 1225,
+      "train_loss": 9.16647186386399e-05,
+      "elapsed_seconds": 1578.7
+    },
+    {
+      "step": 1250,
+      "train_loss": 0.0012035483960062265,
+      "elapsed_seconds": 1607.7
+    },
+    {
+      "step": 1275,
+      "train_loss": 0.0005114404484629631,
+      "elapsed_seconds": 1639.4
+    },
+    {
+      "step": 1300,
+      "train_loss": 0.0005542528233490884,
+      "elapsed_seconds": 1668.7
+    },
+    {
+      "step": 1325,
+      "train_loss": 0.000948013854213059,
+      "elapsed_seconds": 1699.7
+    },
+    {
+      "step": 1350,
+      "train_loss": 0.0002928945468738675,
+      "elapsed_seconds": 1730.0
+    },
+    {
+      "step": 1375,
+      "train_loss": 0.0005081103881821036,
+      "elapsed_seconds": 1761.2
+    },
+    {
+      "step": 1400,
+      "train_loss": 0.00018227705731987953,
+      "elapsed_seconds": 1795.3
+    },
+    {
+      "step": 1425,
+      "train_loss": 0.0003703409165609628,
+      "elapsed_seconds": 1824.0
+    },
+    {
+      "step": 1450,
+      "train_loss": 0.00035559595562517643,
+      "elapsed_seconds": 1853.7
+    },
+    {
+      "step": 1475,
+      "train_loss": 0.00011541638377821073,
+      "elapsed_seconds": 1883.3
+    },
+    {
+      "step": 1500,
+      "train_loss": 0.00034438128932379186,
+      "elapsed_seconds": 1950.2
+    },
+    {
+      "step": 1525,
+      "train_loss": 0.00023197451082523912,
+      "elapsed_seconds": 1978.3
+    },
+    {
+      "step": 1550,
+      "train_loss": 0.0001739816361805424,
+      "elapsed_seconds": 2008.6
+    },
+    {
+      "step": 1575,
+      "train_loss": 0.29545578360557556,
+      "elapsed_seconds": 2039.9
+    },
+    {
+      "step": 1600,
+      "train_loss": 0.0005492725758813322,
+      "elapsed_seconds": 2071.8
+    },
+    {
+      "step": 1625,
+      "train_loss": 0.08635443449020386,
+      "elapsed_seconds": 2103.0
+    },
+    {
+      "step": 1650,
+      "train_loss": 0.009525872766971588,
+      "elapsed_seconds": 2135.5
+    },
+    {
+      "step": 1675,
+      "train_loss": 2.2363812923431396,
+      "elapsed_seconds": 2166.5
+    },
+    {
+      "step": 1700,
+      "train_loss": 0.0003250619047321379,
+      "elapsed_seconds": 2195.6
+    },
+    {
+      "step": 1725,
+      "train_loss": 0.007874885573983192,
+      "elapsed_seconds": 2227.2
+    },
+    {
+      "step": 1750,
+      "train_loss": 0.06606341898441315,
+      "elapsed_seconds": 2257.3
+    },
+    {
+      "step": 1775,
+      "train_loss": 0.00042146421037614346,
+      "elapsed_seconds": 2285.3
+    },
+    {
+      "step": 1800,
+      "train_loss": 0.00039634236600250006,
+      "elapsed_seconds": 2318.0
+    },
+    {
+      "step": 1825,
+      "train_loss": 0.0007489974377676845,
+      "elapsed_seconds": 2346.5
+    },
+    {
+      "step": 1850,
+      "train_loss": 0.0003861007571686059,
+      "elapsed_seconds": 2377.1
+    },
+    {
+      "step": 1875,
+      "train_loss": 5.868755033588968e-05,
+      "elapsed_seconds": 2407.2
+    },
+    {
+      "step": 1900,
+      "train_loss": 0.0001935691834660247,
+      "elapsed_seconds": 2437.2
+    },
+    {
+      "step": 1925,
+      "train_loss": 0.45398417115211487,
+      "elapsed_seconds": 2466.7
+    },
+    {
+      "step": 1950,
+      "train_loss": 0.00029667181661352515,
+      "elapsed_seconds": 2498.0
+    },
+    {
+      "step": 1975,
+      "train_loss": 9.740267705637962e-05,
+      "elapsed_seconds": 2528.0
+    },
+    {
+      "step": 2000,
+      "train_loss": 0.21316470205783844,
+      "elapsed_seconds": 2555.8
+    },
+    {
+      "step": 2025,
+      "train_loss": 0.0010642255656421185,
+      "elapsed_seconds": 2584.7
+    },
+    {
+      "step": 2050,
+      "train_loss": 0.00019456430163700134,
+      "elapsed_seconds": 2614.9
+    },
+    {
+      "step": 2075,
+      "train_loss": 0.0005000084056518972,
+      "elapsed_seconds": 2644.9
+    },
+    {
+      "step": 2100,
+      "train_loss": 0.0006440539145842195,
+      "elapsed_seconds": 2673.2
+    },
+    {
+      "step": 2125,
+      "train_loss": 0.00011515613732626662,
+      "elapsed_seconds": 2702.6
+    },
+    {
+      "step": 2150,
+      "train_loss": 0.0019320501014590263,
+      "elapsed_seconds": 2732.8
+    },
+    {
+      "step": 2175,
+      "train_loss": 0.0005199311999604106,
+      "elapsed_seconds": 2765.0
+    },
+    {
+      "step": 2200,
+      "train_loss": 0.0001560732926009223,
+      "elapsed_seconds": 2796.6
+    },
+    {
+      "step": 2225,
+      "train_loss": 0.000284263223875314,
+      "elapsed_seconds": 2827.3
+    },
+    {
+      "step": 2250,
+      "train_loss": 0.0021418840624392033,
+      "elapsed_seconds": 2895.6
+    },
+    {
+      "step": 2275,
+      "train_loss": 0.008376911282539368,
+      "elapsed_seconds": 2925.6
+    },
+    {
+      "step": 2300,
+      "train_loss": 0.00026726050418801606,
+      "elapsed_seconds": 2957.4
+    },
+    {
+      "step": 2325,
+      "train_loss": 0.0006537204026244581,
+      "elapsed_seconds": 2986.0
+    },
+    {
+      "step": 2350,
+      "train_loss": 0.00023549758770968765,
+      "elapsed_seconds": 3015.0
+    },
+    {
+      "step": 2375,
+      "train_loss": 0.00010505607497179881,
+      "elapsed_seconds": 3044.9
+    },
+    {
+      "step": 2400,
+      "train_loss": 0.05295659974217415,
+      "elapsed_seconds": 3077.0
+    },
+    {
+      "step": 2425,
+      "train_loss": 0.09786733239889145,
+      "elapsed_seconds": 3109.6
+    },
+    {
+      "step": 2450,
+      "train_loss": 0.00026852902374230325,
+      "elapsed_seconds": 3139.7
+    },
+    {
+      "step": 2475,
+      "train_loss": 0.0001662516879150644,
+      "elapsed_seconds": 3170.8
+    },
+    {
+      "step": 2500,
+      "train_loss": 0.00014934387581888586,
+      "elapsed_seconds": 3203.0
+    },
+    {
+      "step": 2525,
+      "train_loss": 6.58965072943829e-05,
+      "elapsed_seconds": 3232.8
+    },
+    {
+      "step": 2550,
+      "train_loss": 1.925431251525879,
+      "elapsed_seconds": 3263.9
+    },
+    {
+      "step": 2575,
+      "train_loss": 0.00014177504635881633,
+      "elapsed_seconds": 3291.6
+    },
+    {
+      "step": 2600,
+      "train_loss": 0.00035672311787493527,
+      "elapsed_seconds": 3322.4
+    },
+    {
+      "step": 2625,
+      "train_loss": 0.00021283385285641998,
+      "elapsed_seconds": 3349.0
+    },
+    {
+      "step": 2650,
+      "train_loss": 7.328375068027526e-05,
+      "elapsed_seconds": 3378.1
+    },
+    {
+      "step": 2675,
+      "train_loss": 0.00015332204930018634,
+      "elapsed_seconds": 3407.8
+    },
+    {
+      "step": 2700,
+      "train_loss": 0.00018987558723893017,
+      "elapsed_seconds": 3439.2
+    },
+    {
+      "step": 2725,
+      "train_loss": 0.4378642737865448,
+      "elapsed_seconds": 3471.4
+    },
+    {
+      "step": 2750,
+      "train_loss": 0.00011550555791473016,
+      "elapsed_seconds": 3501.5
+    },
+    {
+      "step": 2775,
+      "train_loss": 0.04678701236844063,
+      "elapsed_seconds": 3534.3
+    },
+    {
+      "step": 2800,
+      "train_loss": 0.00015419034752994776,
+      "elapsed_seconds": 3564.0
+    },
+    {
+      "step": 2825,
+      "train_loss": 0.00019083016377408057,
+      "elapsed_seconds": 3594.1
+    },
+    {
+      "step": 2850,
+      "train_loss": 0.00036465152516029775,
+      "elapsed_seconds": 3623.9
+    },
+    {
+      "step": 2875,
+      "train_loss": 0.00015539088053628802,
+      "elapsed_seconds": 3653.8
+    },
+    {
+      "step": 2900,
+      "train_loss": 0.000369048590073362,
+      "elapsed_seconds": 3683.6
+    },
+    {
+      "step": 2925,
+      "train_loss": 0.004179066047072411,
+      "elapsed_seconds": 3713.2
+    },
+    {
+      "step": 2950,
+      "train_loss": 6.764745921827853e-05,
+      "elapsed_seconds": 3742.6
+    },
+    {
+      "step": 2975,
+      "train_loss": 3.001936197280884,
+      "elapsed_seconds": 3807.6
+    },
+    {
+      "step": 3000,
+      "train_loss": 1.4800641536712646,
+      "elapsed_seconds": 3838.8
+    },
+    {
+      "step": 3025,
+      "train_loss": 0.0012432349612936378,
+      "elapsed_seconds": 3866.6
+    },
+    {
+      "step": 3050,
+      "train_loss": 1.0160988569259644,
+      "elapsed_seconds": 3896.7
+    },
+    {
+      "step": 3075,
+      "train_loss": 0.0001246239262400195,
+      "elapsed_seconds": 3924.2
+    },
+    {
+      "step": 3100,
+      "train_loss": 7.873238791944459e-05,
+      "elapsed_seconds": 3953.2
+    },
+    {
+      "step": 3125,
+      "train_loss": 0.0008394904434680939,
+      "elapsed_seconds": 3984.5
+    },
+    {
+      "step": 3150,
+      "train_loss": 0.0004370777460280806,
+      "elapsed_seconds": 4014.4
+    },
+    {
+      "step": 3175,
+      "train_loss": 5.3594692872138694e-05,
+      "elapsed_seconds": 4044.4
+    },
+    {
+      "step": 3200,
+      "train_loss": 4.078765050508082e-05,
+      "elapsed_seconds": 4074.7
+    },
+    {
+      "step": 3225,
+      "train_loss": 0.017226964235305786,
+      "elapsed_seconds": 4106.1
+    },
+    {
+      "step": 3250,
+      "train_loss": 0.00025204860139638186,
+      "elapsed_seconds": 4137.1
+    },
+    {
+      "step": 3275,
+      "train_loss": 0.0003011010412592441,
+      "elapsed_seconds": 4167.2
+    },
+    {
+      "step": 3300,
+      "train_loss": 0.0004400870529934764,
+      "elapsed_seconds": 4195.0
+    },
+    {
+      "step": 3325,
+      "train_loss": 0.0008016985957510769,
+      "elapsed_seconds": 4227.0
+    },
+    {
+      "step": 3350,
+      "train_loss": 0.000106819425127469,
+      "elapsed_seconds": 4257.2
+    },
+    {
+      "step": 3375,
+      "train_loss": 0.08224166184663773,
+      "elapsed_seconds": 4287.4
+    },
+    {
+      "step": 3400,
+      "train_loss": 0.0002432577166473493,
+      "elapsed_seconds": 4318.5
+    },
+    {
+      "step": 3425,
+      "train_loss": 6.828251207480207e-05,
+      "elapsed_seconds": 4349.2
+    },
+    {
+      "step": 3450,
+      "train_loss": 0.00012658166815526783,
+      "elapsed_seconds": 4381.1
+    },
+    {
+      "step": 3475,
+      "train_loss": 0.00015181834169197828,
+      "elapsed_seconds": 4410.7
+    },
+    {
+      "step": 3500,
+      "train_loss": 0.35821017622947693,
+      "elapsed_seconds": 4440.3
+    },
+    {
+      "step": 3525,
+      "train_loss": 0.00025581434601917863,
+      "elapsed_seconds": 4470.5
+    },
+    {
+      "step": 3550,
+      "train_loss": 0.0001643336145207286,
+      "elapsed_seconds": 4497.9
+    },
+    {
+      "step": 3575,
+      "train_loss": 0.000499785237479955,
+      "elapsed_seconds": 4528.1
+    },
+    {
+      "step": 3600,
+      "train_loss": 0.0004411103727761656,
+      "elapsed_seconds": 4560.3
+    },
+    {
+      "step": 3625,
+      "train_loss": 0.0014597108820453286,
+      "elapsed_seconds": 4588.8
+    },
+    {
+      "step": 3650,
+      "train_loss": 0.00012126287765568122,
+      "elapsed_seconds": 4621.0
+    },
+    {
+      "step": 3675,
+      "train_loss": 0.00916310865432024,
+      "elapsed_seconds": 4651.9
+    },
+    {
+      "step": 3700,
+      "train_loss": 0.00013978885544929653,
+      "elapsed_seconds": 4683.1
+    },
+    {
+      "step": 3725,
+      "train_loss": 0.0003563076606951654,
+      "elapsed_seconds": 4751.0
+    },
+    {
+      "step": 3750,
+      "train_loss": 1.4922146797180176,
+      "elapsed_seconds": 4779.7
+    },
+    {
+      "step": 3775,
+      "train_loss": 0.00016429265087936074,
+      "elapsed_seconds": 4810.5
+    },
+    {
+      "step": 3800,
+      "train_loss": 8.721250196686015e-05,
+      "elapsed_seconds": 4839.1
+    },
+    {
+      "step": 3825,
+      "train_loss": 0.00023964536376297474,
+      "elapsed_seconds": 4870.2
+    },
+    {
+      "step": 3850,
+      "train_loss": 5.132537262397818e-05,
+      "elapsed_seconds": 4899.4
+    },
+    {
+      "step": 3875,
+      "train_loss": 9.982789197238162e-05,
+      "elapsed_seconds": 4930.6
+    },
+    {
+      "step": 3900,
+      "train_loss": 0.0004879718762822449,
+      "elapsed_seconds": 4960.3
+    },
+    {
+      "step": 3925,
+      "train_loss": 0.000204970026970841,
+      "elapsed_seconds": 4991.0
+    },
+    {
+      "step": 3950,
+      "train_loss": 0.0059666563756763935,
+      "elapsed_seconds": 5022.8
+    },
+    {
+      "step": 3975,
+      "train_loss": 0.08070497959852219,
+      "elapsed_seconds": 5053.4
+    },
+    {
+      "step": 4000,
+      "train_loss": 0.00020134366059210151,
+      "elapsed_seconds": 5082.7
+    },
+    {
+      "step": 4025,
+      "train_loss": 0.000540467444807291,
+      "elapsed_seconds": 5111.5
+    },
+    {
+      "step": 4050,
+      "train_loss": 1.3667696714401245,
+      "elapsed_seconds": 5144.2
+    },
+    {
+      "step": 4075,
+      "train_loss": 5.4356965847546235e-05,
+      "elapsed_seconds": 5175.5
+    },
+    {
+      "step": 4100,
+      "train_loss": 0.0005039492389187217,
+      "elapsed_seconds": 5207.7
+    },
+    {
+      "step": 4125,
+      "train_loss": 0.00010950679279631004,
+      "elapsed_seconds": 5239.1
+    },
+    {
+      "step": 4150,
+      "train_loss": 0.00012506218627095222,
+      "elapsed_seconds": 5270.8
+    },
+    {
+      "step": 4175,
+      "train_loss": 0.0002086303720716387,
+      "elapsed_seconds": 5301.0
+    },
+    {
+      "step": 4200,
+      "train_loss": 0.00116827548481524,
+      "elapsed_seconds": 5332.2
+    },
+    {
+      "step": 4225,
+      "train_loss": 0.00029983450076542795,
+      "elapsed_seconds": 5362.9
+    },
+    {
+      "step": 4250,
+      "train_loss": 0.022885331884026527,
+      "elapsed_seconds": 5395.2
+    },
+    {
+      "step": 4275,
+      "train_loss": 0.2037612944841385,
+      "elapsed_seconds": 5426.9
+    },
+    {
+      "step": 4300,
+      "train_loss": 0.000368596229236573,
+      "elapsed_seconds": 5459.2
+    },
+    {
+      "step": 4325,
+      "train_loss": 0.004737371113151312,
+      "elapsed_seconds": 5489.9
+    },
+    {
+      "step": 4350,
+      "train_loss": 0.5102221369743347,
+      "elapsed_seconds": 5520.9
+    },
+    {
+      "step": 4375,
+      "train_loss": 0.00047396396985277534,
+      "elapsed_seconds": 5553.0
+    },
+    {
+      "step": 4400,
+      "train_loss": 0.00017660610319580883,
+      "elapsed_seconds": 5582.9
+    },
+    {
+      "step": 4425,
+      "train_loss": 0.2772960960865021,
+      "elapsed_seconds": 5613.2
+    },
+    {
+      "step": 4450,
+      "train_loss": 8.622094173915684e-05,
+      "elapsed_seconds": 5682.6
+    },
+    {
+      "step": 4475,
+      "train_loss": 0.00010747602209448814,
+      "elapsed_seconds": 5716.1
+    },
+    {
+      "step": 4500,
+      "train_loss": 0.000317494326736778,
+      "elapsed_seconds": 5746.2
+    },
+    {
+      "step": 4525,
+      "train_loss": 0.0001145870701293461,
+      "elapsed_seconds": 5774.9
+    },
+    {
+      "step": 4550,
+      "train_loss": 4.54850414826069e-05,
+      "elapsed_seconds": 5805.9
+    },
+    {
+      "step": 4575,
+      "train_loss": 0.00014377469778992236,
+      "elapsed_seconds": 5837.5
+    },
+    {
+      "step": 4600,
+      "train_loss": 0.0001731874217512086,
+      "elapsed_seconds": 5867.7
+    },
+    {
+      "step": 4625,
+      "train_loss": 0.00011728418030543253,
+      "elapsed_seconds": 5899.6
+    },
+    {
+      "step": 4650,
+      "train_loss": 0.00016862376651261002,
+      "elapsed_seconds": 5926.8
+    },
+    {
+      "step": 4675,
+      "train_loss": 0.00042920990381389856,
+      "elapsed_seconds": 5956.8
+    },
+    {
+      "step": 4700,
+      "train_loss": 0.00017815925821196288,
+      "elapsed_seconds": 5985.4
+    },
+    {
+      "step": 4725,
+      "train_loss": 0.00026458632783032954,
+      "elapsed_seconds": 6016.4
+    },
+    {
+      "step": 4750,
+      "train_loss": 0.001324300654232502,
+      "elapsed_seconds": 6047.0
+    },
+    {
+      "step": 4775,
+      "train_loss": 0.000521122885402292,
+      "elapsed_seconds": 6079.8
+    },
+    {
+      "step": 4800,
+      "train_loss": 0.00022364847245626152,
+      "elapsed_seconds": 6109.2
+    },
+    {
+      "step": 4825,
+      "train_loss": 0.02347790077328682,
+      "elapsed_seconds": 6139.1
+    },
+    {
+      "step": 4850,
+      "train_loss": 0.0006163681391626596,
+      "elapsed_seconds": 6171.7
+    },
+    {
+      "step": 4875,
+      "train_loss": 0.00013803088222630322,
+      "elapsed_seconds": 6203.9
+    },
+    {
+      "step": 4900,
+      "train_loss": 0.0003493321128189564,
+      "elapsed_seconds": 6233.2
+    },
+    {
+      "step": 4925,
+      "train_loss": 0.000244790076976642,
+      "elapsed_seconds": 6264.1
+    },
+    {
+      "step": 4950,
+      "train_loss": 8.586548938183114e-05,
+      "elapsed_seconds": 6294.4
+    },
+    {
+      "step": 4975,
+      "train_loss": 9.722899267217144e-05,
+      "elapsed_seconds": 6325.8
+    },
+    {
+      "step": 5000,
+      "train_loss": 0.0006442357553169131,
+      "elapsed_seconds": 6355.3
+    },
+    {
+      "step": 5025,
+      "train_loss": 0.0002055836230283603,
+      "elapsed_seconds": 6385.5
+    },
+    {
+      "step": 5050,
+      "train_loss": 0.00020183250308036804,
+      "elapsed_seconds": 6415.7
+    },
+    {
+      "step": 5075,
+      "train_loss": 0.0001301253359997645,
+      "elapsed_seconds": 6447.4
+    },
+    {
+      "step": 5100,
+      "train_loss": 1.6873260736465454,
+      "elapsed_seconds": 6476.5
+    },
+    {
+      "step": 5125,
+      "train_loss": 0.00025763383018784225,
+      "elapsed_seconds": 6507.8
+    },
+    {
+      "step": 5150,
+      "train_loss": 8.477253868477419e-05,
+      "elapsed_seconds": 6540.0
+    },
+    {
+      "step": 5175,
+      "train_loss": 8.125645399559289e-05,
+      "elapsed_seconds": 6567.9
+    },
+    {
+      "step": 5200,
+      "train_loss": 0.00019627313304226846,
+      "elapsed_seconds": 6635.2
+    },
+    {
+      "step": 5225,
+      "train_loss": 0.0006570389377884567,
+      "elapsed_seconds": 6666.1
+    },
+    {
+      "step": 5250,
+      "train_loss": 0.0002926916058640927,
+      "elapsed_seconds": 6694.5
+    },
+    {
+      "step": 5275,
+      "train_loss": 0.0001592903136042878,
+      "elapsed_seconds": 6724.9
+    },
+    {
+      "step": 5300,
+      "train_loss": 0.00023910083109512925,
+      "elapsed_seconds": 6756.3
+    },
+    {
+      "step": 5325,
+      "train_loss": 0.00013206693984102458,
+      "elapsed_seconds": 6787.4
+    },
+    {
+      "step": 5350,
+      "train_loss": 0.00020333017164375633,
+      "elapsed_seconds": 6818.6
+    },
+    {
+      "step": 5375,
+      "train_loss": 0.000572162214666605,
+      "elapsed_seconds": 6849.4
+    },
+    {
+      "step": 5400,
+      "train_loss": 0.00013619686069432646,
+      "elapsed_seconds": 6880.8
+    },
+    {
+      "step": 5425,
+      "train_loss": 0.0001444303779862821,
+      "elapsed_seconds": 6913.1
+    },
+    {
+      "step": 5450,
+      "train_loss": 0.0006481273449026048,
+      "elapsed_seconds": 6945.5
+    },
+    {
+      "step": 5475,
+      "train_loss": 0.00011137389810755849,
+      "elapsed_seconds": 6978.2
+    },
+    {
+      "step": 5500,
+      "train_loss": 0.00011220745363971218,
+      "elapsed_seconds": 7007.5
+    },
+    {
+      "step": 5525,
+      "train_loss": 0.0024246391840279102,
+      "elapsed_seconds": 7037.2
+    },
+    {
+      "step": 5550,
+      "train_loss": 0.00014799828932154924,
+      "elapsed_seconds": 7067.1
+    },
+    {
+      "step": 5575,
+      "train_loss": 0.0003721069952007383,
+      "elapsed_seconds": 7098.1
+    },
+    {
+      "step": 5600,
+      "train_loss": 0.004354552831500769,
+      "elapsed_seconds": 7130.7
+    },
+    {
+      "step": 5625,
+      "train_loss": 7.136381464079022e-05,
+      "elapsed_seconds": 7159.8
+    },
+    {
+      "step": 5650,
+      "train_loss": 0.0001921835500979796,
+      "elapsed_seconds": 7189.7
+    },
+    {
+      "step": 5675,
+      "train_loss": 0.00014589923375751823,
+      "elapsed_seconds": 7222.8
+    },
+    {
+      "step": 5700,
+      "train_loss": 8.455520583083853e-05,
+      "elapsed_seconds": 7252.5
+    },
+    {
+      "step": 5725,
+      "train_loss": 0.00022877147421240807,
+      "elapsed_seconds": 7282.2
+    },
+    {
+      "step": 5750,
+      "train_loss": 0.0010248665930703282,
+      "elapsed_seconds": 7311.4
+    },
+    {
+      "step": 5775,
+      "train_loss": 0.0014517814852297306,
+      "elapsed_seconds": 7342.1
+    },
+    {
+      "step": 5800,
+      "train_loss": 0.00010846959048649296,
+      "elapsed_seconds": 7374.4
+    },
+    {
+      "step": 5825,
+      "train_loss": 0.00022486590023618191,
+      "elapsed_seconds": 7402.7
+    },
+    {
+      "step": 5850,
+      "train_loss": 7.919099880382419e-05,
+      "elapsed_seconds": 7434.2
+    },
+    {
+      "step": 5875,
+      "train_loss": 0.22477799654006958,
+      "elapsed_seconds": 7466.5
+    },
+    {
+      "step": 5900,
+      "train_loss": 2.8371379812597297e-05,
+      "elapsed_seconds": 7493.0
+    },
+    {
+      "step": 5925,
+      "train_loss": 6.242892413865775e-05,
+      "elapsed_seconds": 7561.9
+    },
+    {
+      "step": 5950,
+      "train_loss": 5.0304497563047335e-05,
+      "elapsed_seconds": 7594.4
+    },
+    {
+      "step": 5975,
+      "train_loss": 0.00035803564242087305,
+      "elapsed_seconds": 7625.4
+    },
+    {
+      "step": 6000,
+      "train_loss": 9.035246330313385e-05,
+      "elapsed_seconds": 7656.9
+    },
+    {
+      "step": 6025,
+      "train_loss": 5.7813067542156205e-05,
+      "elapsed_seconds": 7687.0
+    },
+    {
+      "step": 6050,
+      "train_loss": 4.390735921333544e-05,
+      "elapsed_seconds": 7718.3
+    },
+    {
+      "step": 6075,
+      "train_loss": 0.0001329844817519188,
+      "elapsed_seconds": 7749.7
+    },
+    {
+      "step": 6100,
+      "train_loss": 0.00036708847619593143,
+      "elapsed_seconds": 7781.1
+    },
+    {
+      "step": 6125,
+      "train_loss": 3.88413573091384e-05,
+      "elapsed_seconds": 7813.3
+    },
+    {
+      "step": 6150,
+      "train_loss": 0.007301537785679102,
+      "elapsed_seconds": 7840.8
+    },
+    {
+      "step": 6175,
+      "train_loss": 0.00017640778969507664,
+      "elapsed_seconds": 7871.0
+    },
+    {
+      "step": 6200,
+      "train_loss": 0.0002739854680839926,
+      "elapsed_seconds": 7902.8
+    },
+    {
+      "step": 6225,
+      "train_loss": 0.00017625415057409555,
+      "elapsed_seconds": 7936.4
+    },
+    {
+      "step": 6250,
+      "train_loss": 0.000218417146243155,
+      "elapsed_seconds": 7967.7
+    },
+    {
+      "step": 6275,
+      "train_loss": 2.5828121579252183e-05,
+      "elapsed_seconds": 7996.4
+    },
+    {
+      "step": 6300,
+      "train_loss": 0.0006341029074974358,
+      "elapsed_seconds": 8026.1
+    },
+    {
+      "step": 6325,
+      "train_loss": 0.00011096758680650964,
+      "elapsed_seconds": 8059.1
+    },
+    {
+      "step": 6350,
+      "train_loss": 0.0002597671118564904,
+      "elapsed_seconds": 8090.8
+    },
+    {
+      "step": 6375,
+      "train_loss": 0.0002548799675423652,
+      "elapsed_seconds": 8123.8
+    },
+    {
+      "step": 6400,
+      "train_loss": 0.0003679333021864295,
+      "elapsed_seconds": 8152.7
+    },
+    {
+      "step": 6425,
+      "train_loss": 0.2851344645023346,
+      "elapsed_seconds": 8185.2
+    },
+    {
+      "step": 6450,
+      "train_loss": 0.0022606216371059418,
+      "elapsed_seconds": 8217.2
+    },
+    {
+      "step": 6475,
+      "train_loss": 6.30170907243155e-05,
+      "elapsed_seconds": 8247.2
+    },
+    {
+      "step": 6500,
+      "train_loss": 0.00015792030899319798,
+      "elapsed_seconds": 8279.9
+    },
+    {
+      "step": 6525,
+      "train_loss": 0.006342305801808834,
+      "elapsed_seconds": 8310.5
+    },
+    {
+      "step": 6550,
+      "train_loss": 0.00016814951959531754,
+      "elapsed_seconds": 8341.8
+    },
+    {
+      "step": 6575,
+      "train_loss": 0.00011374928726581857,
+      "elapsed_seconds": 8370.2
+    },
+    {
+      "step": 6600,
+      "train_loss": 0.03406073525547981,
+      "elapsed_seconds": 8402.0
+    },
+    {
+      "step": 6625,
+      "train_loss": 0.00016095169121399522,
+      "elapsed_seconds": 8432.0
+    },
+    {
+      "step": 6650,
+      "train_loss": 0.0001321113231824711,
+      "elapsed_seconds": 8501.4
+    },
+    {
+      "step": 6675,
+      "train_loss": 0.00014057313092052937,
+      "elapsed_seconds": 8533.4
+    },
+    {
+      "step": 6700,
+      "train_loss": 0.00014816076145507395,
+      "elapsed_seconds": 8565.5
+    },
+    {
+      "step": 6725,
+      "train_loss": 0.00017831283912528306,
+      "elapsed_seconds": 8596.4
+    },
+    {
+      "step": 6750,
+      "train_loss": 0.00027481027063913643,
+      "elapsed_seconds": 8628.8
+    },
+    {
+      "step": 6775,
+      "train_loss": 7.69120451877825e-05,
+      "elapsed_seconds": 8659.6
+    },
+    {
+      "step": 6800,
+      "train_loss": 0.00023559310648124665,
+      "elapsed_seconds": 8689.8
+    },
+    {
+      "step": 6825,
+      "train_loss": 0.0005921782576479018,
+      "elapsed_seconds": 8720.1
+    },
+    {
+      "step": 6850,
+      "train_loss": 0.012493686750531197,
+      "elapsed_seconds": 8749.3
+    },
+    {
+      "step": 6875,
+      "train_loss": 0.00021117297001183033,
+      "elapsed_seconds": 8780.9
+    },
+    {
+      "step": 6900,
+      "train_loss": 0.00017154424858745188,
+      "elapsed_seconds": 8812.4
+    },
+    {
+      "step": 6925,
+      "train_loss": 0.0009048133506439626,
+      "elapsed_seconds": 8843.2
+    },
+    {
+      "step": 6950,
+      "train_loss": 3.655649197753519e-05,
+      "elapsed_seconds": 8875.9
+    },
+    {
+      "step": 6975,
+      "train_loss": 0.05635092407464981,
+      "elapsed_seconds": 8909.3
+    },
+    {
+      "step": 7000,
+      "train_loss": 0.00046913031837902963,
+      "elapsed_seconds": 8939.9
+    },
+    {
+      "step": 7025,
+      "train_loss": 0.000928153283894062,
+      "elapsed_seconds": 8973.5
+    },
+    {
+      "step": 7050,
+      "train_loss": 0.0001450995623599738,
+      "elapsed_seconds": 9004.1
+    },
+    {
+      "step": 7075,
+      "train_loss": 6.447058694902807e-05,
+      "elapsed_seconds": 9037.5
+    },
+    {
+      "step": 7100,
+      "train_loss": 0.1965302973985672,
+      "elapsed_seconds": 9067.5
+    },
+    {
+      "step": 7125,
+      "train_loss": 0.00013805953494738787,
+      "elapsed_seconds": 9100.0
+    },
+    {
+      "step": 7150,
+      "train_loss": 0.0018658878980204463,
+      "elapsed_seconds": 9130.6
+    },
+    {
+      "step": 7175,
+      "train_loss": 0.0002450212195981294,
+      "elapsed_seconds": 9162.7
+    },
+    {
+      "step": 7200,
+      "train_loss": 4.776156856678426e-05,
+      "elapsed_seconds": 9192.9
+    },
+    {
+      "step": 7225,
+      "train_loss": 0.0002173339162254706,
+      "elapsed_seconds": 9226.4
+    },
+    {
+      "step": 7250,
+      "train_loss": 0.0002573362726252526,
+      "elapsed_seconds": 9254.8
+    },
+    {
+      "step": 7275,
+      "train_loss": 0.00018987315706908703,
+      "elapsed_seconds": 9285.7
+    },
+    {
+      "step": 7300,
+      "train_loss": 0.0016067599644884467,
+      "elapsed_seconds": 9317.8
+    },
+    {
+      "step": 7325,
+      "train_loss": 0.00015377993986476213,
+      "elapsed_seconds": 9349.3
+    },
+    {
+      "step": 7350,
+      "train_loss": 0.00030724162934347987,
+      "elapsed_seconds": 9381.3
+    },
+    {
+      "step": 7375,
+      "train_loss": 0.00021165287762414664,
+      "elapsed_seconds": 9452.9
+    },
+    {
+      "step": 7400,
+      "train_loss": 0.00017982011195272207,
+      "elapsed_seconds": 9484.3
+    },
+    {
+      "step": 7425,
+      "train_loss": 0.00041623268043622375,
+      "elapsed_seconds": 9514.6
+    },
+    {
+      "step": 7450,
+      "train_loss": 0.00020390631107147783,
+      "elapsed_seconds": 9545.7
+    },
+    {
+      "step": 7475,
+      "train_loss": 1.9550132492440753e-05,
+      "elapsed_seconds": 9576.8
+    },
+    {
+      "step": 7500,
+      "train_loss": 0.00017232127720490098,
+      "elapsed_seconds": 9607.7
+    },
+    {
+      "step": 7525,
+      "train_loss": 0.000135933980345726,
+      "elapsed_seconds": 9638.7
+    },
+    {
+      "step": 7550,
+      "train_loss": 0.00017454261251259595,
+      "elapsed_seconds": 9670.3
+    },
+    {
+      "step": 7575,
+      "train_loss": 0.0002630042436067015,
+      "elapsed_seconds": 9703.8
+    },
+    {
+      "step": 7600,
+      "train_loss": 5.546949978452176e-05,
+      "elapsed_seconds": 9732.4
+    },
+    {
+      "step": 7625,
+      "train_loss": 0.00017055534408427775,
+      "elapsed_seconds": 9763.8
+    },
+    {
+      "step": 7650,
+      "train_loss": 0.0002129861240973696,
+      "elapsed_seconds": 9794.1
+    },
+    {
+      "step": 7675,
+      "train_loss": 0.00013274441880639642,
+      "elapsed_seconds": 9825.9
+    },
+    {
+      "step": 7700,
+      "train_loss": 0.00018173510034102947,
+      "elapsed_seconds": 9856.2
+    },
+    {
+      "step": 7725,
+      "train_loss": 0.0005195437697693706,
+      "elapsed_seconds": 9886.6
+    },
+    {
+      "step": 7750,
+      "train_loss": 0.00010813488916028291,
+      "elapsed_seconds": 9918.7
+    },
+    {
+      "step": 7775,
+      "train_loss": 0.0001074956962838769,
+      "elapsed_seconds": 9950.9
+    },
+    {
+      "step": 7800,
+      "train_loss": 0.0005795517936348915,
+      "elapsed_seconds": 9982.4
+    },
+    {
+      "step": 7825,
+      "train_loss": 0.00010956183541566133,
+      "elapsed_seconds": 10014.9
+    },
+    {
+      "step": 7850,
+      "train_loss": 0.3890576660633087,
+      "elapsed_seconds": 10047.4
+    },
+    {
+      "step": 7875,
+      "train_loss": 0.000229491270147264,
+      "elapsed_seconds": 10079.5
+    },
+    {
+      "step": 7900,
+      "train_loss": 3.303720222902484e-05,
+      "elapsed_seconds": 10110.9
+    },
+    {
+      "step": 7925,
+      "train_loss": 0.12442812323570251,
+      "elapsed_seconds": 10139.9
+    },
+    {
+      "step": 7950,
+      "train_loss": 0.0011899794917553663,
+      "elapsed_seconds": 10170.2
+    },
+    {
+      "step": 7975,
+      "train_loss": 5.336413232726045e-05,
+      "elapsed_seconds": 10199.3
+    },
+    {
+      "step": 8000,
+      "train_loss": 0.0002302072534803301,
+      "elapsed_seconds": 10228.1
+    },
+    {
+      "step": 8025,
+      "train_loss": 6.947491056052968e-05,
+      "elapsed_seconds": 10256.4
+    },
+    {
+      "step": 8050,
+      "train_loss": 2.7417709134169854e-05,
+      "elapsed_seconds": 10285.6
+    },
+    {
+      "step": 8075,
+      "train_loss": 0.0004178594390396029,
+      "elapsed_seconds": 10314.3
+    },
+    {
+      "step": 8100,
+      "train_loss": 0.011343349702656269,
+      "elapsed_seconds": 10385.8
+    },
+    {
+      "step": 8125,
+      "train_loss": 0.0004379319725558162,
+      "elapsed_seconds": 10417.0
+    },
+    {
+      "step": 8150,
+      "train_loss": 5.105930540594272e-05,
+      "elapsed_seconds": 10449.4
+    },
+    {
+      "step": 8175,
+      "train_loss": 0.0001618156529730186,
+      "elapsed_seconds": 10482.4
+    },
+    {
+      "step": 8200,
+      "train_loss": 2.1377969460445456e-05,
+      "elapsed_seconds": 10513.9
+    },
+    {
+      "step": 8225,
+      "train_loss": 0.00018167290545534343,
+      "elapsed_seconds": 10545.1
+    },
+    {
+      "step": 8250,
+      "train_loss": 0.2032226175069809,
+      "elapsed_seconds": 10575.5
+    },
+    {
+      "step": 8275,
+      "train_loss": 0.00012956834689248353,
+      "elapsed_seconds": 10604.6
+    },
+    {
+      "step": 8300,
+      "train_loss": 4.684757368522696e-05,
+      "elapsed_seconds": 10636.7
+    },
+    {
+      "step": 8325,
+      "train_loss": 0.00019407691434025764,
+      "elapsed_seconds": 10669.1
+    },
+    {
+      "step": 8350,
+      "train_loss": 0.00039467905298806727,
+      "elapsed_seconds": 10701.9
+    },
+    {
+      "step": 8375,
+      "train_loss": 0.00010881661728490144,
+      "elapsed_seconds": 10731.0
+    },
+    {
+      "step": 8400,
+      "train_loss": 0.0001286575716221705,
+      "elapsed_seconds": 10763.9
+    },
+    {
+      "step": 8425,
+      "train_loss": 0.002072214614599943,
+      "elapsed_seconds": 10797.0
+    },
+    {
+      "step": 8450,
+      "train_loss": 7.318847201531753e-05,
+      "elapsed_seconds": 10826.9
+    },
+    {
+      "step": 8475,
+      "train_loss": 0.0002744556113611907,
+      "elapsed_seconds": 10858.2
+    },
+    {
+      "step": 8500,
+      "train_loss": 0.0003109312092419714,
+      "elapsed_seconds": 10889.3
+    },
+    {
+      "step": 8525,
+      "train_loss": 0.00017521508561912924,
+      "elapsed_seconds": 10920.0
+    },
+    {
+      "step": 8550,
+      "train_loss": 0.00019773161329794675,
+      "elapsed_seconds": 10950.3
+    },
+    {
+      "step": 8575,
+      "train_loss": 0.00029573868960142136,
+      "elapsed_seconds": 10983.8
+    },
+    {
+      "step": 8600,
+      "train_loss": 0.00038230675272643566,
+      "elapsed_seconds": 11017.7
+    },
+    {
+      "step": 8625,
+      "train_loss": 0.00015845159941818565,
+      "elapsed_seconds": 11048.3
+    },
+    {
+      "step": 8650,
+      "train_loss": 0.00023953536583576351,
+      "elapsed_seconds": 11079.9
+    },
+    {
+      "step": 8675,
+      "train_loss": 2.0404273527674377e-05,
+      "elapsed_seconds": 11110.7
+    },
+    {
+      "step": 8700,
+      "train_loss": 0.0001347359939245507,
+      "elapsed_seconds": 11142.3
+    },
+    {
+      "step": 8725,
+      "train_loss": 5.3680341807194054e-05,
+      "elapsed_seconds": 11172.8
+    },
+    {
+      "step": 8750,
+      "train_loss": 0.0001413969584973529,
+      "elapsed_seconds": 11203.2
+    },
+    {
+      "step": 8775,
+      "train_loss": 6.470186781371012e-05,
+      "elapsed_seconds": 11234.1
+    },
+    {
+      "step": 8800,
+      "train_loss": 0.00032250405638478696,
+      "elapsed_seconds": 11263.8
+    },
+    {
+      "step": 8825,
+      "train_loss": 0.0006843017181381583,
+      "elapsed_seconds": 11336.1
+    },
+    {
+      "step": 8850,
+      "train_loss": 3.058451693505049e-05,
+      "elapsed_seconds": 11368.4
+    },
+    {
+      "step": 8875,
+      "train_loss": 0.00010985685366904363,
+      "elapsed_seconds": 11402.7
+    },
+    {
+      "step": 8900,
+      "train_loss": 0.025232234969735146,
+      "elapsed_seconds": 11431.9
+    },
+    {
+      "step": 8925,
+      "train_loss": 6.68377906549722e-05,
+      "elapsed_seconds": 11463.9
+    },
+    {
+      "step": 8950,
+      "train_loss": 5.767626134911552e-05,
+      "elapsed_seconds": 11498.4
+    },
+    {
+      "step": 8975,
+      "train_loss": 0.0028268892783671618,
+      "elapsed_seconds": 11529.6
+    },
+    {
+      "step": 9000,
+      "train_loss": 7.812258263584226e-05,
+      "elapsed_seconds": 11559.2
+    },
+    {
+      "step": 9025,
+      "train_loss": 0.00011127486504847184,
+      "elapsed_seconds": 11591.8
+    },
+    {
+      "step": 9050,
+      "train_loss": 0.00026643156888894737,
+      "elapsed_seconds": 11622.3
+    },
+    {
+      "step": 9075,
+      "train_loss": 0.4311842918395996,
+      "elapsed_seconds": 11655.1
+    },
+    {
+      "step": 9100,
+      "train_loss": 9.386774036101997e-05,
+      "elapsed_seconds": 11688.2
+    },
+    {
+      "step": 9125,
+      "train_loss": 0.00033469326444901526,
+      "elapsed_seconds": 11720.2
+    },
+    {
+      "step": 9150,
+      "train_loss": 7.275411189766601e-05,
+      "elapsed_seconds": 11751.0
+    },
+    {
+      "step": 9175,
+      "train_loss": 0.0008055348880589008,
+      "elapsed_seconds": 11782.7
+    },
+    {
+      "step": 9200,
+      "train_loss": 0.00016704142035450786,
+      "elapsed_seconds": 11812.6
+    },
+    {
+      "step": 9225,
+      "train_loss": 1.8278549759997986e-05,
+      "elapsed_seconds": 11842.4
+    },
+    {
+      "step": 9250,
+      "train_loss": 5.689954195986502e-05,
+      "elapsed_seconds": 11875.0
+    },
+    {
+      "step": 9275,
+      "train_loss": 5.6700038840062916e-05,
+      "elapsed_seconds": 11905.5
+    },
+    {
+      "step": 9300,
+      "train_loss": 0.00028555994504131377,
+      "elapsed_seconds": 11936.6
+    },
+    {
+      "step": 9325,
+      "train_loss": 0.0003661255759652704,
+      "elapsed_seconds": 11969.1
+    },
+    {
+      "step": 9350,
+      "train_loss": 3.357639434398152e-05,
+      "elapsed_seconds": 12000.2
+    },
+    {
+      "step": 9375,
+      "train_loss": 3.8145153666846454e-05,
+      "elapsed_seconds": 12032.5
+    },
+    {
+      "step": 9400,
+      "train_loss": 0.00040735071524977684,
+      "elapsed_seconds": 12065.0
+    },
+    {
+      "step": 9425,
+      "train_loss": 0.00043731697951443493,
+      "elapsed_seconds": 12094.4
+    },
+    {
+      "step": 9450,
+      "train_loss": 0.00017251388635486364,
+      "elapsed_seconds": 12126.5
+    },
+    {
+      "step": 9475,
+      "train_loss": 6.758693780284375e-05,
+      "elapsed_seconds": 12158.9
+    },
+    {
+      "step": 9500,
+      "train_loss": 0.0002595606492832303,
+      "elapsed_seconds": 12190.4
+    },
+    {
+      "step": 9525,
+      "train_loss": 0.00012337368389125913,
+      "elapsed_seconds": 12259.3
+    },
+    {
+      "step": 9550,
+      "train_loss": 0.036812420934438705,
+      "elapsed_seconds": 12291.7
+    },
+    {
+      "step": 9575,
+      "train_loss": 0.0003725710848812014,
+      "elapsed_seconds": 12322.5
+    },
+    {
+      "step": 9600,
+      "train_loss": 8.924224675865844e-05,
+      "elapsed_seconds": 12356.1
+    },
+    {
+      "step": 9625,
+      "train_loss": 0.07156991213560104,
+      "elapsed_seconds": 12387.7
+    },
+    {
+      "step": 9650,
+      "train_loss": 0.019661415368318558,
+      "elapsed_seconds": 12420.0
+    },
+    {
+      "step": 9675,
+      "train_loss": 0.0003352695202920586,
+      "elapsed_seconds": 12450.9
+    },
+    {
+      "step": 9700,
+      "train_loss": 4.8436340875923634e-05,
+      "elapsed_seconds": 12481.0
+    },
+    {
+      "step": 9725,
+      "train_loss": 0.00028311979258432984,
+      "elapsed_seconds": 12514.7
+    },
+    {
+      "step": 9750,
+      "train_loss": 0.00010597055370453745,
+      "elapsed_seconds": 12546.0
+    },
+    {
+      "step": 9775,
+      "train_loss": 0.00016540044452995062,
+      "elapsed_seconds": 12578.1
+    },
+    {
+      "step": 9800,
+      "train_loss": 0.00022942913346923888,
+      "elapsed_seconds": 12609.8
+    },
+    {
+      "step": 9825,
+      "train_loss": 0.17404715716838837,
+      "elapsed_seconds": 12641.4
+    },
+    {
+      "step": 9850,
+      "train_loss": 0.0001943606766872108,
+      "elapsed_seconds": 12670.1
+    },
+    {
+      "step": 9875,
+      "train_loss": 0.00016523095837328583,
+      "elapsed_seconds": 12699.5
+    },
+    {
+      "step": 9900,
+      "train_loss": 6.464798207161948e-05,
+      "elapsed_seconds": 12729.7
+    },
+    {
+      "step": 9925,
+      "train_loss": 0.0001797277363948524,
+      "elapsed_seconds": 12762.5
+    },
+    {
+      "step": 9950,
+      "train_loss": 0.0001348489458905533,
+      "elapsed_seconds": 12793.9
+    },
+    {
+      "step": 9975,
+      "train_loss": 0.00011347323743393645,
+      "elapsed_seconds": 12826.6
+    },
+    {
+      "step": 10000,
+      "train_loss": 6.16452016402036e-05,
+      "elapsed_seconds": 12856.9
+    },
+    {
+      "step": 10025,
+      "train_loss": 7.24734491086565e-05,
+      "elapsed_seconds": 12891.5
+    },
+    {
+      "step": 10050,
+      "train_loss": 0.0001414446742273867,
+      "elapsed_seconds": 12921.0
+    },
+    {
+      "step": 10075,
+      "train_loss": 0.0002736748429015279,
+      "elapsed_seconds": 12952.6
+    },
+    {
+      "step": 10100,
+      "train_loss": 0.00031452401890419424,
+      "elapsed_seconds": 12984.8
+    },
+    {
+      "step": 10125,
+      "train_loss": 8.898461237549782e-05,
+      "elapsed_seconds": 13015.7
+    },
+    {
+      "step": 10150,
+      "train_loss": 0.00016574887558817863,
+      "elapsed_seconds": 13047.8
+    },
+    {
+      "step": 10175,
+      "train_loss": 0.00406967056915164,
+      "elapsed_seconds": 13075.8
+    },
+    {
+      "step": 10200,
+      "train_loss": 0.00014148502668831497,
+      "elapsed_seconds": 13106.5
+    },
+    {
+      "step": 10225,
+      "train_loss": 0.0001971481688087806,
+      "elapsed_seconds": 13138.4
+    },
+    {
+      "step": 10250,
+      "train_loss": 2.5728744731168263e-05,
+      "elapsed_seconds": 13206.1
+    },
+    {
+      "step": 10275,
+      "train_loss": 0.00021604725043289363,
+      "elapsed_seconds": 13232.9
+    },
+    {
+      "step": 10300,
+      "train_loss": 0.0001363392802886665,
+      "elapsed_seconds": 13262.6
+    },
+    {
+      "step": 10325,
+      "train_loss": 4.100674414075911e-05,
+      "elapsed_seconds": 13292.3
+    },
+    {
+      "step": 10350,
+      "train_loss": 0.24880121648311615,
+      "elapsed_seconds": 13322.5
+    },
+    {
+      "step": 10375,
+      "train_loss": 0.0005314312293194234,
+      "elapsed_seconds": 13352.3
+    },
+    {
+      "step": 10400,
+      "train_loss": 0.000573506229557097,
+      "elapsed_seconds": 13381.5
+    },
+    {
+      "step": 10425,
+      "train_loss": 0.00035547403967939317,
+      "elapsed_seconds": 13412.3
+    },
+    {
+      "step": 10450,
+      "train_loss": 0.39114511013031006,
+      "elapsed_seconds": 13441.4
+    },
+    {
+      "step": 10475,
+      "train_loss": 0.0010942991357296705,
+      "elapsed_seconds": 13471.2
+    },
+    {
+      "step": 10500,
+      "train_loss": 0.003947471734136343,
+      "elapsed_seconds": 13498.8
+    },
+    {
+      "step": 10525,
+      "train_loss": 0.00035372457932680845,
+      "elapsed_seconds": 13529.4
+    },
+    {
+      "step": 10550,
+      "train_loss": 0.00012019009591313079,
+      "elapsed_seconds": 13556.9
+    },
+    {
+      "step": 10575,
+      "train_loss": 1.128219485282898,
+      "elapsed_seconds": 13589.3
+    },
+    {
+      "step": 10600,
+      "train_loss": 0.0001345944474451244,
+      "elapsed_seconds": 13617.4
+    },
+    {
+      "step": 10625,
+      "train_loss": 0.005357390735298395,
+      "elapsed_seconds": 13646.7
+    },
+    {
+      "step": 10650,
+      "train_loss": 8.45978720462881e-05,
+      "elapsed_seconds": 13678.0
+    },
+    {
+      "step": 10675,
+      "train_loss": 0.00015160530165303499,
+      "elapsed_seconds": 13708.3
+    },
+    {
+      "step": 10700,
+      "train_loss": 0.0004117320931982249,
+      "elapsed_seconds": 13737.6
+    },
+    {
+      "step": 10725,
+      "train_loss": 0.00013513177691493183,
+      "elapsed_seconds": 13767.6
+    },
+    {
+      "step": 10750,
+      "train_loss": 0.03876262530684471,
+      "elapsed_seconds": 13797.1
+    },
+    {
+      "step": 10775,
+      "train_loss": 0.004233714658766985,
+      "elapsed_seconds": 13827.8
+    },
+    {
+      "step": 10800,
+      "train_loss": 0.0006609963602386415,
+      "elapsed_seconds": 13854.9
+    },
+    {
+      "step": 10825,
+      "train_loss": 0.00018111724057234824,
+      "elapsed_seconds": 13885.2
+    },
+    {
+      "step": 10850,
+      "train_loss": 0.0001977162464754656,
+      "elapsed_seconds": 13914.5
+    },
+    {
+      "step": 10875,
+      "train_loss": 0.00017026328714564443,
+      "elapsed_seconds": 13943.7
+    },
+    {
+      "step": 10900,
+      "train_loss": 0.0005550427013076842,
+      "elapsed_seconds": 13976.8
+    },
+    {
+      "step": 10925,
+      "train_loss": 0.0004095662443432957,
+      "elapsed_seconds": 14008.6
+    },
+    {
+      "step": 10950,
+      "train_loss": 0.000158135881065391,
+      "elapsed_seconds": 14037.8
+    },
+    {
+      "step": 10975,
+      "train_loss": 0.004074970260262489,
+      "elapsed_seconds": 14067.8
+    },
+    {
+      "step": 11000,
+      "train_loss": 5.47944764548447e-05,
+      "elapsed_seconds": 14133.9
+    },
+    {
+      "step": 11025,
+      "train_loss": 0.00017354435112792999,
+      "elapsed_seconds": 14166.2
+    },
+    {
+      "step": 11050,
+      "train_loss": 0.0031487084925174713,
+      "elapsed_seconds": 14199.0
+    },
+    {
+      "step": 11075,
+      "train_loss": 0.00020358241454232484,
+      "elapsed_seconds": 14229.5
+    },
+    {
+      "step": 11100,
+      "train_loss": 4.507896301220171e-05,
+      "elapsed_seconds": 14260.9
+    },
+    {
+      "step": 11125,
+      "train_loss": 0.00015915153198875487,
+      "elapsed_seconds": 14291.2
+    },
+    {
+      "step": 11150,
+      "train_loss": 2.1397720047389157e-05,
+      "elapsed_seconds": 14321.9
+    },
+    {
+      "step": 11175,
+      "train_loss": 0.00011940576951019466,
+      "elapsed_seconds": 14349.6
+    },
+    {
+      "step": 11200,
+      "train_loss": 0.00011451311729615554,
+      "elapsed_seconds": 14377.8
+    },
+    {
+      "step": 11225,
+      "train_loss": 0.00039633942651562393,
+      "elapsed_seconds": 14408.5
+    },
+    {
+      "step": 11250,
+      "train_loss": 0.00011590359645197168,
+      "elapsed_seconds": 14437.3
+    },
+    {
+      "step": 11275,
+      "train_loss": 0.0004440131888259202,
+      "elapsed_seconds": 14467.6
+    },
+    {
+      "step": 11300,
+      "train_loss": 0.0009199543856084347,
+      "elapsed_seconds": 14497.7
+    },
+    {
+      "step": 11325,
+      "train_loss": 0.0007424575160257518,
+      "elapsed_seconds": 14528.8
+    },
+    {
+      "step": 11350,
+      "train_loss": 0.0002488550962880254,
+      "elapsed_seconds": 14558.4
+    },
+    {
+      "step": 11375,
+      "train_loss": 0.00014545694284606725,
+      "elapsed_seconds": 14587.9
+    },
+    {
+      "step": 11400,
+      "train_loss": 2.8033435228280723e-05,
+      "elapsed_seconds": 14617.0
+    },
+    {
+      "step": 11425,
+      "train_loss": 0.000330289825797081,
+      "elapsed_seconds": 14648.1
+    },
+    {
+      "step": 11450,
+      "train_loss": 0.00014344822557177395,
+      "elapsed_seconds": 14679.6
+    },
+    {
+      "step": 11475,
+      "train_loss": 0.0002325458190171048,
+      "elapsed_seconds": 14710.0
+    },
+    {
+      "step": 11500,
+      "train_loss": 4.553690814645961e-05,
+      "elapsed_seconds": 14739.1
+    },
+    {
+      "step": 11525,
+      "train_loss": 0.0002923203574027866,
+      "elapsed_seconds": 14768.0
+    },
+    {
+      "step": 11550,
+      "train_loss": 0.001580536481924355,
+      "elapsed_seconds": 14798.2
+    },
+    {
+      "step": 11575,
+      "train_loss": 0.0700513944029808,
+      "elapsed_seconds": 14830.4
+    },
+    {
+      "step": 11600,
+      "train_loss": 7.841226033633575e-05,
+      "elapsed_seconds": 14859.2
+    },
+    {
+      "step": 11625,
+      "train_loss": 0.00012671906733885407,
+      "elapsed_seconds": 14889.8
+    },
+    {
+      "step": 11650,
+      "train_loss": 0.00019512337166815996,
+      "elapsed_seconds": 14920.8
+    },
+    {
+      "step": 11675,
+      "train_loss": 2.5953062504413538e-05,
+      "elapsed_seconds": 14949.9
+    },
+    {
+      "step": 11700,
+      "train_loss": 0.00014463861589320004,
+      "elapsed_seconds": 14978.2
+    },
+    {
+      "step": 11725,
+      "train_loss": 0.00012547081860248,
+      "elapsed_seconds": 15007.5
+    },
+    {
+      "step": 11750,
+      "train_loss": 0.0009901542216539383,
+      "elapsed_seconds": 15075.2
+    },
+    {
+      "step": 11775,
+      "train_loss": 0.00014621812442783266,
+      "elapsed_seconds": 15104.9
+    },
+    {
+      "step": 11800,
+      "train_loss": 0.0793498083949089,
+      "elapsed_seconds": 15135.3
+    },
+    {
+      "step": 11825,
+      "train_loss": 0.00025950357667170465,
+      "elapsed_seconds": 15165.6
+    },
+    {
+      "step": 11850,
+      "train_loss": 0.0004056347534060478,
+      "elapsed_seconds": 15195.4
+    },
+    {
+      "step": 11875,
+      "train_loss": 0.0002325375098735094,
+      "elapsed_seconds": 15225.7
+    },
+    {
+      "step": 11900,
+      "train_loss": 0.0001929732388816774,
+      "elapsed_seconds": 15255.6
+    },
+    {
+      "step": 11925,
+      "train_loss": 8.677825098857284e-05,
+      "elapsed_seconds": 15287.0
+    },
+    {
+      "step": 11950,
+      "train_loss": 8.14908926258795e-05,
+      "elapsed_seconds": 15319.7
+    },
+    {
+      "step": 11975,
+      "train_loss": 0.00028770187054760754,
+      "elapsed_seconds": 15348.4
+    },
+    {
+      "step": 12000,
+      "train_loss": 0.00019813641847576946,
+      "elapsed_seconds": 15380.8
+    },
+    {
+      "step": 12025,
+      "train_loss": 7.521705992985517e-05,
+      "elapsed_seconds": 15412.1
+    },
+    {
+      "step": 12050,
+      "train_loss": 0.00021572811238002032,
+      "elapsed_seconds": 15444.7
+    },
+    {
+      "step": 12075,
+      "train_loss": 0.00016127467097248882,
+      "elapsed_seconds": 15473.8
+    },
+    {
+      "step": 12100,
+      "train_loss": 0.00019499906920827925,
+      "elapsed_seconds": 15504.1
+    },
+    {
+      "step": 12125,
+      "train_loss": 8.876178617356345e-05,
+      "elapsed_seconds": 15532.8
+    },
+    {
+      "step": 12150,
+      "train_loss": 0.0008122668950818479,
+      "elapsed_seconds": 15563.6
+    },
+    {
+      "step": 12175,
+      "train_loss": 0.0010831741383299232,
+      "elapsed_seconds": 15593.4
+    },
+    {
+      "step": 12200,
+      "train_loss": 0.00022164674010127783,
+      "elapsed_seconds": 15624.7
+    },
+    {
+      "step": 12225,
+      "train_loss": 0.00016845186473801732,
+      "elapsed_seconds": 15653.9
+    },
+    {
+      "step": 12250,
+      "train_loss": 0.00011345498933224007,
+      "elapsed_seconds": 15686.5
+    },
+    {
+      "step": 12275,
+      "train_loss": 0.023315155878663063,
+      "elapsed_seconds": 15716.9
+    },
+    {
+      "step": 12300,
+      "train_loss": 0.00012150247493991628,
+      "elapsed_seconds": 15745.7
+    },
+    {
+      "step": 12325,
+      "train_loss": 0.0005095468950457871,
+      "elapsed_seconds": 15774.2
+    },
+    {
+      "step": 12350,
+      "train_loss": 0.00017930394096765667,
+      "elapsed_seconds": 15803.9
+    },
+    {
+      "step": 12375,
+      "train_loss": 4.9588543333811685e-05,
+      "elapsed_seconds": 15834.0
+    },
+    {
+      "step": 12400,
+      "train_loss": 0.00042987227789126337,
+      "elapsed_seconds": 15861.9
+    },
+    {
+      "step": 12425,
+      "train_loss": 0.00031378789572045207,
+      "elapsed_seconds": 15893.0
+    },
+    {
+      "step": 12450,
+      "train_loss": 0.0002466455043759197,
+      "elapsed_seconds": 15924.7
+    },
+    {
+      "step": 12475,
+      "train_loss": 5.483212225954048e-05,
+      "elapsed_seconds": 15954.7
+    },
+    {
+      "step": 12500,
+      "train_loss": 0.00016624313138891011,
+      "elapsed_seconds": 16020.5
+    },
+    {
+      "step": 12525,
+      "train_loss": 0.00010765048500616103,
+      "elapsed_seconds": 16050.1
+    },
+    {
+      "step": 12550,
+      "train_loss": 0.0044001624919474125,
+      "elapsed_seconds": 16082.4
+    },
+    {
+      "step": 12575,
+      "train_loss": 0.00025001997710205615,
+      "elapsed_seconds": 16112.8
+    },
+    {
+      "step": 12600,
+      "train_loss": 0.0001428892428521067,
+      "elapsed_seconds": 16144.2
+    },
+    {
+      "step": 12625,
+      "train_loss": 2.3603119188919663e-05,
+      "elapsed_seconds": 16174.5
+    },
+    {
+      "step": 12650,
+      "train_loss": 0.00028864588239230216,
+      "elapsed_seconds": 16203.0
+    },
+    {
+      "step": 12675,
+      "train_loss": 0.0007337829447351396,
+      "elapsed_seconds": 16234.2
+    },
+    {
+      "step": 12700,
+      "train_loss": 7.491649012081325e-05,
+      "elapsed_seconds": 16262.4
+    },
+    {
+      "step": 12725,
+      "train_loss": 0.0004529781872406602,
+      "elapsed_seconds": 16291.7
+    },
+    {
+      "step": 12750,
+      "train_loss": 0.0010445758234709501,
+      "elapsed_seconds": 16320.9
+    },
+    {
+      "step": 12775,
+      "train_loss": 0.00013230131298769265,
+      "elapsed_seconds": 16350.1
+    },
+    {
+      "step": 12800,
+      "train_loss": 0.00020517972006928176,
+      "elapsed_seconds": 16378.1
+    },
+    {
+      "step": 12825,
+      "train_loss": 6.124977517174557e-05,
+      "elapsed_seconds": 16408.7
+    },
+    {
+      "step": 12850,
+      "train_loss": 0.0001968287251656875,
+      "elapsed_seconds": 16440.8
+    },
+    {
+      "step": 12875,
+      "train_loss": 0.0004448862746357918,
+      "elapsed_seconds": 16471.3
+    },
+    {
+      "step": 12900,
+      "train_loss": 8.272441482404247e-05,
+      "elapsed_seconds": 16500.6
+    },
+    {
+      "step": 12925,
+      "train_loss": 0.0054472507908940315,
+      "elapsed_seconds": 16531.2
+    },
+    {
+      "step": 12950,
+      "train_loss": 7.298350101336837e-05,
+      "elapsed_seconds": 16561.5
+    },
+    {
+      "step": 12975,
+      "train_loss": 2.2371321392711252e-05,
+      "elapsed_seconds": 16593.7
+    },
+    {
+      "step": 13000,
+      "train_loss": 5.2291201427578926e-05,
+      "elapsed_seconds": 16625.4
+    },
+    {
+      "step": 13025,
+      "train_loss": 0.00011537770478753373,
+      "elapsed_seconds": 16654.1
+    },
+    {
+      "step": 13050,
+      "train_loss": 0.0010214189533144236,
+      "elapsed_seconds": 16683.3
+    },
+    {
+      "step": 13075,
+      "train_loss": 8.808754500932992e-05,
+      "elapsed_seconds": 16712.8
+    },
+    {
+      "step": 13100,
+      "train_loss": 0.0001047793630277738,
+      "elapsed_seconds": 16742.3
+    },
+    {
+      "step": 13125,
+      "train_loss": 5.8172376157017425e-05,
+      "elapsed_seconds": 16771.4
+    },
+    {
+      "step": 13150,
+      "train_loss": 0.00029204352176748216,
+      "elapsed_seconds": 16799.8
+    },
+    {
+      "step": 13175,
+      "train_loss": 0.21903569996356964,
+      "elapsed_seconds": 16828.4
+    },
+    {
+      "step": 13200,
+      "train_loss": 5.7417044445173815e-05,
+      "elapsed_seconds": 16856.6
+    },
+    {
+      "step": 13225,
+      "train_loss": 8.940192492445931e-05,
+      "elapsed_seconds": 16886.3
+    },
+    {
+      "step": 13250,
+      "train_loss": 6.834047235315666e-05,
+      "elapsed_seconds": 16951.3
+    },
+    {
+      "step": 13275,
+      "train_loss": 7.060200732666999e-05,
+      "elapsed_seconds": 16983.9
+    },
+    {
+      "step": 13300,
+      "train_loss": 2.908592068706639e-05,
+      "elapsed_seconds": 17013.1
+    },
+    {
+      "step": 13325,
+      "train_loss": 0.00023356992460321635,
+      "elapsed_seconds": 17041.1
+    },
+    {
+      "step": 13350,
+      "train_loss": 0.00010951598960673437,
+      "elapsed_seconds": 17070.5
+    },
+    {
+      "step": 13375,
+      "train_loss": 0.013817764818668365,
+      "elapsed_seconds": 17101.3
+    },
+    {
+      "step": 13400,
+      "train_loss": 0.0016399957239627838,
+      "elapsed_seconds": 17132.3
+    },
+    {
+      "step": 13425,
+      "train_loss": 0.113414466381073,
+      "elapsed_seconds": 17162.5
+    },
+    {
+      "step": 13450,
+      "train_loss": 0.000570013013202697,
+      "elapsed_seconds": 17194.1
+    },
+    {
+      "step": 13475,
+      "train_loss": 0.00012520141899585724,
+      "elapsed_seconds": 17222.9
+    },
+    {
+      "step": 13500,
+      "train_loss": 4.0688359149498865e-05,
+      "elapsed_seconds": 17255.6
+    },
+    {
+      "step": 13525,
+      "train_loss": 7.199968240456656e-05,
+      "elapsed_seconds": 17285.0
+    },
+    {
+      "step": 13550,
+      "train_loss": 0.00017942623526323587,
+      "elapsed_seconds": 17313.9
+    },
+    {
+      "step": 13575,
+      "train_loss": 0.0003538327291607857,
+      "elapsed_seconds": 17342.5
+    },
+    {
+      "step": 13600,
+      "train_loss": 4.48208193120081e-05,
+      "elapsed_seconds": 17372.0
+    }
+  ],
+  "checkpoints": [
+    {
+      "step": 727,
+      "validation_nll": 0.6242614547769814,
+      "selected": true,
+      "best_validation_nll": 0.6242614547769814,
+      "elapsed_seconds": 991.7
+    },
+    {
+      "step": 1483,
+      "validation_nll": 0.5883199705530872,
+      "selected": true,
+      "best_validation_nll": 0.5883199705530872,
+      "elapsed_seconds": 1929.6
+    },
+    {
+      "step": 2227,
+      "validation_nll": 0.5666189557816427,
+      "selected": true,
+      "best_validation_nll": 0.5666189557816427,
+      "elapsed_seconds": 2867.8
+    },
+    {
+      "step": 2972,
+      "validation_nll": 0.5551189938631077,
+      "selected": true,
+      "best_validation_nll": 0.5551189938631077,
+      "elapsed_seconds": 3804.1
+    },
+    {
+      "step": 3717,
+      "validation_nll": 0.5491589755273943,
+      "selected": true,
+      "best_validation_nll": 0.5491589755273943,
+      "elapsed_seconds": 4742.2
+    },
+    {
+      "step": 4448,
+      "validation_nll": 0.5416231639058896,
+      "selected": true,
+      "best_validation_nll": 0.5416231639058896,
+      "elapsed_seconds": 5680.7
+    },
+    {
+      "step": 5186,
+      "validation_nll": 0.5331048318475803,
+      "selected": true,
+      "best_validation_nll": 0.5331048318475803,
+      "elapsed_seconds": 6618.3
+    },
+    {
+      "step": 5921,
+      "validation_nll": 0.531979136672221,
+      "selected": false,
+      "best_validation_nll": 0.5331048318475803,
+      "elapsed_seconds": 7556.2
+    },
+    {
+      "step": 6646,
+      "validation_nll": 0.5324427911727001,
+      "selected": false,
+      "best_validation_nll": 0.5331048318475803,
+      "elapsed_seconds": 8496.9
+    },
+    {
+      "step": 7363,
+      "validation_nll": 0.5260235428007924,
+      "selected": true,
+      "best_validation_nll": 0.5260235428007924,
+      "elapsed_seconds": 9437.6
+    },
+    {
+      "step": 8092,
+      "validation_nll": 0.521528785924369,
+      "selected": true,
+      "best_validation_nll": 0.521528785924369,
+      "elapsed_seconds": 10376.3
+    },
+    {
+      "step": 8811,
+      "validation_nll": 0.519160855033635,
+      "selected": true,
+      "best_validation_nll": 0.519160855033635,
+      "elapsed_seconds": 11317.8
+    },
+    {
+      "step": 9523,
+      "validation_nll": 0.5161600718194304,
+      "selected": true,
+      "best_validation_nll": 0.5161600718194304,
+      "elapsed_seconds": 12257.1
+    },
+    {
+      "step": 10241,
+      "validation_nll": 0.5129046995758465,
+      "selected": true,
+      "best_validation_nll": 0.5129046995758465,
+      "elapsed_seconds": 13194.6
+    },
+    {
+      "step": 10998,
+      "validation_nll": 0.5123069859537878,
+      "selected": false,
+      "best_validation_nll": 0.5129046995758465,
+      "elapsed_seconds": 14132.6
+    },
+    {
+      "step": 11747,
+      "validation_nll": 0.5083853898994689,
+      "selected": true,
+      "best_validation_nll": 0.5083853898994689,
+      "elapsed_seconds": 15071.9
+    },
+    {
+      "step": 12491,
+      "validation_nll": 0.5098961230997449,
+      "selected": false,
+      "best_validation_nll": 0.5083853898994689,
+      "elapsed_seconds": 16010.1
+    },
+    {
+      "step": 13247,
+      "validation_nll": 0.5053812475253507,
+      "selected": true,
+      "best_validation_nll": 0.5053812475253507,
+      "elapsed_seconds": 16947.7
+    },
+    {
+      "step": 13624,
+      "validation_nll": 0.5075683244416531,
+      "selected": false,
+      "elapsed_seconds": 17437.2
+    }
+  ],
+  "note": "Original official test sealed until final; validation from train only.",
+  "trainable_parameters": 393216,
+  "data": {
+    "name": "openai/gsm8k",
+    "config": "main",
+    "train_count": 7425,
+    "validation_indices": [
+      2194,
+      531,
+      1203,
+      4476,
+      499,
+      3509,
+      5503,
+      4802,
+      559,
+      4359,
+      7367,
+      4231,
+      7409,
+      4471,
+      4207,
+      6526,
+      310,
+      1346,
+      5768,
+      2973,
+      2357,
+      4487,
+      1922,
+      1752,
+      1009,
+      1132,
+      4408,
+      5630,
+      281,
+      4805,
+      5007,
+      7171,
+      6954,
+      88,
+      1362,
+      5658,
+      1813,
+      1841,
+      4044,
+      405,
+      2851,
+      4208,
+      2515,
+      2112,
+      1709,
+      1124,
+      4967,
+      3165
+    ],
+    "train_question_hash": "663b68cfa1728c7393a1441a3306533439df7009b60b3888670cf784bda29d5e",
+    "validation_question_hash": "eeb348b4ff6cb5652b468cd7c3a9afd7549c64e7df1b5ba1a0d4d0c24fb8a86d",
+    "train_usable": 6531,
+    "val_usable": 39,
+    "length_filter": "prompt+official answer <= max_seq; same fixed filtering for train/validation",
+    "test_indices": [
+      350,
+      14,
+      884,
+      605,
+      84,
+      187,
+      140,
+      229,
+      466,
+      991,
+      639,
+      114,
+      222,
+      2,
+      708,
+      300,
+      16,
+      1290,
+      381,
+      1031,
+      621,
+      599,
+      246,
+      565,
+      569,
+      527,
+      271,
+      489,
+      1193,
+      696,
+      1124,
+      1267,
+      698,
+      924,
+      453,
+      664,
+      277,
+      474,
+      1095,
+      1088,
+      1289,
+      782,
+      505,
+      1259,
+      733,
+      391,
+      915,
+      4,
+      148,
+      22,
+      645,
+      1022,
+      1120,
+      1219,
+      690,
+      1110,
+      450,
+      826,
+      933,
+      235,
+      609,
+      392,
+      888,
+      511
+    ],
+    "test_question_hash": "753e938cf3713330f66a8382225b68c229f140ab0d95fc9fae2daf0ef941d235",
+    "test_nll_usable": 56
+  },
+  "baseline_validation_nll": 1.791752886399816,
+  "best_step": 13247,
+  "train_steps": 13624,
+  "train_elapsed_seconds": 17437.2,
+  "selected_validation_nll": 0.5053812475253507,
+  "final": {
+    "selected": {
+      "token_nll": 0.6222426189567579,
+      "numeric_exact": 16,
+      "count": 64,
+      "traces": [
+        {
+          "index": 350,
+          "correct": false,
+          "parsed": 7,
+          "expected": 8,
+          "generated": "The yoga class takes 1 hour, the cooking class takes 3 hours, the cheese-tasting event takes 0.5 hours, the museum tour takes 0.5 hours, and the errands take 2 hours. The total time is 1 + 3 + 0.5 + 0.5 + 2 = <<1+3+0.5+0.5+2=7.0>>7.0 hours.\n#### 7"
+        },
+        {
+          "index": 14,
+          "correct": false,
+          "parsed": null,
+          "expected": 60,
+          "generated": "20% of the students enrolled in contemporary dance so there are 20/100*20 = <<20/100*20=4>> students in contemporary dance.\n4/20 of the students enrolled in contemporary dance so there are 4/20*20 = <<4/20*20=20>> students in contemporary dance.\nThe remaining students are 20-4 = <<20-4=16>>16 students.\n16/20 of the students enrolled in hip-hop dance so there are 16/20*"
+        },
+        {
+          "index": 884,
+          "correct": false,
+          "parsed": 110,
+          "expected": 50,
+          "generated": "Argo has 200 - 40 - 80 - 30 = <<200-40-80-30=110>>110 toys.\n#### 110"
+        },
+        {
+          "index": 605,
+          "correct": false,
+          "parsed": 80,
+          "expected": 42,
+          "generated": "For 4 hours, Patrick sold 15 x 4 = <<15*4=60>>60 cups of lemonade.\nFor 2 hours, Patrick sold 10 x 2 = <<10*2=20>>20 cups of lemonade.\nIn total, Patrick earned 60 + 20 = <<60+20=80>>80 dollars.\n#### 80"
+        },
+        {
+          "index": 84,
+          "correct": false,
+          "parsed": 14,
+          "expected": 15,
+          "generated": "The football team played 22 games and won 8 more than they lost, so they won 22 - 8 = <<22-8=14>>14 games.\n#### 14"
+        },
+        {
+          "index": 187,
+          "correct": true,
+          "parsed": 106,
+          "expected": 106,
+          "generated": "Mandy was able to pay the interest after 3 months so she should give him 100+2*3=$<<100+6=106>>106.\n#### 106"
+        },
+        {
+          "index": 140,
+          "correct": true,
+          "parsed": 20,
+          "expected": 20,
+          "generated": "There are 20 - 12 - 4 = <<20-12-4=4>>4 semi-automatic cars.\nThere are 4/20 = 0.2 = 20% of the cars are semi-automatic.\n#### 20"
+        },
+        {
+          "index": 229,
+          "correct": false,
+          "parsed": 57,
+          "expected": 21,
+          "generated": "Ashlyn took 30/100*120 = <<30/100*120=36>>36 watermelons home.\nAfter two weeks, 3/4*36 = <<3/4*36=27>>27 watermelons were harvested.\nThe number of watermelons not ready to be harvested is 120-36-27 = <<120-36-27=57>>57.\n#### 57"
+        },
+        {
+          "index": 466,
+          "correct": false,
+          "parsed": 45,
+          "expected": 1,
+          "generated": "Kelly paid 20*50*.9=<<20*50*.9=900>>900 cents\nBecky paid 20*45*.95=<<20*45*.95=855>>855 cents\nKelly paid 900-855=<<900-855=45>>45 cents more than Becky\n#### 45"
+        },
+        {
+          "index": 991,
+          "correct": false,
+          "parsed": 33,
+          "expected": 15,
+          "generated": "Bill saw the comet for the first time when he was 30+3=<<30+3=33>>33 years old.\n#### 33"
+        },
+        {
+          "index": 639,
+          "correct": true,
+          "parsed": 216,
+          "expected": 216,
+          "generated": "The volume of the hole is 6*4*3=<<6*4*3=72>>72 cubic feet\nIt takes him 3*72=<<3*72=216>>216 seconds to dig the hole\n#### 216"
+        },
+        {
+          "index": 114,
+          "correct": true,
+          "parsed": 6,
+          "expected": 6,
+          "generated": "If Jamal's phone can hold 1800 photographs, then the number of photographs that Brittany's phone can hold is 1800 / 6 = <<1800/6=300>>300 photographs.\nThe number of birds in Jamal's photograph of the ducks at the zoo is 300 / 50 = <<300/50=6>>6 birds.\n#### 6"
+        },
+        {
+          "index": 222,
+          "correct": false,
+          "parsed": 170,
+          "expected": 140,
+          "generated": "Andy plants 90 + 40 = <<90+40=130>>130 flowers.\nThen he plants 130 + 40 = <<130+40=170>>170 flowers.\n#### 170"
+        },
+        {
+          "index": 2,
+          "correct": false,
+          "parsed": null,
+          "expected": 70000,
+          "generated": "He bought the house for $80,000 and put in $50,000 in repairs, so he spent $130,000 on repairs and the house.\nHe increased the house's value by 150%, so the new value is $80,000 x 1.5 = $<<80*1.5=120>>120,000.\nHe made a profit of $120,000 - $130,000 = $<<-10,000>>10"
+        },
+        {
+          "index": 708,
+          "correct": false,
+          "parsed": 84,
+          "expected": 168,
+          "generated": "Alex charges $12 x 7 = $<<12*7=84>>84 for a day's tutoring.\n#### 84"
+        },
+        {
+          "index": 300,
+          "correct": false,
+          "parsed": 46,
+          "expected": 78,
+          "generated": "On Tuesday, Peter wants to exercise for 2 * 23 = <<2*23=46>>46 minutes.\nOn Tuesday, Peter has to exercise for 46 minutes to reach his goal.\n#### 46"
+        },
+        {
+          "index": 16,
+          "correct": false,
+          "parsed": 160,
+          "expected": 230,
+          "generated": "The distance covered by each train in the two days is 80*2=<<80*2=160>>160 miles.\nThe distance covered by each train in the two days is 80*2=<<80*2=160>>160 miles.\n#### 160"
+        },
+        {
+          "index": 1290,
+          "correct": true,
+          "parsed": 90,
+          "expected": 90,
+          "generated": "A small sunflower has 3 x 12 = <<3*12=36>>36 seeds.\nThe large sunflower has 50% more seeds than a small sunflower, so it has 36 x 1.5 = <<36*1.5=54>>54 seeds.\nAltogether, there are 36 + 54 = <<36+54=90>>90 seeds.\n#### 90"
+        },
+        {
+          "index": 381,
+          "correct": false,
+          "parsed": 0,
+          "expected": 67,
+          "generated": "First find the total distance Chloe hiked: 9 km/h * 5 h = <<9*5=45>>45 km.\nThen subtract Chloe's distance from the total distance: 45 km - 45 km = <<45-45=0>>0 km.\n#### 0"
+        },
+        {
+          "index": 1031,
+          "correct": false,
+          "parsed": 2375,
+          "expected": 5,
+          "generated": "The total number of seats available is 6000 - 950 - 300 = 4750 seats.\nIf the tickets are split equally, each graduate would receive 4750 / 2 = <<4750/2=2375>>2375 tickets.\n#### 2375"
+        },
+        {
+          "index": 621,
+          "correct": false,
+          "parsed": 1500,
+          "expected": 3000,
+          "generated": "The physical therapy cost was 6*2*125=$<<6*2*125=1500>>1500.\n#### 1500"
+        },
+        {
+          "index": 599,
+          "correct": false,
+          "parsed": 20,
+          "expected": 48,
+          "generated": "The pet store has 5 + 2 + 10 = <<5+2+10=17>>17 pets.\nThe total number of legs in the store is 5 dogs * 2 + 2 cats * 2 + 10 birds * 2 = <<5*2+2*2+10*2=20>>20 legs.\n#### 20"
+        },
+        {
+          "index": 246,
+          "correct": false,
+          "parsed": 6600,
+          "expected": 27000,
+          "generated": "Jean paid 250*6*4=$<<250*6*4=6000>>6000*1.1=$<<6000*1.1=6600>>6600\n#### 6600"
+        },
+        {
+          "index": 565,
+          "correct": true,
+          "parsed": 5,
+          "expected": 5,
+          "generated": "Cody ate 1/3 of 12 sandwiches, which is 12/3 = <<12/3=4>>4 sandwiches.\nTrevor ate 1/4 of 12 sandwiches, which is 12/4 = <<12/4=3>>3 sandwiches.\nSo, 12 - 4 - 3 = <<12-4-3=5>>5 sandwiches are left.\n#### 5"
+        },
+        {
+          "index": 569,
+          "correct": true,
+          "parsed": 21,
+          "expected": 21,
+          "generated": "First find how much Mitchell made by multiplying the number of lemonades he sold by the price per lemonade: 21 * 4 = <<21*4=84>>84.\nThen subtract the amount Liam made from the amount Mitchell made to find the difference: 84 - 63 = <<84-63=21>>21.\n#### 21"
+        },
+        {
+          "index": 527,
+          "correct": false,
+          "parsed": 25,
+          "expected": 48,
+          "generated": "If one person can paint half a house in 5 days, then 5 people would paint 5 * 5 = <<5*5=25>>25 houses in 5 days.\n#### 25"
+        },
+        {
+          "index": 271,
+          "correct": false,
+          "parsed": 14,
+          "expected": 20,
+          "generated": "There are 2*3=<<2*3=6>>6 bedrooms in the houses\nThere are 6*2=<<6*2=12>>12 windows in the bedrooms\nThere are 4 windows in each house not connected to bedrooms so there are 4*2=<<4*2=8>>8 windows in the other houses\nThere are 6+8=<<6+8=14>>14 windows in total\n#### 14"
+        },
+        {
+          "index": 489,
+          "correct": false,
+          "parsed": -24,
+          "expected": -10,
+          "generated": "The highest temperature ever recorded in Southlandia is -48 degrees Fahrenheit, Northlandia is 21 degrees Fahrenheit, and Midlandia is -3 degrees Fahrenheit.\nThe average temperature is (-48+21-3)/3 = -24 degrees Fahrenheit.\n#### -24"
+        },
+        {
+          "index": 1193,
+          "correct": false,
+          "parsed": null,
+          "expected": 9,
+          "generated": "First find the total amount Jason earned in a week: $3.00 + $1.50 + $0.75 + $0.50 = $<<3+1.5+0.75+0.50=5.75>>5.75\nThen multiply by 2 to find the amount Jason earned in two weeks: $5.75 * 2 = $<<5.75*2=11.50>>11.50\n#### 11.50"
+        },
+        {
+          "index": 696,
+          "correct": false,
+          "parsed": 221,
+          "expected": 145,
+          "generated": "The class has collected 50 + 30(1.3) + 3(30) = 50 + 39 + 90 = <<50+39+90=179>>179 points.\nThe class is missing 400 - 179 = <<400-179=221>>221 points to go on the trip.\n#### 221"
+        },
+        {
+          "index": 1124,
+          "correct": false,
+          "parsed": 4,
+          "expected": 64,
+          "generated": "Seth gave half of his stickers to Luis, then Luis gave half of the stickers he had to Kris, and Kris gave the remaining 7 stickers to Rob.\nSeth had 2*2=<<2*2=4>>4 stickers in the beginning.\n#### 4"
+        },
+        {
+          "index": 1267,
+          "correct": true,
+          "parsed": 40,
+          "expected": 40,
+          "generated": "The farm has 10*2=<<10*2=20>>2-legged animals\nThe farm has 15*4=<<15*4=60>>4-legged animals\nThe total number of animal legs is 20+60=<<20+60=80>>80\nThere are 80/2=<<80/2=40>>40 pairs of animal legs in total\n#### 40"
+        },
+        {
+          "index": 698,
+          "correct": false,
+          "parsed": null,
+          "expected": 720,
+          "generated": "She puts 50% of $2400.00 into her retirement account, so she puts $2400.00 x .5 = $<<2400*.5=1200.00>>1200.00 into her retirement account.\nShe uses 20% of her paycheck to make her car payment, so she uses $2400.00 x .2 = $<<2400*.2=480.00>>480.00 for her car payment.\nAfter funding her retirement and car payment"
+        },
+        {
+          "index": 924,
+          "correct": false,
+          "parsed": 3,
+          "expected": 12,
+          "generated": "The sloth picks the same number of berries on each trip down the tree, so he picks 24/8 = <<24/8=3>>3 berries per trip down to the ground.\n#### 3"
+        },
+        {
+          "index": 453,
+          "correct": false,
+          "parsed": null,
+          "expected": 6400,
+          "generated": "Jenna trades 3 sapphires for 2 rubies, so she gains 2 rubies worth $1200/2=$<<1200/2=600>>600 per ruby.\nShe started with 8 sapphires and traded 3 for 2 rubies, so she gained 8-3=<<8-3=5>>5 rubies.\nSo she now has 8+5=<<8+5=13>>13 rubies worth $1200/13=$<<1200/13=9"
+        },
+        {
+          "index": 664,
+          "correct": false,
+          "parsed": 36,
+          "expected": 32,
+          "generated": "He learns 1 recipe per 1.5 hours of class time\nSo he learns 1.5*6*4=<<1.5*6*4=36>>36 recipes\n#### 36"
+        },
+        {
+          "index": 277,
+          "correct": false,
+          "parsed": 30,
+          "expected": 4,
+          "generated": "It takes 3 minutes to dig a small hole and 10 minutes to dig a large hole, so it takes 3*10 = <<3*10=30>>30 minutes to dig 30 small holes and 15 large holes.\n#### 30"
+        },
+        {
+          "index": 474,
+          "correct": false,
+          "parsed": 20,
+          "expected": 80,
+          "generated": "Three-fourths of the students have desktop computers, so 20/4 = <<20/4=5>>5 students have desktop computers.\nThere are 5 x 4 = <<5*4=20>>20 students at that grade level.\n#### 20"
+        },
+        {
+          "index": 1095,
+          "correct": true,
+          "parsed": 270,
+          "expected": 270,
+          "generated": "The first train travels 60 miles per hour * 3 hours = <<60*3=180>>180 miles.\nThe second train travels 60/2 = <<60/2=30>>30 miles per hour * 3 hours = <<30*3=90>>90 miles.\nThe two trains are 180 + 90 = <<180+90=270>>270 miles apart.\n#### 270"
+        },
+        {
+          "index": 1088,
+          "correct": false,
+          "parsed": null,
+          "expected": 30,
+          "generated": "He spends 5*40=<<5*40=200>>200 minutes a week learning\nThat is 200/60=<<200/60=3.333...>>3.333 hours a week\nThat is 3.333*60=<<3.333*60=200>>200 hours a week\nThat is 200/16=<<200/16=12.5>>12.5 hours a week\nThat is 1"
+        },
+        {
+          "index": 1289,
+          "correct": true,
+          "parsed": 101,
+          "expected": 101,
+          "generated": "The total square feet of the quilt is 11*3 + 8*4 + 6*6 = <<11*3+8*4+6*6=33+32+36=101>>101 square feet.\n#### 101"
+        },
+        {
+          "index": 782,
+          "correct": false,
+          "parsed": 45,
+          "expected": 54,
+          "generated": "Chase and Rider ride their bikes 5 x 3 = <<5*3=15>>15 times on the usual days.\nOn two other days, they ride twice the times they do on usual days, so they ride 2 x 15 = <<2*15=30>>30 times on those days.\nThey ride their bikes a total of 15 + 30 = <<15+30=45>>45 times a week.\n#### 45"
+        },
+        {
+          "index": 505,
+          "correct": false,
+          "parsed": 200,
+          "expected": 1600,
+          "generated": "The cheapest lumber is a 2 x 4 piece of wood that can make 200 popsicle sticks.\n#### 200"
+        },
+        {
+          "index": 1259,
+          "correct": false,
+          "parsed": 600,
+          "expected": 7200,
+          "generated": "Derrick makes 10 x 2 = $<<10*2=20>>20 in a day.\nIn June, he sells all the doughnuts, so he makes $20 x 30 = $<<20*30=600>>600 in June.\n#### 600"
+        },
+        {
+          "index": 733,
+          "correct": false,
+          "parsed": null,
+          "expected": 5,
+          "generated": "He had 20 / 3 = <<20/3=6.666...>>6.67\nEach of them got 6.67/2 = <<6.67/2=3.335>>3.34\n#### 3.34"
+        },
+        {
+          "index": 391,
+          "correct": false,
+          "parsed": null,
+          "expected": 15,
+          "generated": "The ratio of popsicles that Betty and Sam have is 5:6, meaning Betty has 5/5+6 = 5/11 of the total.\nThe total number of popsicles they have is 165, so Betty has 165/11 = <<165/11=15>>15 popsicles.\nSam has 165-15 = <<165-15=150>>150 popsicles.\nSam has 150-15 = <<150-15=135>>13"
+        },
+        {
+          "index": 915,
+          "correct": true,
+          "parsed": 23,
+          "expected": 23,
+          "generated": "Bruce works 5 hours on Tuesday.\nOn Wednesday, he works 5 hours * 2 = <<5*2=10>>10 hours.\nOn Thursday, he works 2 hours less than Wednesday, so 10 hours - 2 hours = <<10-2=8>>8 hours.\nIn total, Bruce works 5 + 10 + 8 = <<5+10+8=23>>23 hours.\n#### 23"
+        },
+        {
+          "index": 4,
+          "correct": false,
+          "parsed": 60,
+          "expected": 20,
+          "generated": "Wendi feeds each of her 20 chickens 3 cups of feed, so she needs 20 x 3 = <<20*3=60>>60 cups of feed in the final meal of the day.\n#### 60"
+        },
+        {
+          "index": 148,
+          "correct": true,
+          "parsed": 30,
+          "expected": 30,
+          "generated": "Brittany's mom gave the cashier $10 + $12 = $<<12+10=22>>22 for the tickets.\nShe received $8 in change, so she gave the cashier $22 + $8 = $<<22+8=30>>30.\n#### 30"
+        },
+        {
+          "index": 22,
+          "correct": false,
+          "parsed": 8,
+          "expected": 7,
+          "generated": "Billy sold 3 + 2 + 3 = <<3+2+3=8>>8 DVDs on Tuesday.\n#### 8"
+        },
+        {
+          "index": 645,
+          "correct": true,
+          "parsed": 48,
+          "expected": 48,
+          "generated": "The bag of flour was divided into 8 portions of 2 kilograms each, so each portion is 2 kg * 8 = <<2*8=16>>16 kg.\nIn three bags, the total amount of flour was 16 kg * 3 = <<16*3=48>>48 kg.\n#### 48"
+        },
+        {
+          "index": 1022,
+          "correct": false,
+          "parsed": 2,
+          "expected": 12,
+          "generated": "Teresa sold 2/3 * 4 = $<<2/3*4=2.666>>2.666 small stuffed animals.\nShe sold 2/3 * 4 = $<<2/3*4=2.666>>2.666 small stuffed animals.\nShe sold 2/3 * 4 = $<<2/3*4=2.666>>2.666 small stuffed animals.\n#### 2"
+        },
+        {
+          "index": 1120,
+          "correct": false,
+          "parsed": 280,
+          "expected": 560,
+          "generated": "He drives 2*70=<<2*70=140>>140 miles a round trip\nSo he drives 140*2=<<140*2=280>>280 miles a month\n#### 280"
+        },
+        {
+          "index": 1219,
+          "correct": true,
+          "parsed": 100,
+          "expected": 100,
+          "generated": "Ali has to pay 4*20=$<<4*20=80>>80 plus 2*10=$<<2*10=20>>20 for a total of $100.\n#### 100"
+        },
+        {
+          "index": 690,
+          "correct": false,
+          "parsed": null,
+          "expected": 5760,
+          "generated": "Rong has 20 * 12 = <<20*12=240>>240 coins every month.\nNeil has 240 * 2/5 = <<240*(2/5)=96>>96 coins every month.\nAfter 10 years, Neil has 96 * 12 = <<96*12=1152>>1152 coins.\nNeil has 1152 + 240 = <<1152+240=1392>>1392 coins.\n####"
+        },
+        {
+          "index": 1110,
+          "correct": false,
+          "parsed": 9050,
+          "expected": 60,
+          "generated": "She needs to hike 125 x 2 = <<125*2=250>>250 miles a day.\nShe needs to hike 250 - 9300 = <<250-9300=9050>>9050 more miles a day to complete her journey on time.\n#### 9050"
+        },
+        {
+          "index": 450,
+          "correct": false,
+          "parsed": 3,
+          "expected": 4,
+          "generated": "The regular price of popcorn is $3 because the soda costs $3 and you saved $2 by buying the popcorn and soda at the regular price instead of the super ticket price of $20 + $1 = $21.\n#### 3"
+        },
+        {
+          "index": 826,
+          "correct": false,
+          "parsed": 22,
+          "expected": 27,
+          "generated": "Cindy had 5 * 2 = <<5*2=10>>10 green eggs.\nShe had 10 - 1 = <<10-1=9>>9 blue eggs.\nShe had 9 / 3 = <<9/3=3>>3 yellow eggs.\nSo, Cindy had 10 + 9 + 3 = <<10+9+3=22>>22 eggs in total.\n#### 22"
+        },
+        {
+          "index": 933,
+          "correct": false,
+          "parsed": 30,
+          "expected": 15,
+          "generated": "They have 10 people who each donated 5 boxes of stuff so they have 10*5 = <<10*5=50>>50 boxes of stuff.\nThey also have 10 boxes of stuff so they have 50+10 = <<50+10=60>>60 boxes of stuff.\nThey can fit 2 boxes worth of stuff per table so they need 60/2 = <<60/2=30>>30 tables.\n#### 30"
+        },
+        {
+          "index": 235,
+          "correct": true,
+          "parsed": 10,
+          "expected": 10,
+          "generated": "There are 20 friends and 4 slices per person so 20*4 = <<20*4=80>>80 slices\nThere are 8 slices per pizza so 80/8 = <<80/8=10>>10 pizzas\n#### 10"
+        },
+        {
+          "index": 609,
+          "correct": true,
+          "parsed": 7,
+          "expected": 7,
+          "generated": "He needs 1/4 * 4 = <<1/4*4=1>>1 dozen of butter per day.\nSo he needs 1 * 7 = <<1*7=7>>7 pounds of butter for a week.\n#### 7"
+        },
+        {
+          "index": 392,
+          "correct": false,
+          "parsed": 40,
+          "expected": 34,
+          "generated": "He gets $10 x 2 = $<<10*2=20>>20 for the two streaming services.\nHe pays $60 for the cable package.\nSo he saves $60 - $20 = $<<60-20=40>>40 by cancelling his $60 cable package.\n#### 40"
+        },
+        {
+          "index": 888,
+          "correct": false,
+          "parsed": 30,
+          "expected": 10,
+          "generated": "Lani baked 55 cookies - 5 five cookies = <<55-5*5=55-25=30>>30 cookies were in each jar.\n#### 30"
+        },
+        {
+          "index": 511,
+          "correct": false,
+          "parsed": null,
+          "expected": 110,
+          "generated": "Gerald spent $100 / $30 = $<<100/30=3.33>>3.33\nHe has $30 - $3.33 = $<<30-3.33=26.67>>26.67\n#### 26.67"
+        }
+      ]
+    },
+    "original": {
+      "token_nll": 1.8833182397525619,
+      "numeric_exact": 5,
+      "count": 64,
+      "traces": [
+        {
+          "index": 350,
+          "correct": false,
+          "parsed": null,
+          "expected": 8,
+          "generated": "The yoga class on Monday is 1 hour. The cooking class on Tuesday is 3 times that, so 3 hours. The cheese-tasting event on Wednesday is 0.5 hours. The museum tour on Thursday is half the length of the cooking class on Tuesday, so 1.5 hours. The errands on Friday are 2 hours. Adding these up: 1 + 3 + 0.5 + 1.5 + 2 = 8 hours.\n\n#### <int>8"
+        },
+        {
+          "index": 14,
+          "correct": false,
+          "parsed": 6,
+          "expected": 60,
+          "generated": "The total number of students is 20.  \n- 20% of 20 is 4 students in contemporary dance.  \n- 25% of the remaining 16 students is 4 students in jazz dance.  \n- The remaining 12 students enrolled in hip-hop.  \n\nThe percentage of students in hip-hop is $ \\frac{12}{20} \\times 100 = 60\\% $.  \n\n#### 6"
+        },
+        {
+          "index": 884,
+          "correct": false,
+          "parsed": null,
+          "expected": 50,
+          "generated": "A: 200 - 40 - 80 - 30 = 60"
+        },
+        {
+          "index": 605,
+          "correct": false,
+          "parsed": 3,
+          "expected": 42,
+          "generated": "fable\n\nfable\n\n#### 3"
+        },
+        {
+          "index": 84,
+          "correct": false,
+          "parsed": 18,
+          "expected": 15,
+          "generated": "The number of games won is 8 more than the number of games lost. Since the total number of games is 22, the number of games won is 8 + 10 = 18.\n\n#### 18"
+        },
+        {
+          "index": 187,
+          "correct": false,
+          "parsed": null,
+          "expected": 106,
+          "generated": "To find the total amount Mandy needs to pay, we first calculate the interest for 3 months:  \n$ 3 \\times 2\\% = 6\\% $.\n\nThen, the total amount Mandy needs to pay is:  \n$ 100 + (100 \\times 6\\%) = 100 + 6 = 106 $.\n\n#### <int>106"
+        },
+        {
+          "index": 140,
+          "correct": false,
+          "parsed": 2,
+          "expected": 20,
+          "generated": "To find the percentage of semi-automatic cars:\n\n- Total cars = 20  \n- Semi-automatic cars = 4  \n- Percentage = (Number of semi-automatic / Total) \u00d7 100 = (4 / 20) \u00d7 100 = 20%\n\n#### 2"
+        },
+        {
+          "index": 229,
+          "correct": false,
+          "parsed": null,
+          "expected": 21,
+          "generated": "The total number of watermelons is 120. \n\nAfter 30% are ready for harvest, 70% remain:  \n$$ 0.7 \\times 120 = 84 $$\n\nWhen she returns two weeks later, 3/4 of the remaining 84 are ready:  \n$$ 0.75 \\times 84 = 63 $$\n\nThe number of not ready to be harvested is:  \n$$ 84 - 63 = 21 $$\n\n#### <integer> 2"
+        },
+        {
+          "index": 466,
+          "correct": false,
+          "parsed": null,
+          "expected": 1,
+          "generated": "Kelly paid $50 - 0.10 \\times 50 = 40$ cents.\n\nBecky paid $45 - 0.01 \\times 20 = 44$ cents.\n\nKelly paid $40$ cents, and Becky paid $44$ cents.\n\nKelly paid **$6 less** than Becky.\n\n#### <integer>6"
+        },
+        {
+          "index": 991,
+          "correct": false,
+          "parsed": null,
+          "expected": 15,
+          "generated": "Comet Halley orbits the sun every 70 years. Let's denote the age of Bill when he saw the comet for the first time as $ x $. \n\nBill's father was 30 years old when he saw the comet. Let\u2019s denote the age of Bill's father when he saw the comet as $ 30 $.\n\nBill saw the comet a second time when he was three times the age his father was when he saw the comet. This means that when Bill was three times his father's age at that time, he was also 70 years old (since the comet was seen 70 years later"
+        },
+        {
+          "index": 639,
+          "correct": false,
+          "parsed": null,
+          "expected": 216,
+          "generated": "To solve the problem, first, calculate the volume of the hole:\n\n$$\n\\text{Volume} = 6 \\, \\text{ft} \\times 4 \\, \\text{ft} \\times 3 \\, \\text{ft} = 72 \\, \\text{cubic feet}\n$$\n\nSince it takes 3 seconds to shovel 1 cubic foot of earth, the total time required is:\n\n$$\n72 \\, \\text{cubic feet} \\times 3 \\, \\text{seconds/cubic foot} = 216 \\, \\text{seconds}"
+        },
+        {
+          "index": 114,
+          "correct": false,
+          "parsed": null,
+          "expected": 6,
+          "generated": "Jamal's phone can hold 6 times more photographs than can Brittany's phone. Since 6 times more is the same as 6\u00d7, and the maximum number of photographs that Brittany's phone can hold is 50 times more than the number of birds in Jamal's photograph of the ducks at the zoo, we can find the number of birds in Jamal's photograph of the ducks at the zoo by dividing the number of photographs on Jamal's phone by 6.\n\nThe number of birds in Jamal's photograph of the ducks at the zoo is $ \\frac{1800}{6} = 300 $."
+        },
+        {
+          "index": 222,
+          "correct": false,
+          "parsed": 14,
+          "expected": 140,
+          "generated": "Andy plants 90 geraniums and 40 fewer petunias than geraniums. This means he plants 90 - 40 = 50 petunias. The total number of flowers he plants is 90 + 50 = 140.\n\n#### 14"
+        },
+        {
+          "index": 2,
+          "correct": false,
+          "parsed": null,
+          "expected": 70000,
+          "generated": "Josh's profit is the difference between the total cost and the cost of the house. The total cost is $80,000 + $50,000 = $130,000. The value of the house increased by 150%, so the new value is $130,000 + $60,000 = $190,000. The profit is $190,000 - $80,000 = $110,000.\n\n#### <int>110"
+        },
+        {
+          "index": 708,
+          "correct": false,
+          "parsed": 110,
+          "expected": 168,
+          "generated": "To find the total amount Alex charges for 2 weeks of tutoring:\n\n- Each day she charges $12.\n- There are 7 days in a week.\n- For 2 weeks: $12 \u00d7 7 \u00d7 2 = 110.\n\n#### 110"
+        },
+        {
+          "index": 300,
+          "correct": false,
+          "parsed": null,
+          "expected": 78,
+          "generated": "To find the time Peter needs to exercise on Tuesday, we first add the time he exercised on Monday and Sunday:  \n$16 + 23 = 39$ minutes.  \n\nSince he wants to exercise for **twice** this amount on Tuesday, he needs to exercise for:  \n$2 \\times 39 = 78$ minutes.  \n\n#### <integer> 78"
+        },
+        {
+          "index": 16,
+          "correct": false,
+          "parsed": null,
+          "expected": 230,
+          "generated": "The distance covered by each train in the two days is $80\\ \\text{miles} + 150\\ \\text{miles} = 230\\ \\text{miles}$.\n\n#### <int>230"
+        },
+        {
+          "index": 1290,
+          "correct": false,
+          "parsed": null,
+          "expected": 90,
+          "generated": "The number of seeds in a small sunflower is $3 \\times 12 = 36$.\n\nThe number of seeds in a large sunflower is $36 + 0.5 \\times 36 = 36 + 18 = 54$.\n\nThe total number of seeds is $36 + 54 = 90$.\n\n#### <integer> 9"
+        },
+        {
+          "index": 381,
+          "correct": false,
+          "parsed": 4,
+          "expected": 67,
+          "generated": "Chloe hiked for 5 hours at 9 km/h, so she hiked $9 \\times 5 = 45$ kilometers. \n\nChloe hiked 41 kilometers in total. \n\nThe difference in distance is $45 - 41 = 4$ kilometers.\n\n#### 4"
+        },
+        {
+          "index": 1031,
+          "correct": false,
+          "parsed": null,
+          "expected": 5,
+          "generated": "The total number of tickets is $6000 - 950 - 300 = 5700$. \n\nEach graduate would receive $5700 \\div 3 = 1900$ tickets.\n\n#### <integer>1900"
+        },
+        {
+          "index": 621,
+          "correct": false,
+          "parsed": null,
+          "expected": 3000,
+          "generated": "The total time spent is $6 \\times 2 = 12$ sessions. Each session is 2 hours, so the total time is $12 \\times 2 = 24$ hours. The total cost is $24 \\times 125 = 3000$.\n\n#### 3,Y"
+        },
+        {
+          "index": 599,
+          "correct": false,
+          "parsed": 44,
+          "expected": 48,
+          "generated": "The total number of legs in the pet store is calculated by adding the legs of all the pets: 5 dogs \u00d7 4 legs + 2 cats \u00d7 2 legs + 10 birds \u00d7 2 legs = 20 + 4 + 20 = 44.\n\n#### 44"
+        },
+        {
+          "index": 246,
+          "correct": false,
+          "parsed": null,
+          "expected": 27000,
+          "generated": "The total cost for the makeup is $250 \u00d7 6 \u00d7 4 = $6,000. After a 10% discount, the final cost is $6,000 \u00d7 90% = $5,400. \n\n#### <integer> 54"
+        },
+        {
+          "index": 565,
+          "correct": false,
+          "parsed": null,
+          "expected": 5,
+          "generated": "Cody ate $ \\frac{1}{3} $ of the 12 sandwiches, which is $ 4 $ sandwiches. Trevor ate $ \\frac{1}{4} $ of the 12 sandwiches, which is $ 3 $ sandwiches. \n\nTotal eaten: $ 4 + 3 = 7 $ sandwiches.\n\nSweets left: $ 12 - 7 = 5 $.\n\n#### <integer> 5"
+        },
+        {
+          "index": 569,
+          "correct": false,
+          "parsed": null,
+          "expected": 21,
+          "generated": "Liam made $63, and Mitchell made $84 by selling 21 lemonades at $4 each. \n\nMitchell made $84 - $63 = $21 more.\n\n#### <integer> 2"
+        },
+        {
+          "index": 527,
+          "correct": false,
+          "parsed": 3,
+          "expected": 48,
+          "generated": "One person can paint a house in $5$ days, so it takes $3$ hours for one person to paint a house. For $5$ people, it would take $3$ hours as well.\n\n#### 3"
+        },
+        {
+          "index": 271,
+          "correct": false,
+          "parsed": null,
+          "expected": 20,
+          "generated": "John has 2 houses with 3 bedrooms each. Each bedroom has 2 windows, so the total number of window units in the houses is $2 \\times 3 \\times 2 = 12$.\n\nThere are an additional 4 windows in each house not connected to bedrooms. Since there are 2 houses, the total additional windows are $2 \\times 4 = 8$.\n\nThe total number of windows is $12 + 8 = 20$.\n\n#### <fable|fable"
+        },
+        {
+          "index": 489,
+          "correct": false,
+          "parsed": null,
+          "expected": -10,
+          "generated": "The average highest temperature is calculated by adding the temperatures of the three countries and then dividing by 3. \n\nThe total is $ -48 + 21 + (-3) = -30 $, and the average is $ -30 \\div 3 = -10 $.\n\n#### <fable> -10"
+        },
+        {
+          "index": 1193,
+          "correct": false,
+          "parsed": null,
+          "expected": 9,
+          "generated": "Jason earned $3.00 for doing his laundry, $1.50 for cleaning his room, $0.75 for taking the trash to the curb each time, and $0.50 for emptying the dishwasher. In a two-week period, he did the laundry once, took the trash out twice, and cleaned his room once. \n\nThe total amount Jason earned is $3.00 + $1.50 + $0.75 + $0.50 = $6.30.\n\n#### <int>6"
+        },
+        {
+          "index": 696,
+          "correct": false,
+          "parsed": null,
+          "expected": 145,
+          "generated": "Adam has collected 50 points.  \nBetty has collected 30% more than 50, so 30% of 50 is 15, and 50 + 15 = 60.  \nMarta has collected 3 times more than 60, so 60 \u00d7 3 = 180.  \nTom has 30 points less than Betty, so 60 - 30 = 30.  \n\nThe total points collected are 50 + 60 + 180 + 30 = 300"
+        },
+        {
+          "index": 1124,
+          "correct": false,
+          "parsed": 30,
+          "expected": 64,
+          "generated": "Seth gave half of his stickers to Luis. Luis used half of the stickers and gave the rest to Kris. Kris kept 9 stickers and gave the remaining 7 stickers to Rob. \n\nSeth had 3 \u00d7 10 = 30 stickers in the beginning.\n\n#### 30"
+        },
+        {
+          "index": 1267,
+          "correct": false,
+          "parsed": null,
+          "expected": 40,
+          "generated": "The total number of legs is $10 \\times 2 + 15 \\times 4 = 20 + 60 = 80$.\n\nSince each pair consists of 2 legs, the number of pairs is $80 \\div 2 = 40$.\n\n#### <integer> 4"
+        },
+        {
+          "index": 698,
+          "correct": false,
+          "parsed": null,
+          "expected": 720,
+          "generated": "Solving the problem:  \nGreta's retirement account is 50% of $2400.00, so she saves $1200.00.  \nShe uses 20% of her paycheck for her car payment, which is $480.00.  \nThe remaining amount is $1200.00 - $480.00 = $720.00.  \n\n#### <int>72"
+        },
+        {
+          "index": 924,
+          "correct": false,
+          "parsed": null,
+          "expected": 12,
+          "generated": "To find the least number of berries per trip, divide the total number of berries by the number of trips:\n\n$$\n\\frac{24 \\text{ berries}}{4 \\text{ trips}} = 6 \\text{ berries per trip}\n$$\n\n#### <integer> 6"
+        },
+        {
+          "index": 453,
+          "correct": false,
+          "parsed": null,
+          "expected": 6400,
+          "generated": "Jenna starts with 8 sapphires. She trades 3 sapphires for 2 rubies. Each sapphire is worth $800, and each ruby is worth $1200.\n\n- She trades 3 sapphires for 2 rubies: 3 \u00d7 $800 = 2 \u00d7 $1200  \n  So, 3 sapphires = 2 rubies \u2192 2 rubies = 3 sapphires  \n  Total money from this trade: 3 \u00d7 $800 = $2,400  \n\n-"
+        },
+        {
+          "index": 664,
+          "correct": false,
+          "parsed": 3,
+          "expected": 32,
+          "generated": "John learns a new recipe for every 1.5 hours of class time. There are 4 classes a week and 6 weeks. The total class time is $4 \\times 2 \\times 6 = 48$ hours. The number of recipes is $48 \\div 1.5 = 32$.\n\n#### 3"
+        },
+        {
+          "index": 277,
+          "correct": false,
+          "parsed": null,
+          "expected": 4,
+          "generated": "To find the total time, first calculate the time for 30 small holes: $3 \\text{ hours} \\times 3 = 9$ hours. Then calculate the time for 15 large holes: $10 \\text{ minutes} \\times 1.5 = 15$ minutes. The total time is $9$ hours and $15$ minutes, which is $9.25$ hours.\n\n#### <integer> 9"
+        },
+        {
+          "index": 474,
+          "correct": false,
+          "parsed": null,
+          "expected": 80,
+          "generated": "The total number of students is the sum of those who have a desktop computer and those who do not. Since three-fourths of the students have a desktop computer, and 20 students do not have one, we can find the total number of students by:\n\n$$\n\\frac{3}{4} \\times 40 = 30\n$$\n\nThe total number of students is 30.\n\n#### <integer> 3"
+        },
+        {
+          "index": 1095,
+          "correct": true,
+          "parsed": 270,
+          "expected": 270,
+          "generated": "After 3 hours, the first train has traveled $60 \\, \\text{mph} \\times 3 = 180$ miles, and the second train has traveled $30 \\, \\text{mph} \\times 3 = 90$ miles. The total distance between them is $180 + 90 = 270$ miles.\n\n#### 270"
+        },
+        {
+          "index": 1088,
+          "correct": false,
+          "parsed": 212,
+          "expected": 30,
+          "generated": "John spends 40 minutes per class, 5 days a week, so 40 \u00d7 5 = 200 minutes per week. He spends 1/16 of that on Saturday and Sunday, so 200 \u00d7 1/16 = 12.5 minutes. The total time is 200 + 12.5 = 212.5 hours.\n\n#### 212"
+        },
+        {
+          "index": 1289,
+          "correct": true,
+          "parsed": 101,
+          "expected": 101,
+          "generated": "To find the total square feet of the quilt, we first calculate the total area from each type of shirt:\n\n- 11 small shirts \u00d7 3 ft\u00b2 = 33 ft\u00b2  \n- 8 medium shirts \u00d7 4 ft\u00b2 = 32 ft\u00b2  \n- 6 large shirts \u00d7 6 ft\u00b2 = 36 ft\u00b2  \n\nAdding these together: 33 + 32 + 36 = 101 ft\u00b2  \n\n#### 101"
+        },
+        {
+          "index": 782,
+          "correct": false,
+          "parsed": null,
+          "expected": 54,
+          "generated": "Chase and Rider ride their bikes 3 times a day for 5 days, totaling $3 \\times 5 = 15$ times. On two other days, they ride twice the times they do on usual days, so they ride $3 \\times 2 = 6$ times each of those days. The total number of times they ride their bikes a week is $15 + 6 + 6 = 27$ times.\n\n#### <integer> 27"
+        },
+        {
+          "index": 505,
+          "correct": false,
+          "parsed": 4,
+          "expected": 1600,
+          "generated": "The most popsicle sticks Frederick can make is 400.\n\n#### 4"
+        },
+        {
+          "index": 1259,
+          "correct": false,
+          "parsed": 120,
+          "expected": 7200,
+          "generated": "Derrick makes $10 \\times 6 = 60$ dozen of doughnuts in June. Since each dozen sells for $2, he makes $60 \\times 2 = 120$ dollars in June.\n\n#### 120"
+        },
+        {
+          "index": 733,
+          "correct": false,
+          "parsed": null,
+          "expected": 5,
+          "generated": "To find out how much each sibling gets, divide the total money by the number of siblings: $ 20 \\div 3 = 6\\overline{6} $.\n\nEach of them gets $6\\frac{2}{3}$ dollars.\n\n#### <integer> 6"
+        },
+        {
+          "index": 391,
+          "correct": false,
+          "parsed": null,
+          "expected": 15,
+          "generated": "The total number of popsicles is 165, and the ratio is 5:6. Let's find the number of popsicles each has:\n\n- Let the number of popsicles Betty has be 5 parts.\n- Let the number of popsicles Sam have be 6 parts.\n\nThe total number of parts is 5 + 6 = 11 parts.\n\nSo, each part is $ \\frac{165}{11} = 15 $.\n\n- Betty has $ 5 \\times 15 = 75 $ popsicles.\n- Sam has $ 6 \\times 1"
+        },
+        {
+          "index": 915,
+          "correct": true,
+          "parsed": 23,
+          "expected": 23,
+          "generated": "On Tuesday, Bruce works for 5 hours. On Wednesday, he works twice as much as on Tuesday, so $2 \\times 5 = 10$ hours. On Thursday, he works 2 hours less than on Wednesday, so $10 - 2 = 8$ hours. The total hours he works are $5 + 10 + 8 = 23$ hours.\n\n#### 23"
+        },
+        {
+          "index": 4,
+          "correct": false,
+          "parsed": 6,
+          "expected": 20,
+          "generated": "To find the total amount of feed Wendi needs to give her 20 chickens in the final meal of the day:\n\n- Each chicken gets 15 cups in the morning.\n- Each chicken gets 25 cups in the afternoon.\n- Each chicken gets 3 cups in the final meal.\n\nSo, the total amount of feed for 20 chickens is:\n\n$$ 20 \\times 3 = 60 \\text{ cups} $$\n\n#### 6"
+        },
+        {
+          "index": 148,
+          "correct": false,
+          "parsed": 3,
+          "expected": 30,
+          "generated": "The total cost for the tickets is $10 + $12 = $22. She received $8 in change, so the total amount she gave the cashier is $22 + $8 = $30.\n\n#### 3"
+        },
+        {
+          "index": 22,
+          "correct": false,
+          "parsed": null,
+          "expected": 7,
+          "generated": "Billy sold $3$ DVDs to the first 3 customers, $4$ DVDs to the next 2 customers, and $0$ DVDs to the last 3 customers. \n\nThe total number of DVDs sold on Tuesday is $3 + 4 = 7$.\n\n#### <1>"
+        },
+        {
+          "index": 645,
+          "correct": false,
+          "parsed": null,
+          "expected": 48,
+          "generated": "The total amount of flour in the original bag is $8 \\times 2 = 16$ kilograms. \n\nTherefore, the total amount of flour in three bags is $16 \\times 3 = 48$ kilograms.\n\n#### <comet|comet"
+        },
+        {
+          "index": 1022,
+          "correct": false,
+          "parsed": 4,
+          "expected": 12,
+          "generated": "Teresa sold $4$ small stuffed animals.\n\n#### 4"
+        },
+        {
+          "index": 1120,
+          "correct": false,
+          "parsed": null,
+          "expected": 560,
+          "generated": "John visits his parents twice a month, and it takes him 2 hours to drive to visit them at a speed of 70 mph. \n\nTo find the total distance for a round trip, we first calculate the distance for one round trip:\n\n$$\n\\text{Distance} = \\text{Speed} \\times \\text{Time} = 70\\ \\text{mph} \\times 2\\ \\text{hours} = 140\\ \\text{marble}\n$$\n\nSince he visits his parents twice a month, the total distance is:\n\n$$\n2 \\times 140 ="
+        },
+        {
+          "index": 1219,
+          "correct": false,
+          "parsed": 10,
+          "expected": 100,
+          "generated": "To find how much Ali has to pay John, we first calculate the total cost of the wooden tables and the roof frames separately, then add them together.\n\n- The cost of the wooden tables is $4 \u00d7 20 = 80.\n- The cost of the roof frames is $2 \u00d7 10 = 20.\n\nAdding these together: $80 + $20 = $100.\n\n#### 10"
+        },
+        {
+          "index": 690,
+          "correct": false,
+          "parsed": 33,
+          "expected": 5760,
+          "generated": "Rong saves 20 coins per month, and Neil saves $2/5$ times more, so he saves $20 \\times \\frac{2}{5} = 8$ coins per month. After 10 years, Rong saves $20 \\times 120 = 2400$ coins, and Neil saves $8 \\times 120 = 960$ coins. \n\nThe total number of coins they have after 10 years is $2400 + 960 = 3360$.\n\n#### 33"
+        },
+        {
+          "index": 1110,
+          "correct": false,
+          "parsed": null,
+          "expected": 60,
+          "generated": "To find the total number of miles she needs to hike per day, we first calculate the total distance she will cover in a single day:  \n$ 125 \\, \\text{miles/day} \\times 2 \\, \\text{days} = 250 \\, \\text{miles} $.\n\nSince she needs to complete her 9,300-mile journey on time, we divide the total distance by the number of days she will be on vacation:  \n$ 9,300 \\, \\text{miles} \\div 30 \\, \\text{"
+        },
+        {
+          "index": 450,
+          "correct": false,
+          "parsed": 6,
+          "expected": 4,
+          "generated": "The regular price of the popcorn is $6.\n\n#### 6"
+        },
+        {
+          "index": 826,
+          "correct": false,
+          "parsed": 2,
+          "expected": 27,
+          "generated": "Cindy had 5 green eggs. She had twice as many blue ones as green, so 5 \u00d7 2 = 10 blue ones. She had one fewer pink than blue, so 10 - 1 = 9 pink ones. She had one-third as many yellow as pink, so 9 \u00d7 1 = 3 yellow ones.\n\nTotal number of eggs = 5 + 10 + 9 + 3 = 27.\n\n#### 2"
+        },
+        {
+          "index": 933,
+          "correct": false,
+          "parsed": 30,
+          "expected": 15,
+          "generated": "The total number of boxes is $10 \\times 5 + 10 = 60$.\n\nEach table can hold $2$ boxes, so the number of new tables needed is $\\frac{60}{2} = 30$.\n\n#### 30"
+        },
+        {
+          "index": 235,
+          "correct": true,
+          "parsed": 10,
+          "expected": 10,
+          "generated": "John needs to make sure each of his 20 friends gets 4 slices, so he needs $20 \\times 4 = 80$ slices in total. Since each pizza is sliced into 8 portions, he needs $80 \\div 8 = 10$ pizzas.\n\n#### 10"
+        },
+        {
+          "index": 609,
+          "correct": false,
+          "parsed": null,
+          "expected": 7,
+          "generated": "To find the total pounds of butter needed, first calculate how many pounds of butter are needed for 4 dozen croissants:  \n$ 4 \\text{ dozen} \\times \\frac{1}{4} \\text{ pound} = 1 \\text{ pound} $.  \n\nThen, multiply by the number of days in a week (7):  \n$ 1 \\text{ pound} \\times 7 = 7 \\text{ pounds} $.  \n\n#### <1,Y>"
+        },
+        {
+          "index": 392,
+          "correct": false,
+          "parsed": null,
+          "expected": 34,
+          "generated": "To find the total cost of the cable package, we first calculate the cost of the bundled streaming services:  \n$10 (Netflix) + $10 (Hulu) + $10 (Disney) = $30.  \n\nHe saves 20% of the cable package's cost, so the amount saved is:  \n$60 \u00d7 20% = $12"
+        },
+        {
+          "index": 888,
+          "correct": true,
+          "parsed": 10,
+          "expected": 10,
+          "generated": "Lani baked 55 cookies. She ate 5 cookies, leaving 50 cookies. She placed the remaining 50 cookies into 5 jars, so each jar has $ \\frac{50}{5} = 10 $ cookies.\n\n#### 10"
+        },
+        {
+          "index": 511,
+          "correct": false,
+          "parsed": null,
+          "expected": 110,
+          "generated": "Gerald worked for an entire week (7 days) and spent $100. He was paid $30 each day, so his total weekly earnings are $30 \u00d7 7 = $210. He spent $100, so he has $210 - $100 = **$110**.\n\n#### <fable|fable"
+        }
+      ]
+    },
+    "base": {
+      "token_nll": 1.398923237587096,
+      "numeric_exact": 7,
+      "count": 64,
+      "traces": [
+        {
+          "index": 350,
+          "correct": false,
+          "parsed": null,
+          "expected": 8,
+          "generated": "Solution:  \nPeyton's activities total: 1 hour (yoga) + 3 \u00d7 1 hour (cooking) + 0.5 hour (cheese-tasting) + 0.5 hour (museum tour) + 2 hours (errands) = **5 hours**.  \n\n#### <integer> 5"
+        },
+        {
+          "index": 14,
+          "correct": true,
+          "parsed": 60,
+          "expected": 60,
+          "generated": "20% of 20 students is 4 students.  \n25% of the remaining 16 students is 4 students.  \nThe rest (16 - 4 = 12 students) enrolled in hip-hop.  \n\nPercentage of students in hip-hop: $ \\frac{12}{20} \\times 100 = 60\\% $.  \n\n#### 60"
+        },
+        {
+          "index": 884,
+          "correct": false,
+          "parsed": null,
+          "expected": 50,
+          "generated": "Argo starts with 200 toys. He gives away 40 to Alyssa, 80 to Bonnie, and 30 to Nicky.  \nTotal toys given: $40 + 80 + 30 = 150$.  \nArgo now has $200 - 150 = 50$ toys.  \n\n#### <integer>50"
+        },
+        {
+          "index": 605,
+          "correct": false,
+          "parsed": null,
+          "expected": 42,
+          "generated": "Patrick earned $0.50 per cup for 15 cups per hour for 4 hours, totaling $30. In the next two hours, he earned $0.60 per cup for 10 cups per hour, totaling $60. His total earnings are $30 + $60 = $90.\n\n#### <integer>90"
+        },
+        {
+          "index": 84,
+          "correct": false,
+          "parsed": null,
+          "expected": 15,
+          "generated": "The team played 22 games and won 8 more than they lost. Let the number of games they lost be $ x $. Then, the number of games they won is $ x + 8 $. Since the total number of games is 22, we have:\n\n$$ x + 8 + x = 22 $$\n\n$$ 2x + 8 = 22 $$\n\n$$ 2x = 14 $$\n\n$$ x = 7 $$\n\nSo, the team won $ 7 + 8 = 15 $ games.\n\n#### <integer> 15"
+        },
+        {
+          "index": 187,
+          "correct": false,
+          "parsed": null,
+          "expected": 106,
+          "generated": "Mandy should pay $100 + (100 \\times 2\\%) \\times 3 = $106.\n\n#### 106."
+        },
+        {
+          "index": 140,
+          "correct": true,
+          "parsed": 20,
+          "expected": 20,
+          "generated": "To find the percentage of semi-automatic cars, we first calculate the number of semi-automatic cars:  \n$ 20 - 12 - 4 = 4 $.\n\nThen, we calculate the percentage:  \n$ \\frac{4}{20} \\times 100 = 20\\% $.\n\n#### 20"
+        },
+        {
+          "index": 229,
+          "correct": false,
+          "parsed": 57,
+          "expected": 21,
+          "generated": "30% of 120 = 36  \n3/4 of 36 = 27  \nTotal not ready = 120 - 36 - 27 = 57  \n\n#### 57"
+        },
+        {
+          "index": 466,
+          "correct": false,
+          "parsed": null,
+          "expected": 1,
+          "generated": "Kelly paid $50 - 10\\% \\times 50 = 50 - 2.50 = 47.50$ cents.\n\nBecky paid $45 - 45\\% \\times 45 = 45 - 20.25 = 24.75$ cents.\n\nKelly paid $47.50 and Becky paid $24.75, so Kelly paid **more** by $22.75.\n\n#### <integer>2275"
+        },
+        {
+          "index": 991,
+          "correct": false,
+          "parsed": 30,
+          "expected": 15,
+          "generated": "Bill's dad saw the comet when he was 30 years old.  \nBill saw the comet a second time when he was three times the age his father was when he saw the comet.  \n\nBill's age when he saw the comet for the first time is **30 years**.  \n\n#### 30"
+        },
+        {
+          "index": 639,
+          "correct": false,
+          "parsed": null,
+          "expected": 216,
+          "generated": "To solve the problem, we first calculate the volume of the hole:\n\n$$\n\\text{Volume} = \\text{length} \\times \\text{width} \\times \\text{depth} = 6 \\times 4 \\times 3 = 72 \\text{ cubic feet}\n$$\n\nSince it takes Bob 3 seconds to shovel 1 cubic foot of earth, the total time required is:\n\n$$\n\\text{Time} = 72 \\times 3 = 216 \\text{ seconds}\n$$\n\n#### <integer> 216"
+        },
+        {
+          "index": 114,
+          "correct": false,
+          "parsed": null,
+          "expected": 6,
+          "generated": "Jamal's phone can hold 1800 photographs, and it holds 6 times more photographs than Brittany's phone. Let's find out how many photographs Brittany's phone can hold:\n\n$$\n1800 \\div 6 = 300\n$$\n\nBrittany's phone can hold 300 photographs.\n\nSince the maximum number of photographs that Brittany's phone can hold is 50 times more than the number of birds in Jamal's photograph of the ducks at the zoo, we can now find the number of ducks:\n\n$$\n300 \\div 50 = 6\n$$"
+        },
+        {
+          "index": 222,
+          "correct": false,
+          "parsed": null,
+          "expected": 140,
+          "generated": "Andy plants $90$ geraniums and $40$ fewer petunias, so he plants $90 - 40 = 50$ petunias. The total number of flowers he plants is $90 + 50 = 140$.\n\n#### <integer> 140"
+        },
+        {
+          "index": 2,
+          "correct": false,
+          "parsed": null,
+          "expected": 70000,
+          "generated": "Josh's profit is calculated by subtracting the cost of the house from the increased value. The increased value is $80,000 + 150\\% \\times 80,000 = 80,000 + 120,000 = 200,000. His profit is $200,000 - $80,000 = $120,000.\n\n#### <integer>120000"
+        },
+        {
+          "index": 708,
+          "correct": false,
+          "parsed": null,
+          "expected": 168,
+          "generated": "Alex charges $12 per day for 2 weeks of tutoring.  \nShe charges $12 \u00d7 2 \u00d7 7 = $168.  \n\n#### <integer> 168"
+        },
+        {
+          "index": 300,
+          "correct": true,
+          "parsed": 78,
+          "expected": 78,
+          "generated": "On Tuesday, Peter wants to exercise for twice the amount of time he did on Monday and Sunday combined. On Monday, he exercised for 16 minutes, and on Sunday, he exercised for 23 minutes. Together, they combined to $16 + 23 = 39$ minutes. Twice that amount is $2 \\times 39 = 78$ minutes. \n\n#### 78"
+        },
+        {
+          "index": 16,
+          "correct": true,
+          "parsed": 230,
+          "expected": 230,
+          "generated": "The distance covered by each train in the two days is calculated as follows:\n\n- Each train travels 80 miles westward for 80 days.\n- Each train travels 150 miles northward for 80 days.\n\nThe distance covered by each train in the two days is:\n- 80 miles westward + 150 miles northward = 230 miles.\n\n#### 230"
+        },
+        {
+          "index": 1290,
+          "correct": false,
+          "parsed": null,
+          "expected": 90,
+          "generated": "A small sunflower has 3 dozen seeds, which is 3 \u00d7 12 = 36 seeds. A large sunflower has 50% more seeds than a small sunflower, so it has 36 + 15 = 51 seeds. Altogether, there are 36 + 51 = 87 sunflower seeds.\n\n#### <integer>87"
+        },
+        {
+          "index": 381,
+          "correct": true,
+          "parsed": 67,
+          "expected": 67,
+          "generated": "Cho hiked 14 kilometers per hour for 8 hours, so the total distance is $14 \\times 8 = 112$ kilometers. Chloe hiked 9 kilometers per hour for 5 hours, so the total distance is $9 \\times 5 = 45$ kilometers. The difference in distance is $112 - 45 = 67$ kilometers. \n\n#### 67"
+        },
+        {
+          "index": 1031,
+          "correct": false,
+          "parsed": null,
+          "expected": 5,
+          "generated": "After accounting for 950 seats for graduates and 300 seats for faculty, there are $6000 - 950 - 300 = 4650$ seats left for friends and family. If the tickets are split equally, each graduate would receive $4650 \\div 1 = 4650$ tickets.\n\n#### <integer>4650"
+        },
+        {
+          "index": 621,
+          "correct": false,
+          "parsed": null,
+          "expected": 3000,
+          "generated": "John went to physical therapy for $6$ weeks, each week twice for $2$ hours, costing $125 per hour. The total cost is $6 \\times 2 \\times 2 \\times 125 = 3000$ dollars.\n\n#### <integer>3000"
+        },
+        {
+          "index": 599,
+          "correct": false,
+          "parsed": null,
+          "expected": 48,
+          "generated": "The total number of legs in the store is calculated by adding the legs of all the pets: 5 dogs \u00d7 4 legs + 2 cats \u00d7 2 legs + 10 birds \u00d7 2 legs = 20 + 4 + 20 = 44 legs.\n\n#### <integer>44"
+        },
+        {
+          "index": 246,
+          "correct": false,
+          "parsed": null,
+          "expected": 27000,
+          "generated": "Solution:  \nJeans makeup artist charges $250 per hour. She works 6 hours per day for 4 days a week, totaling $250 \u00d7 6 \u00d7 4 = $6,000. The movie takes 5 weeks, so the total cost is $6,000 \u00d7 5 = $30,000. After a 10% discount, Jean pays $30,000 \u00d7 0.9 = $27,000.  \n\n#### <integer>27000"
+        },
+        {
+          "index": 565,
+          "correct": false,
+          "parsed": null,
+          "expected": 5,
+          "generated": "Cody ate $ \\frac{1}{3} \\times 12 = 4 $ sandwiches, and Trevor ate $ \\frac{1}{4} \\times 12 = 3 $ sandwiches. Together, they ate $ 4 + 3 = 7 $ sandwiches. The remaining sandwiches are $ 12 - 7 = 5 $.\n\n#### <5>"
+        },
+        {
+          "index": 569,
+          "correct": false,
+          "parsed": null,
+          "expected": 21,
+          "generated": "Mitchell made $21 \u00d7 $4 = $84.  \n#### 84."
+        },
+        {
+          "index": 527,
+          "correct": false,
+          "parsed": 1,
+          "expected": 48,
+          "generated": "One person can paint half a house in 5 days, so the painting rate is $ \\frac{1}{5} $ of a house per day. For 5 people, the total time would be $ \\frac{1}{5} \\div \\frac{1}{5} = 1 $ day.  \n#### 1"
+        },
+        {
+          "index": 271,
+          "correct": false,
+          "parsed": null,
+          "expected": 20,
+          "generated": "John has 2 houses with 3 bedrooms each. Each bedroom has 2 windows, so the total number of bedroom windows is $2 \\times 3 \\times 2 = 12$ windows. There are 4 additional windows in each house not connected to bedrooms, so the total number of additional windows is $2 \\times 4 = 8$ windows. \n\nTotal windows = $12 + 8 = 20$.\n\n#### <integer>20"
+        },
+        {
+          "index": 489,
+          "correct": false,
+          "parsed": null,
+          "expected": -10,
+          "generated": "The average highest temperature is calculated by adding the temperatures of the three countries and dividing by 3.  \nThe average highest temperature of these 3 countries is $ \\frac{-48 + 21 - 3}{3} = \\frac{-30}{3} = -10 $ degrees Fahrenheit.  \n\n#### <integer> -10"
+        },
+        {
+          "index": 1193,
+          "correct": false,
+          "parsed": null,
+          "expected": 9,
+          "generated": "Solution: Jason earned $3.00 for doing his laundry, $1.50 for cleaning his room, $0.75 for taking the trash out, and $0.50 for emptying the dishwasher. In a two-week period, he earned $3.00 + $1.50 + $0.75 + $0.50 = $6.75.\n\n#### <integer>675"
+        },
+        {
+          "index": 696,
+          "correct": false,
+          "parsed": null,
+          "expected": 145,
+          "generated": "Adam has collected 50 points.  \nBetty collected 30% more than Adam, so she has $ 50 \\times 1.3 = 65 $ points.  \nMarta collected 3 times more than Tom, who has 30 points less than Betty. Tom has $ 65 - 30 = 35 $ points.  \nMarta has $ 3 \\times 35 = 105 $ points.  \n\nThe class has collected $ 50 + 65 + 105 = 220 $ points.  \n\nThe class is"
+        },
+        {
+          "index": 1124,
+          "correct": false,
+          "parsed": null,
+          "expected": 64,
+          "generated": "Seth gave half of his stickers to Luis. Luis used half of the stickers and gave the rest to Kris. Kris kept 9 of the stickers and gave the remaining 7 stickers to Rob. \n\nSeth had $ 2 \\times 9 + 7 = 25 $ stickers in the beginning.\n\n#### <integer> 25"
+        },
+        {
+          "index": 1267,
+          "correct": false,
+          "parsed": null,
+          "expected": 40,
+          "generated": "A farm has 10 2-legged animals and 15 4-legged animals.  \nEach 2-legged animal has 2 legs, and each 4-legged animal has 4 legs.  \n\nTotal legs = (10 \u00d7 2) + (15 \u00d7 4) = 20 + 60 = 80 legs.  \n\nNumber of pairs of animal legs = 80 \u00f7 2 = 40.  \n\n#### <integer>40"
+        },
+        {
+          "index": 698,
+          "correct": false,
+          "parsed": null,
+          "expected": 720,
+          "generated": "She puts 50% of $2400.00 into her retirement account, which is $1200.00. She uses 20% of her paycheck for her car payment, which is $480.00. After these expenses, she has $2400.00 - $1200.00 - $480.00 = $920.00 left to spend.\n\n#### <integer>920"
+        },
+        {
+          "index": 924,
+          "correct": false,
+          "parsed": null,
+          "expected": 12,
+          "generated": "To find the least number of berries per trip, divide the total number of berries by the number of trips:\n\n$$\n\\frac{24}{4} = 6\n$$\n\nThe least number of berries he can pick up per trip is **6**.\n\n#### <integer> 6"
+        },
+        {
+          "index": 453,
+          "correct": false,
+          "parsed": null,
+          "expected": 6400,
+          "generated": "Jenna starts with 8 sapphires. She trades 3 sapphires for 2 rubies. Each sapphire is worth $800, and each ruby is worth $1200.\n\n- Sapphires: $8 \\times 800 = 6400$\n- Rubies: $2 \\times 1200 = 2400$\n\nTotal value: $6400 + 2400 = 8800$\n\n#### <integer>8800"
+        },
+        {
+          "index": 664,
+          "correct": false,
+          "parsed": null,
+          "expected": 32,
+          "generated": "John learns a new recipe for every 1.5 hours of class time. Over 6 weeks, the class meets 4 times a week for 2 hours each time, totaling $4 \\times 2 = 8$ hours of class time.\n\nHe learns a new recipe for every 1.5 hours, so the total number of recipes is $8 \\div 1.5 = 5.333...$. Since he can't learn a fraction of a recipe, he learns **5** recipes.\n\n#### <integer>5"
+        },
+        {
+          "index": 277,
+          "correct": false,
+          "parsed": null,
+          "expected": 4,
+          "generated": "It takes Matthew 3 minutes to dig a small hole and 10 minutes to dig a large hole.  \nTo find the total time, calculate the time for 30 small holes and 15 large holes:  \n30 \u00d7 3 + 15 \u00d7 10 = 90 + 150 = 240 minutes.  \nConvert minutes to hours: 240 \u00f7 60 = 4 hours.  \n\n#### <4>"
+        },
+        {
+          "index": 474,
+          "correct": false,
+          "parsed": null,
+          "expected": 80,
+          "generated": "Three-fourths of the students have desktop computers, so the number of students with desktop computers is $ \\frac{3}{4} \\times x $, where $ x $ is the total number of students. We are told that 20 students do not have desktop computers, so the remaining 20 students have no desktop computers. Therefore, $ \\frac{3}{4}x = 20 $. Solving for $ x $, we get $ x = \\frac{20 \\times 4}{3} = \\frac{80}{3} $. Since $ x $ must be a whole number"
+        },
+        {
+          "index": 1095,
+          "correct": false,
+          "parsed": null,
+          "expected": 270,
+          "generated": "After 3 hours, the first train has traveled $60 \\times 3 = 180$ miles, and the second train has traveled $60 \\times 3 = 180$ miles. The total distance between them is $180 + 180 = 360$ miles.\n\n#### <integer>360"
+        },
+        {
+          "index": 1088,
+          "correct": false,
+          "parsed": null,
+          "expected": 30,
+          "generated": "He spends 5 days * 40 minutes per class = 200 minutes per week.  \nHe spends 1/16 of his weekly minutes on Saturday and Sunday, so 200 * 1/16 = 12.5 minutes.  \nHe spends 200 - 12.5 = 187.5 minutes on learning.  \n\n#### 187.5"
+        },
+        {
+          "index": 1289,
+          "correct": false,
+          "parsed": null,
+          "expected": 101,
+          "generated": "A small t-shirt is 3 square feet, a medium one is 4 square feet, and a large one is 6 square feet.  \nOctavia uses 11 small shirts, 8 medium shirts, and 6 large shirts.  \n\nSolution:  \n$ (11 \\times 3) + (8 \\times 4) + (6 \\times 6) = 33 + 32 + 36 = 101 $ square feet.  \n\n#### <integer>101"
+        },
+        {
+          "index": 782,
+          "correct": false,
+          "parsed": 21,
+          "expected": 54,
+          "generated": "Chase and Rider ride their bikes 5 days a week, with 3 times the usual times on two days. The total number of rides per week is $5 \\times 3 + 2 \\times 3 = 15 + 6 = 21$ times.\n\n#### 21"
+        },
+        {
+          "index": 505,
+          "correct": false,
+          "parsed": 400,
+          "expected": 1600,
+          "generated": "To solve this problem, we need to determine the cheapest lumber that Frederick can buy to make the most popsicles.\n\n- A 2 x 4 piece costs $4 and provides 200 sticks.\n- A 2 x 8 piece costs $6 and provides 400 sticks.\n\nSince he wants to make the most popsicles, he should buy the 2 x 8 piece because it provides more sticks per dollar.\n\nSolution:  \n#### 400"
+        },
+        {
+          "index": 1259,
+          "correct": false,
+          "parsed": null,
+          "expected": 7200,
+          "generated": "Derrick makes $2 per doughnut, and there are 10 dozen doughnuts per day, which is 10 \u00d7 12 = 120 doughnuts per day. In June, there are 30 days in the month, so he sells $120 \u00d7 30 = $3,600 in total.\n\n#### <integer> 3600"
+        },
+        {
+          "index": 733,
+          "correct": false,
+          "parsed": null,
+          "expected": 5,
+          "generated": "Greg and his 3 younger siblings made a total of $20. To split the money equally, each person would get $20 \u00f7 4 = $5.\n\n#### <integer>5"
+        },
+        {
+          "index": 391,
+          "correct": false,
+          "parsed": 90,
+          "expected": 15,
+          "generated": "The ratio of popsicles that Betty and Sam have is 5:6.  \nLet the number of popsicles Betty has be $5x$ and Sam have $6x$.  \nThe total number of popsicles is $5x + 6x = 165$.  \nSolving for $x$:  \n$11x = 165$  \n$x = 15$.  \n\nSam has $6x = 90$ popsicles, and Betty has $5x = 75$.  \nSam has **90 more** popsicles than Betty.  \n\n#### 90"
+        },
+        {
+          "index": 915,
+          "correct": false,
+          "parsed": null,
+          "expected": 23,
+          "generated": "Bruce works for 5 hours on Tuesday. On Wednesday, he works twice as long as on Tuesday, so $2 \\times 5 = 10$ hours. On Thursday, he works 2 hours less than Wednesday, so $10 - 2 = 8$ hours. \n\nTotal hours worked in all three days: $5 + 10 + 8 = 23$.\n\n#### <integer>23"
+        },
+        {
+          "index": 4,
+          "correct": false,
+          "parsed": null,
+          "expected": 20,
+          "generated": "In the final meal of the day, Wendi gives her flock of chickens **20 chickens \u00d7 3 cups per meal = 60 cups** of feed.\n\n#### <integer> 60"
+        },
+        {
+          "index": 148,
+          "correct": false,
+          "parsed": null,
+          "expected": 30,
+          "generated": "Solution:  \nLet the price of an adult ticket be $12 and a child ticket be $10. Brittany's mom paid $8 in change. Let the total amount she gave the cashier be $x.  \nShe bought 1 child and 1 adult ticket, so the total cost is $10 + $12 = $22.  \nShe received $8 in change, so $x - $22 = $8.  \nSolving, $x = $30.  \n\n#### <30>"
+        },
+        {
+          "index": 22,
+          "correct": true,
+          "parsed": 7,
+          "expected": 7,
+          "generated": "Billy sold $3 + 2 \\times 2 + 3 = 7$ DVDs on Tuesday.\n\n#### 7"
+        },
+        {
+          "index": 645,
+          "correct": false,
+          "parsed": null,
+          "expected": 48,
+          "generated": "A bag of flour is divided into 8 portions of 2 kilograms each.  \nTotal flour in one portion is $2 \\, \\text{kg}$.  \nThree bags contain $3 \\times 2 = 6 \\, \\text{kg}$ of flour.  \n\n#### <integer> 6"
+        },
+        {
+          "index": 1022,
+          "correct": false,
+          "parsed": 30,
+          "expected": 12,
+          "generated": "Teresa sold $120 / $4 = 30 small stuffed animals.\n\n#### 30"
+        },
+        {
+          "index": 1120,
+          "correct": false,
+          "parsed": 280,
+          "expected": 560,
+          "generated": "John visits his parents twice a month, and it takes him 2 hours to drive there at a speed of 70 mph. \n\nTo find the total distance he drives in a month:  \n- Round trip time = 2 hours \u00d7 2 = 4 hours  \n- Distance = Speed \u00d7 Time = 70 mph \u00d7 4 hours = 280 miles  \n\n#### 280"
+        },
+        {
+          "index": 1219,
+          "correct": false,
+          "parsed": null,
+          "expected": 100,
+          "generated": "John is a carpenter who manufactured 4 wooden tables for $20 each and 2 roof frames for $10 each. The total cost is $20 \u00d7 4 + $10 \u00d7 2 = $80 + $20 = $100. Ali has to pay John $100.\n\n#### <integer> 100"
+        },
+        {
+          "index": 690,
+          "correct": false,
+          "parsed": null,
+          "expected": 5760,
+          "generated": "Rong saves 20 coins per month, and Neil saves $2/5 \\times 20 = 8$ coins per month. After 10 years, Rong saves $20 \\times 12 \\times 10 = 2400$ coins, and Neil saves $8 \\times 12 \\times 10 = 960$ coins. Together, they have $2400 + 960 = 3360$ coins.\n\n#### <3360>"
+        },
+        {
+          "index": 1110,
+          "correct": false,
+          "parsed": null,
+          "expected": 60,
+          "generated": "To solve the problem:\n\n1. Calculate the total distance Soledad will hike in June:  \n   $ 9,300 \\text{ miles} \\times 2 = 18,600 \\text{ miles} $.\n\n2. Divide by the number of days in June to find the daily distance:  \n   $ \\frac{18,600}{30} = 620 \\text{ miles per day} $.\n\nSolution:  \nSoledad must hike **620** more miles per day to complete her journey on time.\n\n#### <integer>"
+        },
+        {
+          "index": 450,
+          "correct": false,
+          "parsed": null,
+          "expected": 4,
+          "generated": "The regular price of popcorn is $5.\n\n#### <5>"
+        },
+        {
+          "index": 826,
+          "correct": false,
+          "parsed": null,
+          "expected": 27,
+          "generated": "Cindy had 5 green eggs.  \nShe had twice as many blue eggs as green, so 5 \u00d7 2 = 10 blue eggs.  \nShe had one fewer pink eggs than blue, so 10 \u2212 1 = 9 pink eggs.  \nShe had one-third as many yellow eggs as pink, so 9 \u00d7 1/3 = 3 yellow eggs.  \n\nTotal eggs = 5 + 10 + 9 + 3 = 27.  \n\n#### <integer> 27"
+        },
+        {
+          "index": 933,
+          "correct": false,
+          "parsed": null,
+          "expected": 15,
+          "generated": "Solution:  \nThey already have 15 tables and can fit 2 boxes per table. Each box contains 5 items, so they need $ \\frac{15 \\times 2}{5} = 6 $ new tables.  \n\n#### <integer>6"
+        },
+        {
+          "index": 235,
+          "correct": true,
+          "parsed": 10,
+          "expected": 10,
+          "generated": "John needs to order $ \\frac{20 \\times 4}{8} = 10 $ pizzas.\n\n#### 10"
+        },
+        {
+          "index": 609,
+          "correct": false,
+          "parsed": null,
+          "expected": 7,
+          "generated": "To find the total amount of butter needed, we first calculate how many pounds of butter are needed for 1 dozen croissants:  \n$$ \\frac{1}{4} \\text{ pound} $$\n\nJuan wants to make 4 dozen croissants a day.  \n$$ 4 \\times \\frac{1}{4} = 1 \\text{ pound} $$\n\nHe wants to make this for a week (7 days):  \n$$ 1 \\times 7 = 7 \\text{ pounds} $$\n\n#### <integer> 7"
+        },
+        {
+          "index": 392,
+          "correct": false,
+          "parsed": 20,
+          "expected": 34,
+          "generated": "Tim saves $20 on his monthly expenses by canceling his cable package. \n\n#### 20"
+        },
+        {
+          "index": 888,
+          "correct": false,
+          "parsed": null,
+          "expected": 10,
+          "generated": "Lani baked 55 cookies. She ate 5 five-cookie portions, leaving $ 55 - 5 \\times 5 = 50 $ cookies. She placed the remaining 50 cookies equally into 5 jars, so each jar has $ \\frac{50}{5} = 10 $ cookies.\n\n#### <integer> 10"
+        },
+        {
+          "index": 511,
+          "correct": false,
+          "parsed": null,
+          "expected": 110,
+          "generated": "Gerald works $30 every day for a week (7 days), so he earns $210. He spent $100, so he has $210 - $100 = $110.\n\n#### <110>"
+        }
+      ]
+    },
+    "selected_protocol": {
+      "correct": 64,
+      "total": 64,
+      "traces": [
+        {
+          "role": "ENC_X",
+          "i": 0,
+          "j": 0,
+          "expected": "maple",
+          "raw": "maple",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 0,
+          "j": 0,
+          "expected": "marble",
+          "raw": "marble",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 0,
+          "j": 0,
+          "expected": "maple|marble",
+          "raw": "maple|marble",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 0,
+          "j": 0,
+          "expected": "X=0,Y=0",
+          "raw": "X=0,Y=0",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 0,
+          "j": 4,
+          "expected": "maple",
+          "raw": "maple",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 0,
+          "j": 4,
+          "expected": "spruce",
+          "raw": "spruce",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 0,
+          "j": 4,
+          "expected": "maple|spruce",
+          "raw": "maple|spruce",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 0,
+          "j": 4,
+          "expected": "X=0,Y=4",
+          "raw": "X=0,Y=4",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 1,
+          "j": 3,
+          "expected": "frost",
+          "raw": "frost",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 1,
+          "j": 3,
+          "expected": "harbor",
+          "raw": "harbor",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 1,
+          "j": 3,
+          "expected": "frost|harbor",
+          "raw": "frost|harbor",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 1,
+          "j": 3,
+          "expected": "X=1,Y=3",
+          "raw": "X=1,Y=3",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 1,
+          "j": 7,
+          "expected": "frost",
+          "raw": "frost",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 1,
+          "j": 7,
+          "expected": "comet",
+          "raw": "comet",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 1,
+          "j": 7,
+          "expected": "frost|comet",
+          "raw": "frost|comet",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 1,
+          "j": 7,
+          "expected": "X=1,Y=7",
+          "raw": "X=1,Y=7",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 2,
+          "j": 2,
+          "expected": "ocean",
+          "raw": "ocean",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 2,
+          "j": 2,
+          "expected": "fable",
+          "raw": "fable",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 2,
+          "j": 2,
+          "expected": "ocean|fable",
+          "raw": "ocean|fable",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 2,
+          "j": 2,
+          "expected": "X=2,Y=2",
+          "raw": "X=2,Y=2",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 2,
+          "j": 6,
+          "expected": "ocean",
+          "raw": "ocean",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 2,
+          "j": 6,
+          "expected": "velvet",
+          "raw": "velvet",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 2,
+          "j": 6,
+          "expected": "ocean|velvet",
+          "raw": "ocean|velvet",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 2,
+          "j": 6,
+          "expected": "X=2,Y=6",
+          "raw": "X=2,Y=6",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 3,
+          "j": 1,
+          "expected": "cinder",
+          "raw": "cinder",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 3,
+          "j": 1,
+          "expected": "orbit",
+          "raw": "orbit",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 3,
+          "j": 1,
+          "expected": "cinder|orbit",
+          "raw": "cinder|orbit",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 3,
+          "j": 1,
+          "expected": "X=3,Y=1",
+          "raw": "X=3,Y=1",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 3,
+          "j": 5,
+          "expected": "cinder",
+          "raw": "cinder",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 3,
+          "j": 5,
+          "expected": "copper",
+          "raw": "copper",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 3,
+          "j": 5,
+          "expected": "cinder|copper",
+          "raw": "cinder|copper",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 3,
+          "j": 5,
+          "expected": "X=3,Y=5",
+          "raw": "X=3,Y=5",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 4,
+          "j": 0,
+          "expected": "violet",
+          "raw": "violet",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 4,
+          "j": 0,
+          "expected": "marble",
+          "raw": "marble",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 4,
+          "j": 0,
+          "expected": "violet|marble",
+          "raw": "violet|marble",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 4,
+          "j": 0,
+          "expected": "X=4,Y=0",
+          "raw": "X=4,Y=0",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 4,
+          "j": 4,
+          "expected": "violet",
+          "raw": "violet",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 4,
+          "j": 4,
+          "expected": "spruce",
+          "raw": "spruce",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 4,
+          "j": 4,
+          "expected": "violet|spruce",
+          "raw": "violet|spruce",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 4,
+          "j": 4,
+          "expected": "X=4,Y=4",
+          "raw": "X=4,Y=4",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 5,
+          "j": 3,
+          "expected": "echo",
+          "raw": "echo",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 5,
+          "j": 3,
+          "expected": "harbor",
+          "raw": "harbor",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 5,
+          "j": 3,
+          "expected": "echo|harbor",
+          "raw": "echo|harbor",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 5,
+          "j": 3,
+          "expected": "X=5,Y=3",
+          "raw": "X=5,Y=3",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 5,
+          "j": 7,
+          "expected": "echo",
+          "raw": "echo",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 5,
+          "j": 7,
+          "expected": "comet",
+          "raw": "comet",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 5,
+          "j": 7,
+          "expected": "echo|comet",
+          "raw": "echo|comet",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 5,
+          "j": 7,
+          "expected": "X=5,Y=7",
+          "raw": "X=5,Y=7",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 6,
+          "j": 2,
+          "expected": "pollen",
+          "raw": "pollen",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 6,
+          "j": 2,
+          "expected": "fable",
+          "raw": "fable",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 6,
+          "j": 2,
+          "expected": "pollen|fable",
+          "raw": "pollen|fable",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 6,
+          "j": 2,
+          "expected": "X=6,Y=2",
+          "raw": "X=6,Y=2",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 6,
+          "j": 6,
+          "expected": "pollen",
+          "raw": "pollen",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 6,
+          "j": 6,
+          "expected": "velvet",
+          "raw": "velvet",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 6,
+          "j": 6,
+          "expected": "pollen|velvet",
+          "raw": "pollen|velvet",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 6,
+          "j": 6,
+          "expected": "X=6,Y=6",
+          "raw": "X=6,Y=6",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 7,
+          "j": 1,
+          "expected": "tundra",
+          "raw": "tundra",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 7,
+          "j": 1,
+          "expected": "orbit",
+          "raw": "orbit",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 7,
+          "j": 1,
+          "expected": "tundra|orbit",
+          "raw": "tundra|orbit",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 7,
+          "j": 1,
+          "expected": "X=7,Y=1",
+          "raw": "X=7,Y=1",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 7,
+          "j": 5,
+          "expected": "tundra",
+          "raw": "tundra",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 7,
+          "j": 5,
+          "expected": "copper",
+          "raw": "copper",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 7,
+          "j": 5,
+          "expected": "tundra|copper",
+          "raw": "tundra|copper",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 7,
+          "j": 5,
+          "expected": "X=7,Y=5",
+          "raw": "X=7,Y=5",
+          "correct": true
+        }
+      ]
+    },
+    "original_protocol": {
+      "correct": 63,
+      "total": 64,
+      "traces": [
+        {
+          "role": "ENC_X",
+          "i": 0,
+          "j": 0,
+          "expected": "maple",
+          "raw": "maple",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 0,
+          "j": 0,
+          "expected": "marble",
+          "raw": "marble",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 0,
+          "j": 0,
+          "expected": "maple|marble",
+          "raw": "maple|marble",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 0,
+          "j": 0,
+          "expected": "X=0,Y=0",
+          "raw": "X=0,Y=0",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 0,
+          "j": 4,
+          "expected": "maple",
+          "raw": "maple",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 0,
+          "j": 4,
+          "expected": "spruce",
+          "raw": "spruce",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 0,
+          "j": 4,
+          "expected": "maple|spruce",
+          "raw": "maple|spruce",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 0,
+          "j": 4,
+          "expected": "X=0,Y=4",
+          "raw": "X=0,Y=4",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 1,
+          "j": 3,
+          "expected": "frost",
+          "raw": "frost",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 1,
+          "j": 3,
+          "expected": "harbor",
+          "raw": "harbor",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 1,
+          "j": 3,
+          "expected": "frost|harbor",
+          "raw": "frost|harbor",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 1,
+          "j": 3,
+          "expected": "X=1,Y=3",
+          "raw": "X=1,Y=3",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 1,
+          "j": 7,
+          "expected": "frost",
+          "raw": "frost",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 1,
+          "j": 7,
+          "expected": "comet",
+          "raw": "comet",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 1,
+          "j": 7,
+          "expected": "frost|comet",
+          "raw": "frost|1",
+          "correct": false
+        },
+        {
+          "role": "RECEIVE",
+          "i": 1,
+          "j": 7,
+          "expected": "X=1,Y=7",
+          "raw": "X=1,Y=7",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 2,
+          "j": 2,
+          "expected": "ocean",
+          "raw": "ocean",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 2,
+          "j": 2,
+          "expected": "fable",
+          "raw": "fable",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 2,
+          "j": 2,
+          "expected": "ocean|fable",
+          "raw": "ocean|fable",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 2,
+          "j": 2,
+          "expected": "X=2,Y=2",
+          "raw": "X=2,Y=2",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 2,
+          "j": 6,
+          "expected": "ocean",
+          "raw": "ocean",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 2,
+          "j": 6,
+          "expected": "velvet",
+          "raw": "velvet",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 2,
+          "j": 6,
+          "expected": "ocean|velvet",
+          "raw": "ocean|velvet",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 2,
+          "j": 6,
+          "expected": "X=2,Y=6",
+          "raw": "X=2,Y=6",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 3,
+          "j": 1,
+          "expected": "cinder",
+          "raw": "cinder",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 3,
+          "j": 1,
+          "expected": "orbit",
+          "raw": "orbit",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 3,
+          "j": 1,
+          "expected": "cinder|orbit",
+          "raw": "cinder|orbit",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 3,
+          "j": 1,
+          "expected": "X=3,Y=1",
+          "raw": "X=3,Y=1",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 3,
+          "j": 5,
+          "expected": "cinder",
+          "raw": "cinder",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 3,
+          "j": 5,
+          "expected": "copper",
+          "raw": "copper",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 3,
+          "j": 5,
+          "expected": "cinder|copper",
+          "raw": "cinder|copper",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 3,
+          "j": 5,
+          "expected": "X=3,Y=5",
+          "raw": "X=3,Y=5",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 4,
+          "j": 0,
+          "expected": "violet",
+          "raw": "violet",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 4,
+          "j": 0,
+          "expected": "marble",
+          "raw": "marble",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 4,
+          "j": 0,
+          "expected": "violet|marble",
+          "raw": "violet|marble",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 4,
+          "j": 0,
+          "expected": "X=4,Y=0",
+          "raw": "X=4,Y=0",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 4,
+          "j": 4,
+          "expected": "violet",
+          "raw": "violet",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 4,
+          "j": 4,
+          "expected": "spruce",
+          "raw": "spruce",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 4,
+          "j": 4,
+          "expected": "violet|spruce",
+          "raw": "violet|spruce",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 4,
+          "j": 4,
+          "expected": "X=4,Y=4",
+          "raw": "X=4,Y=4",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 5,
+          "j": 3,
+          "expected": "echo",
+          "raw": "echo",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 5,
+          "j": 3,
+          "expected": "harbor",
+          "raw": "harbor",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 5,
+          "j": 3,
+          "expected": "echo|harbor",
+          "raw": "echo|harbor",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 5,
+          "j": 3,
+          "expected": "X=5,Y=3",
+          "raw": "X=5,Y=3",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 5,
+          "j": 7,
+          "expected": "echo",
+          "raw": "echo",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 5,
+          "j": 7,
+          "expected": "comet",
+          "raw": "comet",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 5,
+          "j": 7,
+          "expected": "echo|comet",
+          "raw": "echo|comet",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 5,
+          "j": 7,
+          "expected": "X=5,Y=7",
+          "raw": "X=5,Y=7",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 6,
+          "j": 2,
+          "expected": "pollen",
+          "raw": "pollen",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 6,
+          "j": 2,
+          "expected": "fable",
+          "raw": "fable",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 6,
+          "j": 2,
+          "expected": "pollen|fable",
+          "raw": "pollen|fable",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 6,
+          "j": 2,
+          "expected": "X=6,Y=2",
+          "raw": "X=6,Y=2",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 6,
+          "j": 6,
+          "expected": "pollen",
+          "raw": "pollen",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 6,
+          "j": 6,
+          "expected": "velvet",
+          "raw": "velvet",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 6,
+          "j": 6,
+          "expected": "pollen|velvet",
+          "raw": "pollen|velvet",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 6,
+          "j": 6,
+          "expected": "X=6,Y=6",
+          "raw": "X=6,Y=6",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 7,
+          "j": 1,
+          "expected": "tundra",
+          "raw": "tundra",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 7,
+          "j": 1,
+          "expected": "orbit",
+          "raw": "orbit",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 7,
+          "j": 1,
+          "expected": "tundra|orbit",
+          "raw": "tundra|orbit",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 7,
+          "j": 1,
+          "expected": "X=7,Y=1",
+          "raw": "X=7,Y=1",
+          "correct": true
+        },
+        {
+          "role": "ENC_X",
+          "i": 7,
+          "j": 5,
+          "expected": "tundra",
+          "raw": "tundra",
+          "correct": true
+        },
+        {
+          "role": "ENC_Y",
+          "i": 7,
+          "j": 5,
+          "expected": "copper",
+          "raw": "copper",
+          "correct": true
+        },
+        {
+          "role": "SEND",
+          "i": 7,
+          "j": 5,
+          "expected": "tundra|copper",
+          "raw": "tundra|copper",
+          "correct": true
+        },
+        {
+          "role": "RECEIVE",
+          "i": 7,
+          "j": 5,
+          "expected": "X=7,Y=5",
+          "raw": "X=7,Y=5",
+          "correct": true
+        }
+      ]
+    },
+    "improvement_gate": true,
+    "selection_rule": "Best development NLL only; public test evaluated exactly once after selection",
+    "caveat": "Only GSM8K-style math and Forge protocol measured. No general Qwen improvement implied."
+  },
+  "selected_adapter_sha256": "ee5a940cbc6f909b4c6b090be1fa307274f02224a3df6df18948ac2e68b9b837",
+  "total_elapsed_seconds": 19169.4
+}

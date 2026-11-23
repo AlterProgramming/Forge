@@ -1,0 +1,75 @@
+name: Qwen3 0.6B five-hour checkpoint continuation
+on:
+  push:
+    branches: [research/qwen3-five-hour-continuation-20261122]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  train-and-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Restore audited plaintext experiment source to Forge branch
+        run: |
+          mkdir -p experiments/qwen3-five-hour
+          python - <<'PYCODE'
+          import base64,gzip,hashlib,pathlib
+          payload=pathlib.Path('experiments/qwen3-five-hour/train.py.gz.b64').read_text().strip()
+          source=gzip.decompress(base64.b64decode(payload))
+          expected='6e326c3506013269ef1365547fa93e10b2cb19cba675aff4e7994cc298b0b659'
+          assert hashlib.sha256(source).hexdigest()==expected
+          needle=b'validation_indices=val_ids,test_indices=test_ids,'
+          assert source.count(needle)==1
+          source=source.replace(needle,b'validation_indices=val_ids,')
+          assert hashlib.sha256(source).hexdigest()=='0f8f593bb08f224bb4a587db24724ca892a85d5ce453462a3579e62c365e32e5'
+          pathlib.Path('experiments/qwen3-five-hour/train.py').write_bytes(source)
+          PYCODE
+          python -m py_compile experiments/qwen3-five-hour/train.py
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add experiments/qwen3-five-hour/train.py
+          git commit -m 'Restore audited five-hour Qwen experiment source'
+          git push origin HEAD:research/qwen3-five-hour-continuation-20261122
+      - name: Install CPU Qwen training stack
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch>=2.4,<3'
+          python -m pip install 'transformers>=4.51,<5' 'peft>=0.13,<1' 'datasets>=3,<5' accelerate safetensors
+      - name: Verify original adapter and training code
+        run: |
+          python scripts/qwen_recovery_smoke.py --self-test
+          python experiments/qwen3-five-hour/train.py --self-test
+      - name: Train resumed Qwen LoRA with heldout evaluation
+        env:
+          HF_HUB_DISABLE_TELEMETRY: '1'
+          HF_DATASETS_DISABLE_PROGRESS_BARS: '1'
+          TOKENIZERS_PARALLELISM: 'false'
+          OMP_NUM_THREADS: '2'
+          MKL_NUM_THREADS: '2'
+        run: |
+          python -u experiments/qwen3-five-hour/train.py \
+            --out qwen_5h_output --train-seconds 17400 \
+            --eval-period 900 --max-seq 320 --lr 0.00008
+      - name: Upload actual weights, results, and eval traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qwen3-0_6b-five-hour-selected-checkpoint
+          path: qwen_5h_output/
+          retention-days: 90
+          if-no-files-found: warn
+      - name: Preserve selection, actual checkpoint and results in Forge branch
+        if: success()
+        run: |
+          mkdir -p models/qwen3-0.6b-five-hour-candidate
+          cp -R qwen_5h_output/. models/qwen3-0.6b-five-hour-candidate/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add models/qwen3-0.6b-five-hour-candidate
+          git commit -m 'Record five-hour Qwen LoRA model, full heldout metrics, and source hashes' || exit 0
+          git push origin HEAD:research/qwen3-five-hour-continuation-20261122
