@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.DS_Store
+out/*
+!out/.gitkeep
+*.glb
+*.gltf
+*.mp4
+*.mov
+*.webm
+*.png
+*.jpg
+*.jpeg
+*.zip

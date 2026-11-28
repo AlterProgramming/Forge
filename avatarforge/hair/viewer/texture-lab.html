@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Avatar Forge Hair Texture Lab</title>
+  <link rel="stylesheet" href="texture-lab.css">
+  <script src="https://cdn.jsdelivr.net/npm/babylonjs@9.9.2/babylon.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/babylonjs-loaders@9.9.2/babylonjs.loaders.min.js"></script>
+  <script src="hair-dynamics.js"></script>
+  <script src="hair-texture.js"></script>
+</head>
+<body>
+  <main>
+    <section class="stage"><canvas id="canvas"></canvas><div class="badge" id="status">Drop a v11 hair GLB</div></section>
+    <aside>
+      <h1>Hair Texture Lab</h1>
+      <p class="muted">One rooted topology · 1A → 4C editor anchors</p>
+      <button id="open">Open GLB</button>
+      <input id="file" type="file" accept=".glb,.gltf" hidden>
+      <label>Texture anchor<select id="label"></select></label>
+      <label>Continuous texture <output id="coordOut">2B</output><input id="coord" type="range" min="0" max="11" value="4" step="0.01"></label>
+      <hr>
+      <label>Water / rain <output id="waterOut">0.00</output><input id="water" type="range" min="0" max="1" value="0" step="0.01"></label>
+      <label>Conditioner <output id="conditionerOut">0.00</output><input id="conditioner" type="range" min="0" max="1" value="0" step="0.01"></label>
+      <label>Gel / hold <output id="gelOut">0.00</output><input id="gel" type="range" min="0" max="1" value="0" step="0.01"></label>
+      <label>Oil / slip <output id="oilOut">0.00</output><input id="oil" type="range" min="0" max="1" value="0" step="0.01"></label>
+      <div class="row"><button id="soak">Rain / soak</button><button id="dry">Dry</button><button id="clear">Clear products</button></div>
+      <hr>
+      <label>Gust strength <output id="gustOut">1.00</output><input id="gust" type="range" min="0" max="2.5" value="1" step="0.05"></label>
+      <div class="row"><button id="gustNow">Gust</button><button id="reset">Reset motion</button></div>
+      <p id="summary" class="summary">No texture-lab mesh loaded.</p>
+    </aside>
+  </main>
+  <script src="texture-lab-app.js"></script>
+</body>
+</html>
